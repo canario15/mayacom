@@ -1,4 +1,22 @@
 Rails.application.routes.draw do
+
+  get '/' => 'pages#home'
+  get '/celulares'      => 'phones#index'
+  get '/celulares/:id'  => 'phones#show'
+
+  get '/accesorios/'    => 'pages#accesories'
+  #get '/accesorios/:id' => 'pages#show'
+
+  get '/contratos/'     => 'pages#contract'
+  #get '/contratos/:id'  => 'pages#show'
+
+  get '/ofertas/'       => 'pages#ofert'
+  #get '/ofertas/:id'    => 'pages#show'
+
+  get '/contacto/'      => 'pages#contact'
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

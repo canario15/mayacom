@@ -1,0 +1,65 @@
+<div class="header-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+      </div>
+      <div class="">
+        <div class="header-right">
+          <div class="user-menu">
+            <ul>
+              <li><a href="#"><i class="fa fa-user"></i> Mi Cuenta</a></li>
+              <li><a href="cart.html"><i class="fa fa-user"></i> Carrito</a></li>
+              <li><a href="checkout.html"><i class="fa fa-user"></i> Checkout</a></li>
+              <li><a href="#"><i class="fa fa-user"></i> Login</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> <!-- End header area -->
+
+<div class="site-branding-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="logo">
+          <h1>
+            <a href="./">
+              <img class="logo-img" src="/assets/logo.png">
+            </a>
+          </h1>
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+
+      </div>
+    </div>
+  </div>
+</div> <!-- End site branding area -->
+
+<div class="mainmenu-area">
+  <div class="container">
+    <div class="row">
+      <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class="<%=@hover_menu == CONSTANT_MENU_HOME_ID ? 'active' : " " %>"> <a href="/">Inicio</a></li>
+          <li class="<%=@hover_menu == CONSTANT_MENU_PHONES ? 'active' : " " %>"><a href="/celulares">Celulares</a></li>
+          <li class="<%=@hover_menu == CONSTANT_MENU_ACCESORIOES ? 'active' : " " %>"><a href="/accesorios">Accesorios</a></li>
+          <li class="<%=@hover_menu == CONSTANT_MENU_CONTRACTS ? 'active' : " " %>"><a href="/contratos">Contratos</a></li>
+          <li class="<%=@hover_menu == CONSTANT_MENU_OFFER ? 'active' : " " %>"><a href="/ofertas">Ofertas</a></li>
+          <li class="<%=@hover_menu == CONSTANT_MENU_CONTACT_ID ? 'active' : " " %>"><a href="/contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div> <!-- End mainmenu area -->

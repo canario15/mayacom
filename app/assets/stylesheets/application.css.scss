@@ -1,0 +1,123 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+.brand-list {
+  list-style-type: none;
+}
+.brand-list label {
+  font-size: 21px;
+  font-weight: lighter;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+.link-cel-name {
+  color: #303967!important;
+}
+
+.container-cel {
+  width: 50%;
+}
+
+.col-md-cust {
+  float: left;
+  min-height: 1px;
+  position: relative;
+  width: 48%;
+}
+
+.icheckbox_flat-blue, .iradio_flat-blue {
+  margin: -5px 0 0!important;
+}
+
+.filter-tit {
+  font-weight: 700;
+  margin-top: 18px;
+}
+
+.col-md-cust-2 {
+  float: left;
+  min-height: 1px;
+  position: relative;
+  width: 33%;
+}
+
+.filters li{
+  margin-bottom: 24px;
+}
+
+.caract {
+  clear: both;
+  margin-bottom: 32px;
+}
+
+.caract-inn {
+  padding: 0 8px 10px;
+}
+
+.caract-table {
+  border-top: 2px solid #d4d4d4;
+  width: 100%;
+}
+
+.caract-table th {
+  color: #303967;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 8px 5px;
+  vertical-align: top;
+  width: 180px;
+}
+
+caption, th {
+  text-align: left;
+}
+
+.caract-table td {
+  font-size: 12px;
+  padding: 5px;
+  vertical-align: top;
+}
+
+.caract-table td table {
+    width: 100%;
+}
+
+.caract-table td th {
+  border-top: 1px dotted #b2b2b2;
+  color: #000;
+  font-size: 12px;
+  padding: 3px 5px;
+  width: 141px;
+}
+
+.caract-table td tr:first-child th, .caract-table td tr:first-child td {
+  border: medium none;
+}
+.caract-table td td {
+  border-top: 1px dotted #b2b2b2;
+  padding: 3px 5px;
+}
+.caract-table td {
+  font-size: 12px;
+  padding: 5px;
+  vertical-align: top;
+}
+
+.par {
+  border-top: 2px solid #d4d4d4;
+}
+
+

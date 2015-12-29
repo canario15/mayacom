@@ -13,4 +13,22 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require bxslider.min
+//= require icheck
+//= require jquery.easing.1.3.min
+//= require jquery.sticky
+//= require main
+//= require owl.carousel.min
+//= require script.slider
+
+
+
+$(document).ready(function () {
+  $(".radio-test").iCheck({
+    checkboxClass: 'icheckbox_flat-blue',
+    radioClass: 'iradio_flat-blue'
+  });
+
+
+
+});
