@@ -1,226 +1,176 @@
-  <div class="product-big-title-area">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="product-bit-title text-center">
-            <h2>Celulares</h2>
+<div class="product-big-title-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="product-bit-title text-center">
+          <h2>Equipos</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="single-product-area">
+  <div class="zigzag-bottom"></div>
+  <div class="container catalog-cel-cont">
+    <div class="row row-tit">
+      <div class="col-lg-8 col-md-8 col-sm-7 col-xs-7 colTit hidden-xs visible-xss">
+        <h1>Catálogo de equipos
+        </h1>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-5 col-xs-12 col-xss-5">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Buscar un equipo">
+            <span class="input-group-btn">
+              <button class="btn btn-default btn-searh" type="button">
+                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+              </button>
+            </span>
+        </div>
+      </div>
+    </div>
+    <div class="row row-body">
+      <div class="col-md-3 col-sm-3 col-xss-4 filters-col">
+        <ul id="accordion">
+          <div class="hd">
+            <span class="glyphicon glyphicon-filter" aria-hidden="true"></span>
+            <h4>Filtrar Equipos</h4>
+          </div>
+          <li>
+            <div class="acc-panel">
+              <i class="fa fa-caret-down fa-lg"></i>
+              <h5>Qué equipo buscás?</h5>
+            </div>
+            <ul>
+              <li>
+                <%= check_box_tag(:prod, "cel", false, class: "radio-test") %>
+                <%= label_tag(:prod_cel, "Celulares") %>
+              </li>
+              <li>
+                <%= check_box_tag(:prod, "tabl", false, class: "radio-test") %>
+                <%= label_tag(:prod_tabl, "Tablets") %>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <div class="acc-panel">
+              <i class="fa fa-caret-right fa-lg"></i>
+              <h5>Rango de Precio</h5>
+            </div>
+            <ul>
+              <div class="slide-cont">
+                <p>
+                  Deslizá los circulos y define el precio
+                  Mostrar desde <span class="slide-1">$0</span> hasta <span class="slide-2">$65000</span>
+                </p>
+                <input id="ex2" type="text" class="span2" data-slider-min="1" data-slider-max="65000" data-slider-step="500" data-slider-value="[0,65000]"> </br>
+                <b>$0</b>
+                <b style="float:right">$ 65000</b>
+              </div>
+            </ul>
+          </li>
+          <li>
+            <div class="acc-panel">
+              <i class="fa fa-caret-right fa-lg"></i>
+              <h5>Modo de Compra</h5>
+            </div>
+            <ul>
+              <li>
+                <%= check_box_tag(:type, "free", false, class: "radio-test") %>
+                <%= label_tag(:type_free, "Prepago") %>
+              </li>
+              <li>
+                <%= check_box_tag(:type, "contr_ant", false, class: "radio-test") %>
+                <%= label_tag(:type_contr_ant, "Contrato Antel") %>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <div class="acc-panel">
+              <i class="fa fa-caret-right fa-lg"></i>
+              <h5>Marca</h5>
+            </div>
+            <ul>
+              <li>
+                <%= check_box_tag(:brand, "nokia", false, class: "radio-test") %>
+                <%= label_tag(:brand_nokia, "Nokia") %>
+              </li>
+              <li>
+                <%= check_box_tag(:brand, "acer", false, class: "radio-test") %>
+                <%= label_tag(:brand_acer, "Acer") %>
+              </li>
+              <li>
+                <%= check_box_tag(:brand, "lg", false, class: "radio-test") %>
+                <%= label_tag(:brand_lg, "LG") %>
+              </li>
+              <li>
+                <%= check_box_tag(:brand, "sony", false, class: "radio-test") %>
+                <%= label_tag(:brand_sony, "Sony") %>
+              </li>
+              <li>
+                <%= check_box_tag(:brand, "motorola", false, class: "radio-test") %>
+                <%= label_tag(:brand_motorola, "Motorola") %>
+              </li>
+              <li>
+                <%= check_box_tag(:brand, "alcatel", false, class: "radio-test") %>
+                <%= label_tag(:brand_alcatel, "Alcatel") %>
+              </li>
+              <li>
+                <%= check_box_tag(:brand, "samsung", false, class: "radio-test") %>
+                <%= label_tag(:brand_samsung, "Samsung") %>
+              </li>
+              <li>
+                <%= check_box_tag(:brand, "blackberry", false, class: "radio-test") %>
+                <%= label_tag(:brand_blackberry, "BlackBerry") %>
+              </li>
+              <li>
+                <%= check_box_tag(:brand, "doogee", false, class: "radio-test") %>
+                <%= label_tag(:brand_doogee, "Doogee") %>
+              </li>
+              <li>
+                <%= check_box_tag(:brand, "unicell", false, class: "radio-test") %>
+                <%= label_tag(:brand_unicell, "Unicell") %>
+              </li>
+              <li>
+                <%= check_box_tag(:brand, "huawei", false, class: "radio-test") %>
+                <%= label_tag(:brand_huawei, "Huawei") %>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="pull-right col-xs-12 col-md-9 col-sm-9 col-xss-8 phones-col ">
+        <div class="phone-catalog">
+          <div class="row row-header">
+            <div class="my-col-1 col-lg-2 col-md-2 col-sm-3 col-xss-3">
+              <strong>12</strong>
+              productos de <strong>81</strong>
+            </div>
+            <div class="my-col-2 col-lg-4 col-md-6 col-sm-4 col-xss-4">
+              <span>Ver como </span>
+              <span>
+                <i class=" rw-ico fa fa-th fa-2x"></i>
+                <i class=" rw-ico fa fa-th-list fa-2x"></i>
+              </span>
+            </div>
+            <div class="my-col-3 col-lg-6 col-md-4 col-sm-5 col-xss-5">
+              Ordenar por:
+              <span>
+                <select size="1" class="form-control order-data">
+                  <option selected="selected" value="DESTACADO">Destacados</option>
+                  <option value="PRECIO_ASC">Menor precio</option>
+                  <option value="PRECIO_DESC">Mayor precio</option>
+                </select>
+              </span>
+            </div>
+          </div>
+          <div class="row row-phones">
+            <%= render partial: "/phones/show2" %>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-  <div class="single-product-area">
-    <div class="zigzag-bottom"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8">
-            <div class="row">
-              <% 6.times do %>
-                <div class="col-md-4 col-sm-6">
-                  <div class="single-shop-product">
-                    <div class="product-upper">
-                      <img src="assets/product-1.jpg" alt="">
-                    </div>
-                    <h2><a class="link-cel-name" href="">Apple new mac book 2015 March :P</a></h2>
-                    <div class="product-carousel-price">
-                      <ins>$899.00</ins> <del>$999.00</del>
-                    </div>
-                    <div class="product-option-shop">
-                      <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">Agregar al carrito</a>
-                    </div>
-                  </div>
-                </div>
-              <% end -%>
-            </div>
-            <div class="row">
-              <div class="col-md-12">
-                <div class="product-pagination text-center">
-                  <nav>
-                    <ul class="pagination">
-                      <li>
-                        <a href="#" aria-label="Previous">
-                          <span aria-hidden="true">&laquo;</span>
-                        </a>
-                      </li>
-                      <li><a href="#">1</a></li>
-                      <li><a href="#">2</a></li>
-                      <li><a href="#">3</a></li>
-                      <li><a href="#">4</a></li>
-                      <li><a href="#">5</a></li>
-                      <li>
-                        <a href="#" aria-label="Next">
-                          <span aria-hidden="true">&raquo;</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </nav>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <h2> Filtrar </h2>
-            <div class="row">
-              <ul class="brand-list">
-                <h4 class="filter-tit"> Marcas: </h4>
-                <div class="col-md-cust">
-                  <li>
-                    <%= radio_button_tag(:brand, "nokia", false, class: "radio-test") %>
-                    <%= label_tag(:brand_nokia, "Nokia") %>
-                  </li>
-                  <li>
-                    <%= radio_button_tag(:brand, "acer", false, class: "radio-test") %>
-                    <%= label_tag(:brand_acer, "Acer") %>
-                  </li>
-                  <li>
-                    <%= radio_button_tag(:brand, "lg", false, class: "radio-test") %>
-                    <%= label_tag(:brand_lg, "LG") %>
-                  </li>
-                  <li>
-                    <%= radio_button_tag(:brand, "sony", false, class: "radio-test") %>
-                    <%= label_tag(:brand_sony, "Sony") %>
-                  </li>
-                  <li>
-                    <%= radio_button_tag(:brand, "motorola", false, class: "radio-test") %>
-                    <%= label_tag(:brand_motorola, "Motorola") %>
-                  </li>
-                  <li>
-                    <%= radio_button_tag(:brand, "alcatel", false, class: "radio-test") %>
-                    <%= label_tag(:brand_alcatel, "Alcatel") %>
-                  </li>
-                </div>
-                <div class="col-md-cust">
-                  <li>
-                    <%= radio_button_tag(:brand, "samsung", false, class: "radio-test") %>
-                    <%= label_tag(:brand_samsung, "Samsung") %>
-                  </li>
-                  <li>
-                    <%= radio_button_tag(:brand, "blackberry", false, class: "radio-test") %>
-                    <%= label_tag(:brand_blackberry, "BlackBerry") %>
-                  </li>
-                  <li>
-                    <%= radio_button_tag(:brand, "doogee", false, class: "radio-test") %>
-                    <%= label_tag(:brand_doogee, "Doogee") %>
-                  </li>
-                  <li>
-                    <%= radio_button_tag(:brand, "unicell", false, class: "radio-test") %>
-                    <%= label_tag(:brand_unicell, "Unicell") %>
-                  </li>
-                  <li>
-                    <%= radio_button_tag(:brand, "huawei", false, class: "radio-test") %>
-                    <%= label_tag(:brand_huawei, "Huawei") %>
-                  </li>
-                </div>
-              </ul>
-            </div>
-            <div class="row">
-              <ul class="brand-list">
-                <h4 class="filter-tit"> Modalidades: </h4>
-                <div class="col-md-cust">
-                  <li>
-                    <%= radio_button_tag(:type, "free", false, class: "radio-test") %>
-                    <%= label_tag(:type_free, "Libre") %>
-                  </li>
-                </div>
-                <div class="col-md-cust">
-                  <li>
-                    <%= radio_button_tag(:type, "contr_ant", false, class: "radio-test") %>
-                    <%= label_tag(:type_contr_ant, "Contrato Antel") %>
-                  </li>
-                </div>
-              </ul>
-            </div>
-            <div class="row">
-              <ul class="brand-list filters">
-                <h4 class="filter-tit"> Caracteristicas: </h4>
-                <div class="col-md-cust-2">
-                  <li>
-                    <%= check_box_tag 'caract', true, false, class: 'radio-test' %>
-                    <%= image_tag "/assets/bluetooth.png", width: 40 %>
-                  </li>
-                  <li>
-                    <%= check_box_tag 'caract', true, false, class: 'radio-test' %>
-                    <%= image_tag "/assets/camara.png", width: 40 %>
-                  </li>
-                  <li>
-                    <%= check_box_tag 'caract', true, false, class: 'radio-test' %>
-                    <%= image_tag "/assets/radio.png", width: 40 %>
-                  </li>
-                  <li>
-                    <%= check_box_tag 'caract', true, false, class: 'radio-test' %>
-                    <%= image_tag "/assets/mp3.png", width: 40 %>
-                  </li>
-                  <li>
-                    <%= check_box_tag 'caract', true, false, class: 'radio-test' %>
-                    <%= image_tag "/assets/micro-sd.jpeg", width: 40 %>
-                  </li>
-                  <li>
-                    <%= check_box_tag 'caract', true, false, class: 'radio-test' %>
-                    <%= image_tag "/assets/wifi.png", width: 40 %>
-                  </li>
-                  <li>
-                    <%= check_box_tag 'caract', true, false, class: 'radio-test' %>
-                    <%= image_tag "/assets/3g.png", width: 40 %>
-                  </li>
-                </div>
-                <div class="col-md-cust-2">
-                  <li>
-                    <%= check_box_tag 'caract', true, false, class: 'radio-test' %>
-                    <%= image_tag "/assets/gsm.png", width: 40 %>
-                  </li>
-                  <li>
-                    <%= check_box_tag 'caract', true, false, class: 'radio-test' %>
-                    <%= image_tag "/assets/gps.png", width: 40 %>
-                  </li>
-                  <li>
-                    <%= check_box_tag 'caract', true, false, class: 'radio-test' %>
-                    <%= image_tag "/assets/flash.jpeg", width: 40 %>
-                  </li>
-                  <li>
-                    <%= check_box_tag 'caract', true, false, class: 'radio-test' %>
-                    <%= image_tag "/assets/tv.jpeg", width: 40 %>
-                  </li>
-                  <li>
-                    <%= check_box_tag 'caract', true, false, class: 'radio-test' %>
-                    <%= image_tag "/assets/dual-sim.png", width: 40 %>
-                  </li>
-                  <li>
-                    <%= check_box_tag 'caract', true, false, class: 'radio-test' %>
-                    <%= image_tag "/assets/auricular1.png", width: 40 %>
-                  </li>
-                </div>
-                <div class="col-md-cust-2">
-                  <li>
-                    <%= check_box_tag 'caract', true, false, class: 'radio-test' %>
-                    <%= image_tag "/assets/lte.png", width: 40 %>
-                  </li>
-                  <li>
-                    <%= check_box_tag 'caract', true, false, class: 'radio-test' %>
-                    <%= image_tag "/assets/bluetooth.png", width: 40 %>
-                  </li>
-                  <li>
-                    <%= check_box_tag 'caract', true, false, class: 'radio-test' %>
-                    <%= image_tag "/assets/bluetooth.png", width: 40 %>
-                  </li>
-                  <li>
-                    <%= check_box_tag 'caract', true, false, class: 'radio-test' %>
-                    <%= image_tag "/assets/bluetooth.png", width: 40 %>
-                  </li>
-                  <li>
-                    <%= check_box_tag 'caract', true, false, class: 'radio-test' %>
-                    <%= image_tag "/assets/bluetooth.png", width: 40 %>
-                  </li>
-                  <li>
-                    <%= check_box_tag 'caract', true, false, class: 'radio-test' %>
-                    <%= image_tag "/assets/bluetooth.png", width: 40 %>
-                  </li>
-                </div>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+</div>
 
 

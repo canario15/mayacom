@@ -585,10 +585,10 @@ body {
     width: 100%;
 }
 .product-hover a {
-    background: #5a88ca none repeat scroll 0 0;
-    border: 1px solid #5a88ca;
+    background:  #303967 none repeat scroll 0 0;
+    border: 1px solid  #303967;
     border-radius: 5px;
-    color: #fff;
+    color: #fecc00;
     display: block;
     font-size: 16px;
     left: 10%;
@@ -601,10 +601,12 @@ body {
     width: 80%;
     z-index: 99;
 }
+
 .product-hover a:hover {
-    background: #000 none repeat scroll 0 0;
-    border-color: #444;
+    background: #fecc00 none repeat scroll 0 0;
+    border-color: #fecc00;
     text-decoration: none;
+    color: #303967!important;
 }
 .product-carousel-price ins {
     color: #5a88ca;
@@ -657,15 +659,15 @@ body {
     top: 0;
 }
 .latest-product .owl-nav div, .related-products-wrapper .owl-nav div {
-    background: #fa8072 none repeat scroll 0 0;
-    color: #fff;
+    background: #303967 none repeat scroll 0 0;
+    color: #fecc00;
     display: inline-block;
     margin-left: 15px;
     padding: 1px 10px;
 }
 .latest-product .owl-nav div:hover, .brand-wrapper .owl-nav div:hover, .related-products-wrapper .owl-nav div:hover {
-    background: #f95f5f none repeat scroll 0 0;
-    color: #fff;
+    background: #fecc00 none repeat scroll 0 0;
+    color: #303967;
 }
 
 .brand-list .owl-nav {
