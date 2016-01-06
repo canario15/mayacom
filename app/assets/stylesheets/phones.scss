@@ -171,7 +171,6 @@
   overflow: hidden;
   padding-left: 12px;
   text-align: left;
-  width: 223px;
 }
 
 .datahover .hov-tit2 {
@@ -188,7 +187,6 @@
   color: #fff;
   font-family: Arial,sans-serif;
   font-size: 14px;
-  max-height: 102px;
   overflow: hidden;
   padding-left: 12px;
   padding-right: 40px;
@@ -206,3 +204,29 @@
   width: 100%;
 }
 
+.items {
+  background: #303967 none repeat scroll 0 0;
+  border-top: 1px solid #fecc00;
+  height: 45px;
+  width: 100%;
+}
+
+.more-details {
+  color: #fecc00;
+  margin-left: 18px;
+  margin-top: 9px;
+}
+
+.more-details a {
+  color: #fecc00!important;
+}
+
+.i-want {
+  color: yellow !important;
+  margin-right: 23px;
+  margin-top: 9px;
+}
+
+.i-want a {
+  color: #fecc00!important;
+}
