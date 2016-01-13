@@ -4,14 +4,13 @@ Rails.application.routes.draw do
   get '/celulares'      => 'phones#index'
   get '/celulares/:id'  => 'phones#show'
 
-  get '/accesorios/'    => 'pages#accesories'
-  #get '/accesorios/:id' => 'pages#show'
+  get '/accesorios/'    => 'accessories#index'
+  get '/accesorios/:id' => 'accessories#show'
 
-  get '/contratos/'     => 'pages#contract'
-  #get '/contratos/:id'  => 'pages#show'
+  get '/contratos/'     => 'contracts#index'
+  get '/contratos/:id'  => 'contracts#show'
 
   get '/ofertas/'       => 'pages#ofert'
-  #get '/ofertas/:id'    => 'pages#show'
 
   get '/contacto/'      => 'pages#contact'
 

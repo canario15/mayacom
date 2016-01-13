@@ -1,0 +1,299 @@
+.rowContracts {
+  margin: 0 -10px 15px;
+}
+
+.boxContr {
+  min-height: 0;
+  padding: 0 10px;
+  transition: all 0.4s ease-out 0s;
+  cursor: pointer;
+}
+
+.frente {
+  text-align: center;
+  height: 100%;
+  min-height: 0;
+  padding: 15px 15px 140px;
+  text-align: center;
+  width: 100%;
+  position:absolute;
+}
+
+.contract {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 0 0 5px 5px;
+  //height: 100%;
+  height: 341px;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.cont-img {
+  height: 80px;
+  margin: auto;
+  text-align: center;
+}
+
+.img-plan {
+  margin-left: 18px;
+  width: 124px;
+}
+
+.contract h3 {
+  color: #132659;
+  font-size: 24px;
+  margin: 0 auto 2px;
+  width: 295px;
+}
+
+.cost {
+  background-color: #d5e9fd;
+  border-radius: 0 0 5px 5px;
+  bottom: 0;
+  height: 70px;
+  left: 0;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+}
+
+.cost p {
+  color: #0c265b;
+  font-size: 171%;
+  margin: 0;
+}
+
+.cost p strong {
+  font-size: 34px;
+}
+
+.cost p strong small {
+  font-size: 18px;
+  margin-right: 3px;
+}
+
+.clear {
+  clear: both;
+}
+
+.atras {
+  background-color: #303967;
+  background-image: none;
+  border-radius: 0 0 5px 5px;
+  padding: 15px;
+  position: relative;
+}
+
+
+.atras h3{
+  color: #fecc00;
+  font-size: 24px;
+  padding: 0 15px;
+  text-align: center;
+  width: 100%;
+}
+
+.atras h4{
+  color: #fecc00;
+  font-size: 22px;
+  font-weight: 300;
+  margin-top: 5px;
+  text-align: center;
+}
+
+.plan-accordion{
+  margin-top:30px;
+}
+
+
+.cost2 {
+  background: #303967 none repeat scroll 0 0;
+  bottom: 0;
+  display: block;
+  max-height: 70px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  position: relative;
+  width: 108%;
+}
+
+.cost2 span.ctabtn {
+  background: #fecc00 none repeat scroll 0 0;
+  border-radius: 5px;
+  color: #303967;
+  font-size: 16px;
+  margin: 0 10px 0 0;
+  padding: 10px 16px;
+}
+
+.cost2 .info {
+  padding-right: 10px;
+  text-align: right;
+  width: 55%;
+}
+
+.cost2 .info p {
+  color: #fff;
+  display: block;
+  font-family: "Roboto Condensed",sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 3px 0 0;
+}
+
+.cost2 .info p strong {
+  font-size: 32px;
+  font-weight: bolder;
+}
+
+.cost2 .info span {
+  color: #fff;
+  float: right;
+  font-size: 14px;
+  margin-top: -8px;
+}
+
+.plan-title {
+  margin-bottom: 15px;
+  padding: 13px;
+}
+
+.plan-title a p {
+  color: #303967;
+  display: inline;
+  float: left;
+  font-size: 18px;
+  margin-bottom: 0;
+  transition: all 0.4s ease-out 0s;
+}
+
+
+.plan-title .subplanes a.ft {
+  border-right: 1px solid #ccc;
+  margin-right: 15px;
+  padding-right: 15px;
+}
+
+.plan-details .row-tit i {
+  color:#fecc00;
+}
+
+.plan-details ul.lista {
+  list-style: outside none none;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  padding-left: 30px;
+}
+
+.plan-details ul.lista li {
+  background-position: left 8px;
+  background-repeat: no-repeat;
+  font-family: Arial,sans-serif;
+  list-style: outside none none;
+  margin-bottom: 14px;
+  padding-left: 25px;
+}
+.plan-details ul.lista i {
+  color: #fecc00;
+  float: left;
+  margin-right: 11px;
+}
+
+.plan-details h3 {
+  font-size: 18px;
+  color: #303967;
+  margin: 5px;
+}
+
+.plan-details ul.lista li p {
+  color: #555;
+  font-size: 14px;
+  margin-left: 39px;
+}
+
+.plan-details .data {
+  border: 1px solid #303967;
+  border-radius: 5px;
+  left: 134px;
+  margin-top: 60px;
+  overflow: auto;
+  position: absolute
+}
+
+.plan-details .data .col1 {
+  background-color: #fecc00;
+  float: left;
+  height: 62px;
+  line-height: 22px;
+  padding: 8px 14px 8px 20px;
+}
+
+.plan-details .data .col1 p {
+  color: #303967;
+  font-size: 22px;
+  line-height: 12px;
+  margin: -8px 0 0;
+  text-align: right;
+}
+
+.plan-details .data .col1 span {
+  color: #303967;
+  font-size: 40px;
+  line-height: 48px;
+  margin-left: 5px;
+}
+
+.plan-details .data .col2 {
+  background-color: #303967;
+  display: block;
+  float: left;
+  height: 62px;
+  padding: 8px;
+}
+
+.plan-details .data .col2 p {
+  color: #fecc00;
+  float: left;
+  font-family: "Roboto Condensed",sans-serif;
+  font-size: 24px;
+  line-height: 20px;
+  margin: 5px 10px 0 0;
+}
+
+.plan-details .data .col2 small {
+  display: block;
+  font-family: Arial,sans-serif;
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+.plan-details .plan-descripcion {
+  margin-bottom: 30px;
+  margin-left: 15px;
+  margin-top: 30px;
+}
+
+.plan-details .plan-descripcion h3 {
+  color: #303967;
+  font-family: "Roboto Condensed",sans-serif;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.plan-details .plan-descripcion p {
+  color: #545454;
+}
+
+.plan-details .plan-descripcion ul {
+  list-style-type: none;
+}
+
+.plan-details .plan-descripcion li {
+  color: #545454;
+}
+
+.plan-details .plan-descripcion li i{
+  color: #fecc00;
+}

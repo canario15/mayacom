@@ -122,3 +122,113 @@ caption, th {
 .slider-selection {
   background: green none repeat scroll 0 0;
 }
+
+.celbox{
+  margin-bottom: 37px;
+  margin-left: 27px;
+}
+
+.ofertbox .img {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  display: block;
+  float: left;
+  height: 274px;
+  margin-right: 15px;
+  position: relative;
+  width: 246px;
+  overflow: hidden;
+}
+
+.ofertbox .ofconte {
+  border-bottom: 1px dotted #303967;
+  float: left;
+  height: 274px;
+  padding: 12px 0;
+  position: relative;
+  width: 700px;
+}
+
+.ofertbox h2 {
+  font-size: 23px;
+  font-weight: bold;
+  margin: 0;
+  padding-top: 0;
+}
+
+.ofertbox h2 a{
+  color: #303967;
+}
+
+.ofertbox h2 a:hover{
+  color: #fecc00;
+}
+
+.ofertbox .price {
+  bottom: 13px;
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 20px;
+  color: #000;
+  position: absolute;
+  right: 0;
+}
+
+.ofertbox .price .oldPrice {
+  clear: both;
+  color: #777;
+  display: block;
+  float: right;
+  font-size: 13px;
+  margin-right: 50px;
+}
+
+.ofertbox .price .oldPrice strong {
+  color: #777;
+  font-size: 13px;
+  text-decoration: line-through;
+  line-height: 20px;
+}
+
+.ofertbox .price .currentPrice {
+  clear: both;
+  display: block;
+  float: right;
+}
+
+.ofertbox .price strong {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 20px;
+}
+.ofertbox .precio strong, .ofertbox .price strong {
+  color: #303967;
+  font-size: 14px;
+  padding-left: 4px;
+}
+
+span.precio small, span.price small {
+  color: #9e9e9e;
+  font-size: 10px;
+}
+
+.ofertbox .description strong {
+  color: #000;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 24px;
+}
+
+.ofertbox .description p {
+  margin-bottom: 10px;
+}
+.ofertbox p {
+  font-size: 15px;
+  padding: 0 80px 0 0;
+  margin-top: 10px;
+}
+
+.description{
+  margin-top:13px;
+}

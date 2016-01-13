@@ -7,7 +7,9 @@
 
 #accordion ul {
   list-style: none;
-  padding: 0 0 0 0;
+  padding-bottom: 12px;
+  padding-left: 0;
+  padding-top: 12px;
 }
 
 #accordion ul{
@@ -32,3 +34,5 @@
 #accordion a:hover {
   text-decoration: underline;
 }
+
+

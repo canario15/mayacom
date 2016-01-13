@@ -23,7 +23,8 @@
 //= require script.slider
 //= require bootstrap-slider
 //= require jquery.flip
-
+//= require jquery.elevatezoom
+//= require woco.accordion.min
 
 
 $(document).ready(function () {
@@ -50,4 +51,34 @@ $(document).ready(function () {
     trigger: "hover", // click or hover
     speed: 500
   });
+
+  $(".boxContr").flip({
+    axis: "y", // y or x
+    reverse: false, // true and false
+    trigger: "hover", // click or hover
+    speed: 500
+  });
+
+
+  $(".plan-accordion").accordion({
+    //whether the first section is expanded or not
+    firstChildExpand: false,
+    //whether expanding mulitple section is allowed or not
+    multiExpand: false,
+    //slide animation speed
+    slideSpeed: 500,
+    //drop down icon
+    dropDownIcon: "&#9660",
+  });
+
+  $(".accordion-header  ").click(function() {
+    if($($(this).siblings()[0]).data("status") == "0"){
+      $(this).parent().parent().siblings($('drawer')).css({"display":"none"});
+      $($(this).siblings()[0]).data("status", 1);
+    }else{
+      $(this).parent().parent().siblings($('drawer')).css({"display":"block"});
+      $($(this).siblings()[0]).data("status", 0);
+    }
+  });
+
 });

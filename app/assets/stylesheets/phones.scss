@@ -139,12 +139,13 @@
 
 .card {
   display: inline-block;
-  height: 283px;
-  width: 277px;
+  height: 290px;
+  margin-right: 3px;
   padding: 10px 0;
   position: relative;
   text-align: center;
-  margin-right:3px;
+  width: 277px;
+  cursor: pointer;
 }
 
 .name-cel {
@@ -195,13 +196,11 @@
 
 .precio {
   color: #555;
-  display: inline;
-  line-height: 20px;
   color: #ededed !important;
   font-size: 20px;
-  height: 60px;
   text-align: center;
-  width: 100%;
+  border-top: 1px solid #fecc00;
+  padding: 8px;
 }
 
 .items {
