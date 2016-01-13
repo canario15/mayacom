@@ -14,6 +14,53 @@
  *= require_self
  */
 
+
+@font-face {
+  font-family: "RobotoCondensed-Bold";
+  src: url(/assets/RobotoCondensed-Bold.ttf) format("truetype");
+}
+@font-face {
+  font-family: "RobotoCondensed-BoldItalic";
+  src: url(/assets/RobotoCondensed-BoldItalic.ttf) format("truetype");
+}
+@font-face {
+  font-family: "RobotoCondensed-Italic";
+  src: url(/assets/RobotoCondensed-Italic.ttf) format("truetype");
+}
+@font-face {
+  font-family: "RobotoCondensed-LightItalic";
+  src: url(/assets/RobotoCondensed-LightItalic.ttf) format("truetype");
+}
+@font-face {
+  font-family: "RobotoCondensed-Regular";
+  src: url(/assets/RobotoCondensed-Regular.ttf) format("truetype");
+}
+
+.cities-cont{
+  margin-top:50px;
+}
+
+.local-list,{
+  float: left;
+  list-style: outside none none;
+  padding: 0;
+  text-align: center;
+  width: 33%;
+  border-right: 1px solid #ccc;
+  height: 149px;
+  font-family: RobotoCondensed-Regular;
+}
+
+.local-list .city {
+  color: #303967;
+  font-weight: 600;
+  font-family: RobotoCondensed-Bold;
+}
+
+.local-list i {
+  color:#fecc00;
+}
+
 .brand-list {
   list-style-type: none;
 }
@@ -126,6 +173,10 @@ caption, th {
 .celbox{
   margin-bottom: 37px;
   margin-left: 27px;
+}
+
+.ofertbox {
+  font-family: "RobotoCondensed-Regular";
 }
 
 .ofertbox .img {

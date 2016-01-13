@@ -1,65 +1,113 @@
-<div class="header-area">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-7">
-      </div>
-      <div class="">
-        <div class="header-right">
-          <div class="user-menu">
-            <ul>
-              <li><a href="#"><i class="fa fa-user"></i> Mi Cuenta</a></li>
-              <li><a href="cart.html"><i class="fa fa-user"></i> Carrito</a></li>
-              <li><a href="checkout.html"><i class="fa fa-user"></i> Checkout</a></li>
-              <li><a href="#"><i class="fa fa-user"></i> Login</a></li>
-            </ul>
+  <!--
+  <div class="header-area">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7">
+        </div>
+        <div class="">
+          <div class="header-right">
+            <div class="user-menu">
+              <ul>
+                <li><a href="#"><i class="fa fa-user"></i> Mi Cuenta</a></li>
+                <li><a href="cart.html"><i class="fa fa-user"></i> Carrito</a></li>
+                <li><a href="checkout.html"><i class="fa fa-user"></i> Checkout</a></li>
+                <li><a href="#"><i class="fa fa-user"></i> Login</a></li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div> <!-- End header area -->
+  </div> <!-- End header area -->
+  <div class="site-branding-area">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="logo">
+            <h1>
+              <a href="/">
+                <img class="logo-img" src="/assets/logo.png">
+              </a>
+            </h1>
+          </div>
+        </div>
 
-<div class="site-branding-area">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-6">
-        <div class="logo">
-          <h1>
-            <a href="./">
-              <img class="logo-img" src="/assets/logo.png">
-            </a>
-          </h1>
+        <div class="col-sm-9 cities-cont">
+          <ul class="local-list">
+            <li class="city">SALTO </li>
+            <li>
+               <i class="fa fa-check"></i>
+               Brasil 802, 47325781
+            </li>
+            <li>
+              <i class="fa fa-check"></i>
+              Sarandi 44, 47327066
+            </li>
+            <li>
+              <i class="fa fa-check"></i>
+              Uruguay 746, 47340056
+            </li>
+            <li>
+              <i class="fa fa-check"></i>
+              Uruguay 934, 47329449
+            </li>
+            <li>
+              <i class="fa fa-check"></i>
+              Salto Shopping, 47331658
+            </li>
+            <li>
+              <i class="fa fa-check"></i>
+              Terminal Shopping, 47352509
+            </li>
+          </ul>
+          <ul class="local-list">
+            <li class="city">⁠⁠⁠PAYSANDU </li>
+            <li>
+              <i class="fa fa-check"></i>
+              Mac Center Shopping, 47221991
+            </li>
+            <li>
+              <i class="fa fa-check"></i>
+              Leandro Gomez 1009, 47221968
+            </li>
+            <li>
+              <i class="fa fa-check"></i>
+              Setembrino Pereda 880, 47224125
+            </li>
+          </ul>
+          <ul class="local-list">
+            <li class="city">⁠⁠⁠YOUNG </li>
+            <li>
+              <i class="fa fa-check"></i>
+              Rincón 1699, 45675073
+            </li>
+          </ul>
         </div>
       </div>
+    </div>
+  </div> <!-- End site branding area -->
 
-      <div class="col-sm-6">
-
+  <div class="mainmenu-area">
+    <div class="container">
+      <div class="row">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="<%=@hover_menu == CONSTANT_MENU_HOME_ID ? 'active' : " " %>"> <a href="/">Inicio</a></li>
+            <li class="<%=@hover_menu == CONSTANT_MENU_PHONES ? 'active' : " " %>"><a href="/celulares">Celulares</a></li>
+            <li class="<%=@hover_menu == CONSTANT_MENU_ACCESORIOES ? 'active' : " " %>"><a href="/accesorios">Accesorios</a></li>
+            <li class="<%=@hover_menu == CONSTANT_MENU_CONTRACTS ? 'active' : " " %>"><a href="/contratos">Contratos</a></li>
+            <li class="<%=@hover_menu == CONSTANT_MENU_OFFER ? 'active' : " " %>"><a href="/ofertas">Ofertas</a></li>
+            <li class="<%=@hover_menu == CONSTANT_MENU_CONTACT_ID ? 'active' : " " %>"><a href="/contacto">Contacto</a></li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-</div> <!-- End site branding area -->
-
-<div class="mainmenu-area">
-  <div class="container">
-    <div class="row">
-      <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-          </button>
-      </div>
-      <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-          <li class="<%=@hover_menu == CONSTANT_MENU_HOME_ID ? 'active' : " " %>"> <a href="/">Inicio</a></li>
-          <li class="<%=@hover_menu == CONSTANT_MENU_PHONES ? 'active' : " " %>"><a href="/celulares">Celulares</a></li>
-          <li class="<%=@hover_menu == CONSTANT_MENU_ACCESORIOES ? 'active' : " " %>"><a href="/accesorios">Accesorios</a></li>
-          <li class="<%=@hover_menu == CONSTANT_MENU_CONTRACTS ? 'active' : " " %>"><a href="/contratos">Contratos</a></li>
-          <li class="<%=@hover_menu == CONSTANT_MENU_OFFER ? 'active' : " " %>"><a href="/ofertas">Ofertas</a></li>
-          <li class="<%=@hover_menu == CONSTANT_MENU_CONTACT_ID ? 'active' : " " %>"><a href="/contacto">Contacto</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div> <!-- End mainmenu area -->
+  </div> <!-- End mainmenu area -->

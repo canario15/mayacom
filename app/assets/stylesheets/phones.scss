@@ -8,6 +8,7 @@
   border-radius: 5px;
   box-shadow: 0 1px 3px #888;
   margin-bottom: 20px;
+  font-family: "RobotoCondensed-Regular";
 }
 
 .btn-searh {
@@ -22,7 +23,7 @@
 .row-tit h1{
   font-size: 30px;
   color: #303967;
-  font-family: "Roboto Condensed";
+  font-family: "RobotoCondensed-Regular";
   margin: 0;
   padding: 0;
 }
@@ -31,12 +32,22 @@
 
 }
 
+.catalog-cel-cont input{
+  font-family: "RobotoCondensed-LightItalic";
+}
+
 .filters-col {
+  font-family: "RobotoCondensed-Regular";
   padding-left: 22px;
   padding-right: 2px;
   left: 0;
   transition: all 0.7s ease-in-out 0s;
 }
+
+.filters-col label {
+  font-weight: normal;
+}
+
 
 .hd {
   background: #303967 none repeat scroll 0 0;
@@ -172,16 +183,17 @@
   overflow: hidden;
   padding-left: 12px;
   text-align: left;
+  font-family: "RobotoCondensed-Bold";
 }
 
 .datahover .hov-tit2 {
   color: #bfdfff;
   display: block;
   font-size: 12px;
-  font-style: italic;
   margin-bottom: 17px;
   padding-left: 12px;
   text-align: left;
+  font-family: "RobotoCondensed-LightItalic";
 }
 
 .hov-desc {
@@ -208,6 +220,7 @@
   border-top: 1px solid #fecc00;
   height: 45px;
   width: 100%;
+  font-family: "RobotoCondensed-Regular";
 }
 
 .more-details {
@@ -228,4 +241,9 @@
 
 .i-want a {
   color: #fecc00!important;
+}
+
+
+.phone-container {
+   font-family: "RobotoCondensed-Regular";
 }

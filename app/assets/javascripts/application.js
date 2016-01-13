@@ -81,4 +81,28 @@ $(document).ready(function () {
     }
   });
 
+
+  $('.plan-cels-caro').owlCarousel({
+    loop:false,
+    nav:true,
+    margin:20,
+    navigationText:false,
+    rewindNav:false,
+    responsiveClass:true,
+    responsive:{
+      0:{
+          items:1,
+      },
+      600:{
+          items:2,
+      },
+      1000:{
+          items:2,
+      },
+      1200:{
+          items:4,
+      }
+  }
+});
+
 });

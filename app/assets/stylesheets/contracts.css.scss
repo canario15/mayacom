@@ -79,6 +79,7 @@
 }
 
 .atras {
+  font-family: "RobotoCondensed-Regular";
   background-color: #303967;
   background-image: none;
   border-radius: 0 0 5px 5px;
@@ -93,14 +94,16 @@
   padding: 0 15px;
   text-align: center;
   width: 100%;
+  font-family:"RobotoCondensed-Bold";
 }
 
 .atras h4{
   color: #fecc00;
   font-size: 22px;
-  font-weight: 300;
+  font-weight: normal;
   margin-top: 5px;
   text-align: center;
+  font-family:"RobotoCondensed-Regular";
 }
 
 .plan-accordion{
@@ -295,5 +298,66 @@
 }
 
 .plan-details .plan-descripcion li i{
+  color: #fecc00;
+}
+
+.cels-plan-tit {
+  border-bottom: 1px solid #ccc;
+  height: 48px;
+  overflow: hidden;
+  padding: 10px 15px;
+}
+
+.cels-plan-tit h2 {
+  font-size: 23px;
+  color:#303967;
+}
+
+.cels-plan-tit a {
+  color:#303967;
+}
+.cels-plan-tit a:hover {
+  color:#303967;
+}
+
+.cels-plan-tit i {
+  color:#fecc00;
+}
+
+.plan-cels-caro .owl-controls{
+  text-align:center;
+}
+
+.plan-cels-caro .owl-prev, .plan-cels-caro .owl-next {
+  background-color: #4d5ca7;
+  border: 1px solid #424e8e;
+  border-radius: 28px;
+  color: #fecc00;
+  display: inline-block;
+  font-family: Arial;
+  font-size: 17px;
+  padding: 5px 8px;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #303967;
+  margin-left:10px;
+  margin-top:10px;
+}
+
+.plan-cels-caro .owl-prev:hover, .plan-cels-caro .owl-next:hover {
+  background-color:#303864;
+}
+.plan-cels-caro .owl-prev:active, .plan-cels-caro .owl-next:active {
+  position:relative;
+  top:1px;
+}
+
+.cels-plan {
+  margin-top:-25px;
+}
+
+.listdata ul {
+  list-style: none;
+}
+.listdata i {
   color: #fecc00;
 }
