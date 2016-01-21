@@ -29,8 +29,8 @@
 
 $(document).ready(function () {
   $(".radio-test").iCheck({
-    checkboxClass: 'icheckbox_flat-blue',
-    radioClass: 'iradio_flat-blue'
+    checkboxClass: 'icheckbox_flat-yellow',
+    radioClass: 'iradio_flat-yellow '
   });
 
   $("#ex2").slider({

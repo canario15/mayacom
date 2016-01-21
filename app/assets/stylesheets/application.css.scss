@@ -40,15 +40,19 @@
   margin-top:50px;
 }
 
-.local-list,{
+.local-list{
   float: left;
   list-style: outside none none;
   padding: 0;
   text-align: center;
-  width: 33%;
-  border-right: 1px solid #ccc;
+  width: 28%;
+  /*border-right: 1px solid #ccc;*/
   height: 149px;
   font-family: RobotoCondensed-Regular;
+}
+
+.local-list1{
+  margin-left:130px;
 }
 
 .local-list .city {
@@ -282,4 +286,12 @@ span.precio small, span.price small {
 
 .description{
   margin-top:13px;
+}
+
+.container-footer {
+  font-family: "RobotoCondensed-Regular";
+}
+
+.container-footer h2{
+  font-family: "RobotoCondensed-Bold";
 }

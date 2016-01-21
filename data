@@ -8,3 +8,26 @@ amarillo: #fecc00
 iconos de las caracteristicas
 falta red social  y botones de compartir
 paginacion
+
+
+Producto:
+  Tipo(celular o tablet)
+  Tipo de compra(pepago o contrato)
+
+  Nombre a mostrar
+  Marca   (modelo)
+  Lista de Planes
+  Modelo
+  Precio.
+  Precio-ant.
+  Desccripcion corta
+  Descripcion larga
+  Fotos
+  Lista de Especificaciones
+  Lista de Productos relacionados
+
+  Es mas visto?
+  Es top venta?
+  Es top nuevo?
+
+
