@@ -651,7 +651,7 @@ body {
     left: 0;
 }
 .product-carousel {
-    padding-top: 40px;
+    //padding-top: 40px;
 }
 .latest-product .owl-nav {
     position: absolute;
@@ -1004,9 +1004,11 @@ input[type="submit"]:hover, button[type="submit"]:hover {
 .product-name {
     font-size: 25px;
     margin-bottom: 20px;
+    color: #303967;
 }
 .product-inner-price {
     margin-bottom: 25px;
+    font-size: 25px;
 }
 .product-inner-price > ins {
     color: #5a88ca;

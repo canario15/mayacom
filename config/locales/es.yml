@@ -1,0 +1,171 @@
+es:
+  activerecord:
+    models:
+      accessory: "Accesorios"
+      phone: "Celulares"
+      brand: "Marca"
+      plan: "Plan"
+      technology: "Tecnología"
+      contract: "Contrato"
+      image: "Imagen"
+      admin_user: "Admnistrador"
+      access_type: "Tipo de Accesorio"
+      accessory_image: "Imágenes"
+      phone_image: "Imágenes"
+      phone_plan: "Teléfonos para el plan"
+      offer: "Ofertas"
+    attributes:
+      offer:
+        phone: "Teléfono"
+        title: "Título"
+        description: "Descripción"
+        active: "Activo"
+        created_at: "Fecha creación"
+        updated_at: "Fecha Modificación"
+      phone_plan:
+        phone: "Teléfono"
+        title: "Título"
+        price: "Precio"
+        plan: "Plan"
+      accessory:
+        title: "Título"
+        new_price: "Precio"
+        old_price: "Precio Anterior"
+        short_desc: "Descripción corta"
+        long_desc: "Descripción larga"
+        is_top_new: "Top Nuevo?"
+        is_top_sale: "Top Venta?"
+        is_most_view: "Mas Visto?"
+        created_at: "Fecha creación"
+        updated_at: "Fecha Modificación"
+        accessory_image: "Imagenes"
+        access_type: "Tipo de Accesorio"
+        brand: "Marca"
+        phones: "Teléfonos compatibles"
+      accessory_image:
+        image: "Foto"
+      phone:
+        phone_type: "Tipo"
+        title: "Título"
+        brand_id: "Marca"
+        brand: "Marca"
+        model: "Modelo"
+        mode: "Modo"
+        new_price: "Precio"
+        old_price: "Precio Anterior"
+        short_desc: "Descripción corta"
+        long_desc: "Descripción larga"
+        is_top_new: "Top Nuevo?"
+        is_top_sale: "Top Venta?"
+        is_most_view: "Mas Visto?"
+        created_at: "Fecha creación"
+        updated_at: "Fecha Modificación"
+        enter_date: "Fecha Ingreso"
+        phone_images: "Imágenes"
+      phone_images:
+        image: "imagen"
+      accessory_images:
+        image: "imagen"
+      plan:
+        title: "Título"
+        item_1: "Item 1"
+        item_2: "Item 2"
+        item_3: "Item 3"
+        price: "Precio"
+        description: "Descripción"
+        contract: "Contrato"
+        contract_id: "Contrato"
+        created_at: "Fecha creación"
+        updated_at: "Fecha Modificación"
+        order_number: "Orden"
+      technology:
+        name: "Nombre"
+        created_at: "Fecha creación"
+        updated_at: "Fecha Modificación"
+      contract:
+        title: "Título"
+        technology: "Tecnología"
+        short_desc: "Descripción corta"
+        logo: "Logo"
+        created_at: "Fecha creación"
+        updated_at: "Fecha Modificación"
+      brand:
+        name: "Nombre"
+        created_at: "Fecha creación"
+        updated_at: "Fecha Modificación"
+      admin_user:
+        email: "Email"
+        current_sign_in_at: "Actual inicio de sesion"
+        sign_in_count: "Cant. inicios de sesion"
+        current_sign_in_ip: "Actial ip de session"
+        last_sign_in_ip: "Ultimo ip de sesion"
+        last_sign_in_at: "Fecha ultimo inicio de session"
+        created_at: "Fecha creación"
+        updated_at: "Fecha Modificación"
+        password: "Contraseña"
+        password_confirmation: "Confirmación de contraseña"
+      access_type:
+        name: "Nombre"
+        created_at: "Fecha creación"
+        updated_at: "Fecha Modificación"
+  time:
+    formats:
+      long: "%d de %B de %Y"
+      short: "%d de %B - %Y"
+  date:
+    abbr_day_names:
+    - dom
+    - lun
+    - mar
+    - mié
+    - jue
+    - vie
+    - sáb
+    abbr_month_names:
+    -
+    - ene
+    - feb
+    - mar
+    - abr
+    - may
+    - jun
+    - jul
+    - ago
+    - sep
+    - oct
+    - nov
+    - dic
+    day_names:
+    - domingo
+    - lunes
+    - martes
+    - miércoles
+    - jueves
+    - viernes
+    - sábado
+    formats:
+      default: ! '%d/%m/%Y'
+      long: ! '%d de %B de %Y'
+      short: ! '%d de %b'
+    month_names:
+    -
+    - enero
+    - febrero
+    - marzo
+    - abril
+    - mayo
+    - junio
+    - julio
+    - agosto
+    - septiembre
+    - octubre
+    - noviembre
+    - diciembre
+    order:
+    - :day
+    - :month
+    - :year
+  will_paginate:
+    previous_label: "&#8592; Aterior"
+    next_label: "Siguiente &#8594;"
+    page_gap: "&hellip;"

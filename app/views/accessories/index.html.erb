@@ -42,82 +42,12 @@
               <h5>Categorías</h5>
             </div>
             <ul>
-              <li>
-                <%= check_box_tag(:caract, "adp", false, class: "radio-test") %>
-                <%= label_tag(:caract_adp, "Adaptadores") %>
-              </li>
-              <li>
-                <%= check_box_tag(:caract, "auri", false, class: "radio-test") %>
-                <%= label_tag(:caract_auri, "Auriculares") %>
-              </li>
-              <li>
-                <%= check_box_tag(:caract, "bat", false, class: "radio-test") %>
-                <%= label_tag(:caract_bat, "Baterias") %>
-              </li>
-              <li>
-                <%= check_box_tag(:caract, "blue", false, class: "radio-test") %>
-                <%= label_tag(:caract_blue, "Bluetooth") %>
-              </li>
-              <li>
-                <%= check_box_tag(:caract, "bump", false, class: "radio-test") %>
-                <%= label_tag(:caract_bump, "Bumpers") %>
-              </li>
-              <li>
-                <%= check_box_tag(:caract, "cab", false, class: "radio-test") %>
-                <%= label_tag(:caract_cab, "Cables") %>
-              </li>
-              <li>
-                <%= check_box_tag(:caract, "carc", false, class: "radio-test") %>
-                <%= label_tag(:caract_carc, "Carcasas") %>
-              </li>
-              <li>
-                <%= check_box_tag(:caract, "carg", false, class: "radio-test") %>
-                <%= label_tag(:caract_carg, "Cargadores") %>
-              </li>
-              <li>
-                <%= check_box_tag(:caract, "clip", false, class: "radio-test") %>
-                <%= label_tag(:caract_clip, "Clip") %>
-              </li>
-              <li>
-                <%= check_box_tag(:caract, "estu", false, class: "radio-test") %>
-                <%= label_tag(:caract_estu, "Estuches") %>
-              </li>
-              <li>
-                <%= check_box_tag(:caract, "film", false, class: "radio-test") %>
-                <%= label_tag(:caract_film, "Films") %>
-              </li>
-              <li>
-                <%= check_box_tag(:caract, "impr", false, class: "radio-test") %>
-                <%= label_tag(:caract_impr, "Impresoras") %>
-              </li>
-              <li>
-                <%= check_box_tag(:caract, "lap", false, class: "radio-test") %>
-                <%= label_tag(:caract_lap, "Lápiz") %>
-              </li>
-              <li>
-                <%= check_box_tag(:caract, "manlib", false, class: "radio-test") %>
-                <%= label_tag(:caract_manlib, "Manos Libres") %>
-              </li>
-              <li>
-                <%= check_box_tag(:caract, "mem", false, class: "radio-test") %>
-                <%= label_tag(:caract_mem, "Memorias") %>
-              </li>
-              <li>
-                <%= check_box_tag(:caract, "parl", false, class: "radio-test") %>
-                <%= label_tag(:caract_parl, "Parlantes") %>
-              </li>
-              <li>
-                <%= check_box_tag(:caract, "prot", false, class: "radio-test") %>
-                <%= label_tag(:caract_prot, "Protectores") %>
-              </li>
-              <li>
-                <%= check_box_tag(:caract, "sil", false, class: "radio-test") %>
-                <%= label_tag(:caract_sil, "Siliconas") %>
-              </li>
-              <li>
-                <%= check_box_tag(:caract, "sop", false, class: "radio-test") %>
-                <%= label_tag(:caract_sop, "Soportes") %>
-              </li>
+              <% @access_types.each do |acc|%>
+                <li>
+                  <%= check_box_tag(:caract, "#{acc.name}", false, class: "radio-test") %>
+                  <%= label_tag("caract_#{acc.name}", "#{acc.name}") %>
+                </li>
+              <% end -%>
             </ul>
           </li>
         </ul>
@@ -126,17 +56,19 @@
         <div class="phone-catalog">
           <div class="row row-header">
             <div class="my-col-1 col-lg-2 col-md-2 col-sm-3 col-xss-3">
-              <strong>12</strong>
-              productos de <strong>81</strong>
+              <%= page_entries_info @accesories %>
             </div>
-            <div class="my-col-2 col-lg-4 col-md-6 col-sm-4 col-xss-4">
+            <!--<div class="my-col-2 col-lg-4 col-md-6 col-sm-4 col-xss-4">
               <span>Ver como </span>
               <span>
                 <i class=" rw-ico fa fa-th fa-2x"></i>
                 <i class=" rw-ico fa fa-th-list fa-2x"></i>
               </span>
+            </div>-->
+            <div>
+              <%= paginate @accesories, :window => 2 %>
             </div>
-            <div class="my-col-3 col-lg-6 col-md-4 col-sm-5 col-xss-5">
+            <!--<div class="my-col-3 col-lg-6 col-md-4 col-sm-5 col-xss-5">
               Ordenar por:
               <span>
                 <select size="1" class="form-control order-data">
@@ -145,33 +77,38 @@
                   <option value="PRECIO_DESC">Mayor precio</option>
                 </select>
               </span>
-            </div>
+            </div>-->
           </div>
           <div class="row row-phones">
-            <%9.times.each do %>
+            <% @accesories.each do |acc| %>
               <div class="col-md-4 card" >
                 <div class="front" style="height: 100%; width: 100%; backface-visibility: hidden; transform-style: preserve-3d; position: absolute; z-index: 1; transition: all 0.5s ease-out 0s; transform: rotateY(0deg);">
                   <div class="cel-img ">
-                    <img alt="Alcatel Idol 3" src="https://tienda.antel.com.uy/razuna/assets/1/B529ADBCA00746D6A18666BBDF3A6F2D/img/F03B9678CD13448599718E5E03158EFB/alcatel-idol3-1_F03B9678CD13448599718E5E03158EFB.jpg">
+                    <%= image_tag acc.accessory_images.first.image(:index) %>
                   </div>
-                  <div class="name-cel">Alcatel Idol 3</div>
-                  <div class="name-cel2">Con plan Vera LTE $890 sin límite </div>
+                  <div class="name-cel"><%= acc.title %></div>
+                  <div class="name-cel2">$<%= acc.new_price %></div>
                 </div>
-                <div class="back" style="transform: rotateY(-180deg); height: 100%; width: 100%; backface-visibility: hidden; transform-style: preserve-3d; position: absolute; z-index: 0; transition: all 0.5s ease-out 0s;">
+                <div class="back back-card" style="transform: rotateY(-180deg); height: 100%; width: 100%; backface-visibility: hidden; transform-style: preserve-3d; position: absolute; z-index: 0; transition: all 0.5s ease-out 0s;">
                   <div class="datahover">
-                    <div class="hov-tit">Alcatel Idol 3</div>
-                    <div class="hov-tit2">Con plan Vera LTE $890 sin límite </div>
+                    <div class="hov-tit"><%= acc.title %></div>
                     <div class="hov-desc">
-                      <p>El IDOL 3 es el primer Smartphone reversible. Diseño simétrico, con una pantalla de 4,7´´y su súper alta definicón hace que cada película sea una experiencia cinematográfica.&nbsp;
-                      </p>
+                      <p><%= acc.short_desc %></p>
                     </div>
                     <div class="precio">
-                      <div class="bgPrecio"> $15.467</div>
+                      <div class="bgPrecio"> $<%= acc.new_price %></div>
                       <span class="titDesde"></span>
                       <span>
                         <strong></strong>
                       </span>
                     </div>
+                    <div class="items">
+                      <div class="more-details">
+                        <i class="fa fa-plus-circle fa-2x"></i>
+                        <%= link_to "Más detalles", "/accesorios/#{acc.id}"%>
+                      </div>
+                    </div>
+                    <!--
                     <div class="items">
                       <div class="pull-right i-want">
                         <a title="Más detalles" href="#">
@@ -187,6 +124,7 @@
                         </a>
                       </div>
                     </div>
+                    -->
                   </div>
                 </div>
               </div>
@@ -197,3 +135,4 @@
     </div>
   </div>
 </div>
+

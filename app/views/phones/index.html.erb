@@ -19,13 +19,23 @@
         </h1>
       </div>
       <div class="col-lg-4 col-md-4 col-sm-5 col-xs-12 col-xss-5">
+        <!--
+        <%= search_form_for @search do |f| %>
+          <div class="field">
+            <%= f.text_field :title_or_phone_type_or_brand_name_or_model_or_mode_cont%>
+          </div>
+          <div class="actions"><%= f.submit "seach" %></div>
+        <% end -%>
+        -->
         <div class="input-group">
-          <input type="text" class="form-control" placeholder="Buscar un equipo">
+          <%= search_form_for @search, :class => "main-search" do |f| %>
+            <%= f.text_field :title_or_phone_type_or_brand_name_or_model_or_mode_cont, :class => "form-control", :placeholder => "Buscar un equipo" %>
             <span class="input-group-btn">
-              <button class="btn btn-default btn-searh" type="button">
+              <%= f.button "", :class => "btn btn-default btn-searh" do %>
                 <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-              </button>
+              <% end -%>
             </span>
+          <% end -%>
         </div>
       </div>
     </div>
@@ -91,50 +101,12 @@
               <h5>Marca</h5>
             </div>
             <ul>
-              <li>
-                <%= check_box_tag(:brand, "nokia", false, class: "radio-test") %>
-                <%= label_tag(:brand_nokia, "Nokia") %>
-              </li>
-              <li>
-                <%= check_box_tag(:brand, "acer", false, class: "radio-test") %>
-                <%= label_tag(:brand_acer, "Acer") %>
-              </li>
-              <li>
-                <%= check_box_tag(:brand, "lg", false, class: "radio-test") %>
-                <%= label_tag(:brand_lg, "LG") %>
-              </li>
-              <li>
-                <%= check_box_tag(:brand, "sony", false, class: "radio-test") %>
-                <%= label_tag(:brand_sony, "Sony") %>
-              </li>
-              <li>
-                <%= check_box_tag(:brand, "motorola", false, class: "radio-test") %>
-                <%= label_tag(:brand_motorola, "Motorola") %>
-              </li>
-              <li>
-                <%= check_box_tag(:brand, "alcatel", false, class: "radio-test") %>
-                <%= label_tag(:brand_alcatel, "Alcatel") %>
-              </li>
-              <li>
-                <%= check_box_tag(:brand, "samsung", false, class: "radio-test") %>
-                <%= label_tag(:brand_samsung, "Samsung") %>
-              </li>
-              <li>
-                <%= check_box_tag(:brand, "blackberry", false, class: "radio-test") %>
-                <%= label_tag(:brand_blackberry, "BlackBerry") %>
-              </li>
-              <li>
-                <%= check_box_tag(:brand, "doogee", false, class: "radio-test") %>
-                <%= label_tag(:brand_doogee, "Doogee") %>
-              </li>
-              <li>
-                <%= check_box_tag(:brand, "unicell", false, class: "radio-test") %>
-                <%= label_tag(:brand_unicell, "Unicell") %>
-              </li>
-              <li>
-                <%= check_box_tag(:brand, "huawei", false, class: "radio-test") %>
-                <%= label_tag(:brand_huawei, "Huawei") %>
-              </li>
+              <% @brands.each do |b| %>
+                <li>
+                  <%= check_box_tag(:brand, "#{b.name}", false, class: "radio-test") %>
+                  <%= label_tag("brand_#{b.name.downcase}", "#{b.name}") %>
+                </li>
+              <% end -%>
             </ul>
           </li>
         </ul>
@@ -142,10 +114,9 @@
       <div class="pull-right col-xs-12 col-md-9 col-sm-9 col-xss-8 phones-col ">
         <div class="phone-catalog">
           <div class="row row-header">
-            <div class="my-col-1 col-lg-2 col-md-2 col-sm-3 col-xss-3">
-              <strong>12</strong>
-              productos de <strong>81</strong>
+            <div class="my-col-1 col-lg-5 col-md-2 col-sm-3 col-xss-3">
             </div>
+            <!--
             <div class="my-col-2 col-lg-4 col-md-6 col-sm-4 col-xss-4">
               <span>Ver como </span>
               <span>
@@ -153,8 +124,11 @@
                 <i class=" rw-ico fa fa-th-list fa-2x"></i>
               </span>
             </div>
-            <div class="my-col-3 col-lg-6 col-md-4 col-sm-5 col-xss-5">
-              Ordenar por:
+            -->
+            <div>
+            </div>
+            <!--<div class="my-col-3 col-lg-6 col-md-4 col-sm-5 col-xss-5">
+              <!--Ordenar por:
               <span>
                 <select size="1" class="form-control order-data">
                   <option selected="selected" value="DESTACADO">Destacados</option>
@@ -162,28 +136,27 @@
                   <option value="PRECIO_DESC">Mayor precio</option>
                 </select>
               </span>
-            </div>
+            </div>-->
           </div>
           <div class="row row-phones">
-            <%9.times.each do %>
+            <% @phones.each do |p| %>
               <div class="col-md-4 card" >
                 <div class="front" style="height: 100%; width: 100%; backface-visibility: hidden; transform-style: preserve-3d; position: absolute; z-index: 1; transition: all 0.5s ease-out 0s; transform: rotateY(0deg);">
                   <div class="cel-img ">
-                    <img alt="Alcatel Idol 3" src="https://tienda.antel.com.uy/razuna/assets/1/B529ADBCA00746D6A18666BBDF3A6F2D/img/F03B9678CD13448599718E5E03158EFB/alcatel-idol3-1_F03B9678CD13448599718E5E03158EFB.jpg">
+                   <%= image_tag p.phone_images.first.image(:index) %>
                   </div>
-                  <div class="name-cel">Alcatel Idol 3</div>
+                  <div class="name-cel"><%= p %></div>
                   <div class="name-cel2">Con plan Vera LTE $890 sin límite </div>
                 </div>
                 <div class="back" style="transform: rotateY(-180deg); height: 100%; width: 100%; backface-visibility: hidden; transform-style: preserve-3d; position: absolute; z-index: 0; transition: all 0.5s ease-out 0s;">
                   <div class="datahover">
-                    <div class="hov-tit">Alcatel Idol 3</div>
+                    <div class="hov-tit"><%= p %></div>
                     <div class="hov-tit2">Con plan Vera LTE $890 sin límite </div>
                     <div class="hov-desc">
-                      <p>El IDOL 3 es el primer Smartphone reversible. Diseño simétrico, con una pantalla de 4,7´´y su súper alta definicón hace que cada película sea una experiencia cinematográfica.&nbsp;
-                      </p>
+                      <p><%= truncate(p.short_desc, :length => 158, :separator => ' ') %></p>
                     </div>
                     <div class="precio">
-                      <div class="bgPrecio"> $15.467</div>
+                      <div class="bgPrecio"> $<%= p.new_price %></div>
                       <span class="titDesde"></span>
                       <span>
                         <strong></strong>
@@ -192,9 +165,7 @@
                     <div class="items">
                       <div class="more-details">
                         <i class="fa fa-plus-circle fa-2x"></i>
-                        <a title="Más detalles" href="/celulares/1">
-                          Más detalles
-                        </a>
+                        <%= link_to "Más detalles", "/celulares/#{p.id}"  %>
                       </div>
                     </div>
                     <!--

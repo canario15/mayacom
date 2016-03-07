@@ -1,0 +1,76 @@
+<div class="product-big-title-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="product-bit-title text-center">
+          <h2><%= @accessory.title%></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="single-product-area">
+  <div class="zigzag-bottom"></div>
+  <div class="container phone-container">
+    <div class="row">
+      <div class="col-md-11">
+        <div class="product-content-right">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="col-sm-3">
+                <div id="gal1_zoom_01" class="galery-acces">
+                  <% @accessory.accessory_images.each do |img| %>
+                    <%= link_to "#", :data => { :image => "#{img.image(:medium)}", :zoom_image => "#{img.image}"} do %>
+                      <%= image_tag img.image(:thumb)%>
+                    <% end -%>
+                  <% end -%>
+                </div>
+
+              </div>
+              <div class="col-sm-9">
+                <%= image_tag @accessory.accessory_images.first.image(:medium),:id => "zoom_01", :data => { :zoom_image => "#{@accessory.accessory_images.first.image}"} %>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="product-inner">
+                <h2 class="product-name"><%= @accessory.title%></h2>
+                <p>
+                  <%= @accessory.long_desc  %>
+                </p>
+                <div class="product-inner-price">
+                  <span class="price-acc">Precio:</span>
+                  <ins>$<%= @accessory.new_price%></ins>
+                  <% unless @accessory.old_price.blank? %>
+                    antes
+                    <del>$<%= @accessory.old_price%></del>
+                  <% end -%>
+                </div>
+              </div>
+            </div>
+          </div>
+          </br>
+          <div class="col-sm-2"></div>
+          <div class="col-sm-9">
+            <div class="row row2">
+              <h3>Celulares compatibles</h3>
+              <table class="phone-comp-table">
+                <colgroup>
+                  <col width="100">
+                </colgroup>
+                <tbody>
+                  <% @accessory.compatible_phones.each do |data|%>
+                    <tr>
+                      <th><%= data[0]%></th>
+                      <td><%= data[1]%></td>
+                    </tr>
+                  <% end -%>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="col-sm-2"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,131 @@
+<div class=" single-product-area plan-details">
+  <div class="zigzag-bottom"></div>
+  <div class="container catalog-cel-cont">
+    <div class="row row-tit">
+      <div class="plan-title">
+        <h1 class="pull-left">
+          <i class="fa fa-mobile"></i>
+          <%= @plan.title %>
+        </h1>
+        <div class="subplanes">
+          <% class_to_link_next = "arrow-plan" %>
+          <% if (@plan.order_number) >= @contract.plans.count %>
+            <p class="pull-right inac-right-link-arrow">
+              subir de plan
+              <i class="fa fa-chevron-right"></i>
+            </p>
+          <% else -%>
+            <%= link_to "#", class: "pull-right arrow-plan", data: { plan_id: "#{@plan.id}", option: "mayor" }  do %>
+              <p>
+                subir de plan
+                <i class="fa fa-chevron-right"></i>
+              </p>
+            <% end -%>
+          <% end -%>
+          <% if (@plan.order_number - 1) <= 0 %>
+            <p class="pull-right inac-left-link-arrow">
+              <i class="fa fa-chevron-left "></i>
+              bajar de plan
+            </p>
+          <% else -%>
+            <%= link_to "#", class: "pull-right ft arrow-plan", data: { plan_id: "#{@plan.id}", option: "menor"} do %>
+              <p>
+                <i class="fa fa-chevron-left"></i>
+                bajar de plan
+              </p>
+            <% end -%>
+          <% end -%>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="plan-description">
+        <%= @plan.description.html_safe %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class=" single-product-area cels-plan">
+  <div class="container catalog-cel-cont">
+    <div class="cels-plan-tit">
+      <h2 class="pull-left">
+        Seleccioná el equipo para tu <strong><%= @plan.title %></strong>
+      </h2>
+      <a class="pull-right" href="/celulares">
+        Ir al catálogo de equipos
+        <i class="fa fa-chevron-right"></i>
+      </a>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="plans-phones">
+          <% @plan.phone_plans.each do |pp| %>
+            <div class="col-md-4 horizon-item card" >
+              <% p = pp.phone %>
+              <div class="front" style="height: 100%; width: 100%; backface-visibility: hidden; transform-style: preserve-3d; position: absolute; z-index: 1; transition: all 0.5s ease-out 0s; transform: rotateY(0deg);">
+                <div class="cel-img ">
+                 <%= image_tag p.phone_images.first.image(:index) %>
+                </div>
+                <div class="name-cel"><%= p %></div>
+                <div class="name-cel2"> <span style="color:black;font-weight: 600;"><%= pp.price %></span> con plan <%=  @plan.title %> </div>
+              </div>
+              <div class="back" style="transform: rotateY(-180deg); height: 100%; width: 100%; backface-visibility: hidden; transform-style: preserve-3d; position: absolute; z-index: 0; transition: all 0.5s ease-out 0s;">
+                <div class="datahover">
+                  <div class="hov-tit"><%= p %></div>
+                  <div class="hov-tit2">Con plan <%=  @plan.title %> </div>
+                  <div class="hov-desc">
+                    <p><%= truncate(p.short_desc, :length => 158, :separator => ' ') %></p>
+                  </div>
+                  <div class="precio">
+                    <div class="bgPrecio"><%= pp.price %></div>
+                  </div>
+                  <div class="items">
+                    <div class="more-details">
+                      <i class="fa fa-plus-circle fa-2x"></i>
+                      <%= link_to "Más detalles", "/celulares/#{p.id}"  %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end-%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function () {
+
+    $(".arrow-plan").click(function(e) {
+      e.preventDefault();
+      var plan_id = $(this).data('plan-id');
+      var option = $(this).data('option');
+      $.ajax({
+        type: "GET",
+        data: {plan_id: plan_id, option: option },
+        url: "/nextorprevplan",
+        success: function (data) {
+          $("#partial_plan").html(data);
+
+        }
+      });
+    });
+
+    $(".card").flip({
+      axis: "y", // y or x
+      reverse: false, // true and false
+      trigger: "hover", // click or hover
+      speed: 500
+    });
+
+
+    $("#go_phones").click(function() {
+      $('html, body').animate({ scrollTop: $(".cels-plan").offset().top}, 2000);
+    });
+
+  });
+
+</script>

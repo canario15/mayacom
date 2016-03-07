@@ -18,44 +18,29 @@
         <h1>Nuevas Ofertas</h1>
       </div>
     </div>
-    <% 4.times.each do %>
+    <% @offers.each do |offer| %>
       <div class="row celbox">
         <div class="ofertbox">
           <div class="img">
-            <a href="#">
-              <img class="photo" alt="Nokia Microsoft 640 Dual Sim libre color blanco" src="/assets/ofertimg.jpg">
-            </a>
+            <%= link_to "/celulares/#{offer.phone.id}" do %>
+              <%= image_tag offer.phone.phone_images.first.image %>
+            <% end -%>
           </div>
           <div class="ofconte">
             <h2>
-              <a href="/celulares/1">
-                Nokia Microsoft 640 Dual Sim blanco (Libre)
-              </a>
+              <%= link_to "/celulares/#{offer.phone.id}" do %>
+                <%= offer.title %>
+              <% end -%>
             </h2>
             <span class="price">
-              <span class="oldPrice">Antes: <strong>$9.900</strong></span>
-              <span class="currentPrice">Ahora: <strong>$8.500 <small>(IVA inc.)</small></strong></span>
+              <span class="oldPrice">Antes: <strong>$<%= offer.phone.old_price %></strong></span>
+              <span class="currentPrice">Ahora: <strong>$<%= offer.phone.new_price %> <small>(IVA inc.)</small></strong></span>
             </span>
             <div class="description">
               <strong>Descripción</strong>
               <p>
-                Nokia Lumia 640 es un equipo LTE con grandes características que sin dudas querrás conocer ya !!!  Mira sus prestaciones, disponible en varios colores.
+                <%= offer.description %>
               </p>
-            </div>
-            <div class="caracteristicas">
-              <img title="Bluetooth" alt="Bluetooth" src="/public/img/iconos/caract-bluetooth.gif">
-              <img title="Doble chip" alt="Doble chip" src="/public/img/iconos/caract-doble-chip.gif">
-              <img title="Puerto jack (Conectar auriculares)" alt="Conector jack" src="/public/img/iconos/caract-jack.gif">
-              <img title="Memoria expandible" alt="Memoria expandible" src="/public/img/iconos/caract-memoria.gif">
-              <img title="Radio" alt="Radio" src="/public/img/iconos/caract-radio.gif">
-              <img title="Reproduce mp3" alt="Mp3" src="/public/img/iconos/caract-mp3.gif">
-              <img title="Cámara" alt="Cámara" src="/public/img/iconos/caract-camara.gif">
-              <img title="Flash" alt="Flash" src="/public/img/iconos/caract-flash.gif">
-              <img title="Cámara graba video" alt="Filma video" src="/public/img/iconos/caract-video.gif">
-              <img title="Video conferencia" alt="Video conferencia" src="/public/img/iconos/caract-video-conferencia.gif">
-              <img title="Wifi" alt="Wifi" src="/public/img/iconos/caract-wifi.gif">
-              <img title="GPS Asisitido" alt="AGPS" src="/public/img/iconos/caract-agps.gif">
-              <img title="Pantalla táctil - Touchscreen" alt="Pantalla táctil - Touchscreen" src="/public/img/iconos/caract-ts.gif">
             </div>
           </div>
         </div>

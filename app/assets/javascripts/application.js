@@ -25,6 +25,8 @@
 //= require jquery.flip
 //= require jquery.elevatezoom
 //= require woco.accordion.min
+//= require cbpFWTabs
+//= require horizon-swiper.min
 
 
 $(document).ready(function () {
@@ -102,7 +104,48 @@ $(document).ready(function () {
       1200:{
           items:4,
       }
+    }
+  });
+
+  //initiate the plugin and pass the id of the div containing gallery images
+  $("#zoom_01").elevateZoom({
+    gallery:'gal1_zoom_01',
+    galleryActiveClass: 'active_zoom',
+    zoomType : "inner",
+    cursor: "crosshair",
+    imageCrossfade: true
+  });
+
+  //pass the images to Fancybox
+  $("#zoom_01").bind("click", function(e) {
+    var ez = $('#zoom_01').data('elevateZoom');
+    $.fancybox(ez.getGalleryList());
+    return false;
+  });
+
+  $(".arrow-plan").click(function(e) {
+    e.preventDefault();
+    var plan_id = $(this).data('plan-id');
+    var option = $(this).data('option');
+    $.ajax({
+      type: "GET",
+      data: {plan_id: plan_id, option: option },
+      url: "/nextorprevplan",
+      success: function (data) {
+        $("#partial_plan").html(data);
+
+      }
+    });
+  });
+
+  $("#go_phones").click(function() {
+    $('html, body').animate({scrollTop: $(".cels-plan").offset().top}, 2000);
+  });
+
+
+  if ( $( "#phone-tabs" ).length ) {
+    new CBPFWTabs( document.getElementById( 'phone-tabs' ) );
   }
-});
+
 
 });

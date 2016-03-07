@@ -14,6 +14,9 @@
  *= require_self
  */
 
+a {
+  text-decoration: none!important;
+}
 
 @font-face {
   font-family: "RobotoCondensed-Bold";
@@ -52,7 +55,7 @@
 }
 
 .local-list1{
-  margin-left:130px;
+  margin-left:68px;
 }
 
 .local-list .city {
@@ -167,9 +170,11 @@ caption, th {
   vertical-align: top;
 }
 
-.par {
-  border-top: 2px solid #d4d4d4;
+.phone-comp-table tr {
+  border-top: 2px solid #303967;
+  line-height: 23px;
 }
+
 .slider-selection {
   background: green none repeat scroll 0 0;
 }
@@ -294,4 +299,101 @@ span.precio small, span.price small {
 
 .container-footer h2{
   font-family: "RobotoCondensed-Bold";
+}
+
+.row-images ul {
+  list-style:none!important;
+  color:red!important;
+}
+
+.price-acc {
+  font-size: 25px;
+  margin-right: 12px;
+}
+
+.payment-type {
+  margin-top: 44px;
+}
+
+.comun-data i{
+  color:#303967;
+  float:left;
+}
+
+.payment-type img{
+  margin-top: 7px;
+}
+
+.comun-data p{
+  margin-left:54px;
+}
+
+.comun-data span{
+  font-size: 24px;
+  margin-left: 5px;
+}
+
+.row2 {
+  margin-top:57px;
+}
+
+#gal1_zoom_01 img {
+  border:1px solid #aaa;
+  margin-bottom: 5px;
+}
+.active_zoom img {
+  border: 2px solid #fecc00!important;
+}
+
+.zoomWrapper img {
+  border: 1px solid #ccc;
+}
+
+
+.subplanes p:hover {
+  text-decoration:underline;
+}
+
+.inac-left-link-arrow {
+  border-right: 1px solid #ccc;
+  margin-right: 15px;
+  padding-right: 15px;
+  display: inline;
+  float: left;
+  font-size: 18px;
+  margin-bottom: 0;
+  transition: all 0.4s ease-out 0s;
+  cursor: not-allowed !important;
+  color: #ccc!important;
+  text-decoration:none!important;
+}
+
+.inac-left-link-arrow i {
+  color: #ccc!important;
+}
+
+.inac-right-link-arrow {
+  margin-right: 15px;
+  padding-right: 15px;
+  display: inline;
+  float: left;
+  font-size: 18px;
+  margin-bottom: 0;
+  transition: all 0.4s ease-out 0s;
+  cursor: not-allowed !important;
+  color: #ccc!important;
+  text-decoration:none!important;
+}
+
+.inac-right-link-arrow i{
+  color: #ccc!important;
+}
+
+
+.pagination {
+  margin: 11px!important;
+}
+
+.pagination > li > a, .pagination > li > span {
+    color: #303967!important;
 }
