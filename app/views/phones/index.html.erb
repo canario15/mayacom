@@ -19,15 +19,7 @@
         </h1>
       </div>
       <div class="col-lg-4 col-md-4 col-sm-5 col-xs-12 col-xss-5">
-        <!--
-        <%= search_form_for @search do |f| %>
-          <div class="field">
-            <%= f.text_field :title_or_phone_type_or_brand_name_or_model_or_mode_cont%>
-          </div>
-          <div class="actions"><%= f.submit "seach" %></div>
-        <% end -%>
-        -->
-        <div class="input-group">
+        <div class="input-group long-input">
           <%= search_form_for @search, :class => "main-search" do |f| %>
             <%= f.text_field :title_or_phone_type_or_brand_name_or_model_or_mode_cont, :class => "form-control", :placeholder => "Buscar un equipo" %>
             <span class="input-group-btn">
@@ -41,159 +33,90 @@
     </div>
     <div class="row row-body">
       <div class="col-md-3 col-sm-3 col-xss-4 filters-col">
-        <ul id="accordion">
-          <div class="hd">
-            <span class="glyphicon glyphicon-filter" aria-hidden="true"></span>
-            <h4>Filtrar Equipos</h4>
-          </div>
-          <li>
-            <div class="acc-panel">
-              <i class="fa fa-caret-down fa-lg"></i>
-              <h5>Qué equipo buscás?</h5>
+        <%= search_form_for @search, :id => "filter-phone" do |f| %>
+          <ul id="accordion">
+            <div class="hd">
+              <span class="glyphicon glyphicon-filter" aria-hidden="true"></span>
+              <h4>Filtrar Equipos</h4>
             </div>
-            <ul>
-              <li>
-                <%= check_box_tag(:prod, "cel", false, class: "radio-test") %>
-                <%= label_tag(:prod_cel, "Celulares") %>
-              </li>
-              <li>
-                <%= check_box_tag(:prod, "tabl", false, class: "radio-test") %>
-                <%= label_tag(:prod_tabl, "Tablets") %>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <div class="acc-panel">
-              <i class="fa fa-caret-right fa-lg"></i>
-              <h5>Rango de Precio</h5>
-            </div>
-            <ul>
-              <div class="slide-cont">
-                <p>
-                  Deslizá los circulos y define el precio
-                  Mostrar desde <span class="slide-1">$0</span> hasta <span class="slide-2">$65000</span>
-                </p>
-                <input id="ex2" type="text" class="span2" data-slider-min="1" data-slider-max="65000" data-slider-step="500" data-slider-value="[0,65000]"> </br>
-                <b>$0</b>
-                <b style="float:right">$ 65000</b>
+            <li>
+              <div class="acc-panel">
+                <i class="fa fa-caret-down fa-lg"></i>
+                <h5>Qué equipo buscás?</h5>
               </div>
-            </ul>
-          </li>
-          <li>
-            <div class="acc-panel">
-              <i class="fa fa-caret-right fa-lg"></i>
-              <h5>Modo de Compra</h5>
-            </div>
-            <ul>
-              <li>
-                <%= check_box_tag(:type, "free", false, class: "radio-test") %>
-                <%= label_tag(:type_free, "Prepago") %>
-              </li>
-              <li>
-                <%= check_box_tag(:type, "contr_ant", false, class: "radio-test") %>
-                <%= label_tag(:type_contr_ant, "Contrato Antel") %>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <div class="acc-panel">
-              <i class="fa fa-caret-right fa-lg"></i>
-              <h5>Marca</h5>
-            </div>
-            <ul>
-              <% @brands.each do |b| %>
+              <ul>
                 <li>
-                  <%= check_box_tag(:brand, "#{b.name}", false, class: "radio-test") %>
-                  <%= label_tag("brand_#{b.name.downcase}", "#{b.name}") %>
+                  <%= check_box_tag 'q[phone_type_cont_any][]', "Celular" , false, class: "radio-test do-ph-filter" %>
+                  <%= label_tag(:prod_cel, "Celulares") %>
                 </li>
-              <% end -%>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <div class="pull-right col-xs-12 col-md-9 col-sm-9 col-xss-8 phones-col ">
-        <div class="phone-catalog">
-          <div class="row row-header">
-            <div class="my-col-1 col-lg-5 col-md-2 col-sm-3 col-xss-3">
-            </div>
-            <!--
-            <div class="my-col-2 col-lg-4 col-md-6 col-sm-4 col-xss-4">
-              <span>Ver como </span>
-              <span>
-                <i class=" rw-ico fa fa-th fa-2x"></i>
-                <i class=" rw-ico fa fa-th-list fa-2x"></i>
-              </span>
-            </div>
-            -->
-            <div>
-            </div>
-            <!--<div class="my-col-3 col-lg-6 col-md-4 col-sm-5 col-xss-5">
-              <!--Ordenar por:
-              <span>
-                <select size="1" class="form-control order-data">
-                  <option selected="selected" value="DESTACADO">Destacados</option>
-                  <option value="PRECIO_ASC">Menor precio</option>
-                  <option value="PRECIO_DESC">Mayor precio</option>
-                </select>
-              </span>
-            </div>-->
-          </div>
-          <div class="row row-phones">
-            <% @phones.each do |p| %>
-              <div class="col-md-4 card" >
-                <div class="front" style="height: 100%; width: 100%; backface-visibility: hidden; transform-style: preserve-3d; position: absolute; z-index: 1; transition: all 0.5s ease-out 0s; transform: rotateY(0deg);">
-                  <div class="cel-img ">
-                   <%= image_tag p.phone_images.first.image(:index) %>
-                  </div>
-                  <div class="name-cel"><%= p %></div>
-                  <div class="name-cel2">Con plan Vera LTE $890 sin límite </div>
-                </div>
-                <div class="back" style="transform: rotateY(-180deg); height: 100%; width: 100%; backface-visibility: hidden; transform-style: preserve-3d; position: absolute; z-index: 0; transition: all 0.5s ease-out 0s;">
-                  <div class="datahover">
-                    <div class="hov-tit"><%= p %></div>
-                    <div class="hov-tit2">Con plan Vera LTE $890 sin límite </div>
-                    <div class="hov-desc">
-                      <p><%= truncate(p.short_desc, :length => 158, :separator => ' ') %></p>
-                    </div>
-                    <div class="precio">
-                      <div class="bgPrecio"> $<%= p.new_price %></div>
-                      <span class="titDesde"></span>
-                      <span>
-                        <strong></strong>
-                      </span>
-                    </div>
-                    <div class="items">
-                      <div class="more-details">
-                        <i class="fa fa-plus-circle fa-2x"></i>
-                        <%= link_to "Más detalles", "/celulares/#{p.id}"  %>
-                      </div>
-                    </div>
-                    <!--
-                    <div class="items">
-                      <div class="pull-right i-want">
-                        <a title="Más detalles" href="#">
-                          <i class="fa fa-cart-arrow-down fa-2x"></i>
-                          Lo quiero
-                        </a>
-                      </div>
-
-                      <div class="pull-left more-details">
-                        <a title="Más detalles" href="/celulares/1">
-                          <i class="fa fa-newspaper-o fa-2x"></i>
-                          Más detalles
-                        </a>
-                      </div>
-                    </div>
-                    -->
-                  </div>
-                </div>
+                <li>
+                  <%= check_box_tag 'q[phone_type_cont_any][]', "Tablet" , false, class: "radio-test do-ph-filter" %>
+                  <%= label_tag(:prod_tabl, "Tablets") %>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <div class="acc-panel">
+                <i class="fa fa-caret-right fa-lg"></i>
+                <h5>Rango de Precio</h5>
               </div>
-            <% end -%>
-          </div>
-        </div>
+              <ul>
+                <div class="slide-cont">
+                  <p>
+                    Deslizá los circulos y define el precio
+                    Mostrar desde
+                    <span class="slide-1">$0 </span>
+                    hasta
+                    <span class="slide-2">$65000</span>
+                  </p>
+                  <input id="ex2" type="text" class="span2" data-slider-min="1" data-slider-max="65000" data-slider-step="500" data-slider-value="[0,65000]"> </br>
+                  <b>$0</b>
+                  <b style="float:right">$ 65000</b>
+                  <input id="q_new_price_gteq_" class="price_1" type="hidden" name="q[new_price_gteq]" value="1">
+                  <input id="q_new_price_lteq_" class="price_2" type="hidden" name="q[new_price_lteq]" value="65000">
+                </div>
+              </ul>
+            </li>
+            <li>
+              <div class="acc-panel">
+                <i class="fa fa-caret-right fa-lg"></i>
+                <h5>Modo de Compra</h5>
+              </div>
+              <ul>
+                <li>
+                  <%= check_box_tag 'q[mode_cont_any][]', "Prepago" , false, class: "radio-test do-ph-filter" %>
+                  <%= label_tag(:type_free, "Prepago") %>
+                </li>
+                <li>
+                  <%= check_box_tag'q[mode_cont_any][]', "Contrato", false, class: "radio-test do-ph-filter" %>
+                  <%= label_tag(:type_free, "Contrato Antel") %>
+                </li>
+                <li>
+                  <%= check_box_tag'q[mode_cont_any][]', "Libre", false, class: "radio-test do-ph-filter" %>
+                  <%= label_tag(:type_free, "Libre") %>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <div class="acc-panel">
+                <i class="fa fa-caret-right fa-lg"></i>
+                <h5>Marca</h5>
+              </div>
+              <ul>
+                <% @brands.each do |b| %>
+                  <li>
+                    <%= check_box_tag 'q[brand_id_eq_any][]', b.id ,false, class: "radio-test do-ph-filter" %>
+                    <%= label_tag("brand_#{b.name.downcase}", "#{b.name}") %>
+                  </li>
+                <% end -%>
+              </ul>
+            </li>
+          </ul>
+        <% end -%>
+      </div>
+      <div id="phone_container" class="pull-right col-xs-12 col-md-9 col-sm-9 col-xss-8 phones-col ">
+        <%= render partial: "/phones/filter_data" %>
       </div>
     </div>
   </div>
 </div>
-
-

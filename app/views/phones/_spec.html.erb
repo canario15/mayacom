@@ -1,0 +1,303 @@
+<div id="specs-list">
+
+  <table cellspacing="0">
+    <% network = @phone.specification.network %>
+    <tbody>
+      <tr>
+        <th scope="row" rowspan="15">RED</th>
+        <td class="ttl">Tecnología</td>
+        <td class="nfo"><%= network.tecno.html_safe %></td>
+      </tr>
+      <tr>
+        <td class="ttl">Banda 4G</td>
+        <td class="nfo"><%= network.band4g.html_safe %></td>
+      </tr>
+      <tr>
+        <td class="ttl">Banda 3G</td>
+        <td class="nfo"><%= network.band3g.html_safe %></td>
+      </tr>
+      <tr>
+        <td class="ttl">Banda 2G</td>
+        <td class="nfo"><%= network.band2g.html_safe %></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table cellspacing="0">
+    <% launch = @phone.specification.launch %>
+    <tbody>
+      <tr>
+        <th scope="row" rowspan="2">Lanzamiento</th>
+        <td class="ttl">Anunciado</td>
+        <td class="nfo"><%= launch.announced.html_safe %></td>
+      </tr>
+      <tr>
+        <td class="ttl">Estado</td>
+        <td class="nfo"><%= launch.status.html_safe %></td>
+      </tr>
+    </tbody>
+
+  <table cellspacing="0">
+    <% status = @phone.specification.status %>
+    <tbody>
+      <tr>
+        <th scope="row" rowspan="6">Dimenciones</th>
+        <td class="ttl">Dimensiones</td>
+        <td class="nfo"><%= status.dimensions.html_safe %></td>
+      </tr>
+      <tr>
+        <td class="ttl">Peso</td>
+        <td class="nfo"><%= status.weight.html_safe %></td>
+      </tr>
+      <tr>
+        <td class="ttl">Construcción</td>
+        <td class="nfo"><%= status.build.html_safe %></td>
+      </tr>
+      <tr>
+        <td class="ttl">SIM</td>
+        <td class="nfo"><%= status.sim.html_safe %></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table cellspacing="0">
+    <% display = @phone.specification.display %>
+    <tbody>
+      <tr>
+        <th scope="row" rowspan="6">Display</th>
+        <td class="ttl">Tipo</td>
+        <td class="nfo"><%= display.disp_type.html_safe %></td>
+      </tr>
+      <tr>
+        <td class="ttl">Tamaño</td>
+        <td class="nfo"><%= display.size.html_safe %></td>
+      </tr>
+      <tr>
+        <td class="ttl">Resolución</td>
+        <td class="nfo"><%= display.resolution.html_safe %></td>
+      </tr>
+      <tr>
+        <td class="ttl">Multitouch</td>
+        <td class="nfo"><%= display.multitouch.html_safe %></td>
+      </tr>
+      <tr>
+        <td class="ttl">Protección</td>
+        <td class="nfo"><%= display.protection.html_safe %></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table cellspacing="0">
+    <% platform = @phone.specification.platform %>
+    <tbody>
+      <tr>
+        <th scope="row" rowspan="4">Plataforma</th>
+        <td class="ttl">OS</td>
+        <td class="nfo"><%= platform.os.html_safe %></td>
+      </tr>
+      <tr>
+        <td class="ttl">Chipset</td>
+        <td class="nfo"><%= platform.chipset.html_safe %></td>
+      </tr>
+      <tr>
+        <td class="ttl">CPU</td>
+        <td class="nfo"><%= platform.cpu.html_safe %></td>
+      </tr>
+      <tr>
+        <td class="ttl">GPU</td>
+        <td class="nfo"><%= platform.gpu.html_safe %></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table cellspacing="0">
+    <% memory = @phone.specification.memory %>
+    <tbody>
+      <tr>
+        <th scope="row" rowspan="5">Memoria</th>
+        <td class="ttl">Externa</td>
+        <td class="nfo"><%= memory.external.html_safe %></td>
+      </tr>
+      <tr>
+        <td class="ttl">Interna</td>
+        <td class="nfo"><%= memory.internal.html_safe %></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table cellspacing="0">
+    <% camera = @phone.specification.camera %>
+    <tbody>
+      <tr>
+        <th scope="row" rowspan="4">Cámara</th>
+        <td class="ttl">Primaria</td>
+        <td class="nfo"><%= camera.primary.html_safe %></td>
+      </tr>
+      <tr>
+        <td class="ttl">Funciones</td>
+        <td class="nfo"><%= camera.features.html_safe %></td>
+      </tr>
+      <tr>
+        <td class="ttl">Video</td>
+        <td class="nfo"><%= camera.video.html_safe %></td>
+      </tr>
+      <tr>
+        <td class="ttl">Secundaria</td>
+        <td class="nfo"><%= camera.secondary.html_safe %></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table cellspacing="0">
+    <% sound = @phone.specification.sound %>
+    <tbody>
+      <tr>
+        <th scope="row" rowspan="4">Sonido</th>
+        <td class="ttl">Tipos de Alertas</td>
+        <td class="nfo"><%= sound.alerts_type.html_safe %></td>
+      </tr>
+      <tr>
+        <td class="ttl">Altoparlante </td>
+        <td class="nfo"><%= sound.loudspeaker.html_safe %></td>
+      </tr>
+      <tr>
+        <td class="ttl">3.5mm jack </td>
+        <td class="nfo"><%= sound.jack_port.html_safe %></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table cellspacing="0">
+    <% comm = @phone.specification.comm %>
+    <tbody>
+      <tr>
+        <th scope="row" rowspan="9">Comunes</th>
+        <td class="ttl">WLAN</td>
+        <td class="nfo"><%= comm.wlan.html_safe %></td>
+      </tr>
+      <tr>
+        <td class="ttl">Bluetooth</td>
+        <td class="nfo"><%= comm.bluetooth.html_safe %></td>
+      </tr>
+      <tr>
+        <td class="ttl">GPS</td>
+        <td class="nfo"><%= comm.gps.html_safe %></td>
+      </tr>
+      <tr>
+        <td class="ttl">NFC</td>
+        <td class="nfo"><%= comm.nfc.html_safe %></td>
+      </tr>
+      <tr>
+        <td class="ttl">Radio</td>
+        <td class="nfo"><%= comm.radio.html_safe %></td>
+      </tr>
+      <tr>
+        <td class="ttl">USB</td>
+        <td class="nfo"><%= comm.usb.html_safe %></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table cellspacing="0">
+    <% feature = @phone.specification.feature %>
+    <tbody>
+      <tr>
+        <th scope="row" rowspan="12">Características</th>
+        <td class="ttl">Sensores</td>
+        <td class="nfo"><%= feature.sensors.html_safe %></td>
+      </tr>
+      <tr>
+        <td class="ttl">Mensajería</td>
+        <td class="nfo"><%= feature.messaging.html_safe %></td>
+      </tr>
+      <tr>
+        <td class="ttl">Navegador</td>
+        <td class="nfo"><%= feature.browser %></td>
+      </tr>
+      <tr>
+        <td class="ttl">Java</td>
+        <td class="nfo"><%= feature.java.html_safe %></td>
+      </tr>
+      <tr>
+        <td class="ttl"></td>
+        <td class="nfo"><%= feature.otras.html_safe %></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table cellspacing="0">
+    <% battery = @phone.specification.battery %>
+    <tbody>
+      <tr>
+        <th scope="row" rowspan="9">Bateria</th>
+        <td class="ttl">Tipo</td>
+        <td class="nfo"><%= battery.bat_type.html_safe %></td>
+      </tr>
+      <tr>
+        <td class="ttl">Stand-by</td>
+        <td class="nfo"><%= battery.stand_by.html_safe %></td>
+      </tr>
+      <tr>
+        <td class="ttl">Tiempo de conversación</td>
+        <td class="nfo"><%= battery.talk_time.html_safe %></td>
+      </tr>
+      <tr>
+        <td class="ttl">Tiempo de música</td>
+        <td class="nfo"><%= battery.music_play.html_safe %></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table cellspacing="0">
+    <% misc = @phone.specification.misc %>
+    <tbody>
+      <tr>
+        <th scope="row" rowspan="1">Miscelánea</th>
+        <td class="ttl">Colores</td>
+        <td class="nfo"><%= misc.colors.html_safe %></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>No podemos garantizar que la información de esta página es 100% correcta.</p>
+
+</div>
+
+<style type="text/css">
+
+  #specs-list table {
+    border-top: 1px solid #e3e3e3;
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  #specs-list th {
+    background: #f6f6f6 none repeat scroll 0 0;
+    text-transform: uppercase;
+    width: 141px;
+  }
+  #specs-list th, #specs-list td {
+    font: 16px "RobotoCondensed-Regular";
+    padding: 2px 10px;
+    vertical-align: top;
+  }
+
+  #specs-list td.ttl {
+    width: 189px;
+    color: #303967;
+  }
+  #specs-list td {
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  #specs-list tr:last-child td {
+    border-bottom: medium none;
+  }
+
+  #specs-list p {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 14px;
+  }
+
+</style>

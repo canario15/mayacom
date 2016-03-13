@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160215212440) do
+ActiveRecord::Schema.define(version: 20160310205657) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -85,10 +85,36 @@ ActiveRecord::Schema.define(version: 20160215212440) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "batteries", force: :cascade do |t|
+    t.integer "specification_id"
+    t.string  "bat_type"
+    t.string  "stand_by"
+    t.string  "talk_time"
+    t.string  "music_play"
+  end
+
   create_table "brands", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "cameras", force: :cascade do |t|
+    t.integer "specification_id"
+    t.string  "primary"
+    t.string  "features"
+    t.string  "video"
+    t.string  "secondary"
+  end
+
+  create_table "comms", force: :cascade do |t|
+    t.integer "specification_id"
+    t.string  "wlan"
+    t.string  "bluetooth"
+    t.string  "gps"
+    t.string  "nfc"
+    t.string  "radio"
+    t.string  "usb"
   end
 
   create_table "contracts", force: :cascade do |t|
@@ -101,6 +127,49 @@ ActiveRecord::Schema.define(version: 20160215212440) do
     t.string   "logo_content_type"
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
+  end
+
+  create_table "displays", force: :cascade do |t|
+    t.integer "specification_id"
+    t.string  "disp_type"
+    t.string  "size"
+    t.string  "resolution"
+    t.string  "multitouch"
+    t.string  "protection"
+  end
+
+  create_table "features", force: :cascade do |t|
+    t.integer "specification_id"
+    t.string  "sensors"
+    t.string  "messaging"
+    t.string  "browser"
+    t.string  "java"
+    t.string  "otras"
+  end
+
+  create_table "launches", force: :cascade do |t|
+    t.integer "specification_id"
+    t.string  "announced"
+    t.string  "status"
+  end
+
+  create_table "memories", force: :cascade do |t|
+    t.integer "specification_id"
+    t.string  "internal"
+    t.string  "external"
+  end
+
+  create_table "miscs", force: :cascade do |t|
+    t.integer "specification_id"
+    t.string  "colors"
+  end
+
+  create_table "networks", force: :cascade do |t|
+    t.integer "specification_id"
+    t.string  "tecno"
+    t.string  "band4g"
+    t.string  "band3g"
+    t.string  "band2g"
   end
 
   create_table "offers", force: :cascade do |t|
@@ -136,8 +205,8 @@ ActiveRecord::Schema.define(version: 20160215212440) do
     t.string   "title"
     t.integer  "brand_id"
     t.string   "model"
-    t.string   "new_price"
-    t.string   "old_price"
+    t.integer  "new_price"
+    t.integer  "old_price"
     t.text     "short_desc"
     t.text     "long_desc"
     t.boolean  "is_most_view"
@@ -159,6 +228,47 @@ ActiveRecord::Schema.define(version: 20160215212440) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.integer  "order_number"
+  end
+
+  create_table "platforms", force: :cascade do |t|
+    t.integer "specification_id"
+    t.string  "os"
+    t.string  "chipset"
+    t.string  "cpu"
+    t.string  "gpu"
+  end
+
+  create_table "sliders", force: :cascade do |t|
+    t.integer  "phone_id"
+    t.text     "title"
+    t.text     "description"
+    t.integer  "duration"
+    t.boolean  "active"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
+  create_table "sounds", force: :cascade do |t|
+    t.integer "specification_id"
+    t.string  "alerts_type"
+    t.string  "loudspeaker"
+    t.string  "jack_port"
+  end
+
+  create_table "specifications", force: :cascade do |t|
+    t.integer "phone_id"
+  end
+
+  create_table "statuses", force: :cascade do |t|
+    t.integer "specification_id"
+    t.string  "dimensions"
+    t.string  "weight"
+    t.string  "build"
+    t.string  "sim"
   end
 
   create_table "technologies", force: :cascade do |t|

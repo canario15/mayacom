@@ -19,7 +19,10 @@ Rails.application.routes.draw do
 
   get '/nextorprevplan' => 'contracts#next_or_prev_plan'
 
+  post 'send_contact_info'  => 'pages#send_contact_info',                 as: :send_contact_info
+
   resources :phones
+  resources :accessories
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

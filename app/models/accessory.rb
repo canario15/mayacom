@@ -1,13 +1,15 @@
 class Accessory < ActiveRecord::Base
 
-  belongs_to :brand
   belongs_to :access_type
-  has_many :accessory_images
+  has_many :accessory_images, :dependent => :destroy
 
   has_and_belongs_to_many :phones, class_name: 'Phone', join_table: 'accessories_phones'
 
   accepts_nested_attributes_for :accessory_images, :allow_destroy => true
-  accepts_nested_attributes_for :phones#, :allow_destroy => true
+  accepts_nested_attributes_for :phones, :allow_destroy => true
+
+  validate :validate_images
+  validates_presence_of :access_type, :title, :new_price, :short_desc
 
   paginates_per 9
 
@@ -23,4 +25,9 @@ class Accessory < ActiveRecord::Base
     end
     data
   end
+
+  def validate_images
+    errors.add(:accessory_images, "no puede ser vacía") if accessory_images.size < 1
+  end
+
 end

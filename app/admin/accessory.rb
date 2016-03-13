@@ -2,11 +2,10 @@ ActiveAdmin.register Accessory do
   menu :label => "Accesorios"
   menu parent: "Productos"
 
-  permit_params :brand_id, :title, :new_price, :old_price, :access_type_id, :short_desc, :long_desc, :is_most_view, :is_top_sale, :is_top_new, accessory_images_attributes: [:image, :image_file_name, :image_content_type, :image_file_size, :image_updated_at, :_destroy, :id], phone_ids: []
+  permit_params :title, :new_price, :old_price, :access_type_id, :short_desc, :long_desc, :is_most_view, :is_top_sale, :is_top_new, accessory_images_attributes: [:image, :image_file_name, :image_content_type, :image_file_size, :image_updated_at, :_destroy, :id], phone_ids: []
 
   config.batch_actions = false
 
-  filter :brand, collection: proc { Brand.all }, as: :select
   filter :title
   filter :access_type
   filter :is_most_view
@@ -23,8 +22,8 @@ ActiveAdmin.register Accessory do
 
 
   form do |f|
+    f.semantic_errors *f.object.errors.keys
     f.inputs "Accesorio",  :multipart => true do
-      f.input :brand, :as => :select, :collection => Brand.all.collect {|bra| [bra.name, bra.id] }
       f.input :access_type, :as => :select, :collection => AccessType.all.collect {|type| [type.name, type.id] }
       f.input :title
       f.input :new_price
@@ -44,7 +43,6 @@ ActiveAdmin.register Accessory do
 
   show :title => :title do |ac|
     attributes_table do
-      row :brand
       row :access_type
       row :title
       row :new_price

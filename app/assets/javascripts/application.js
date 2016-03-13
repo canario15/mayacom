@@ -27,12 +27,18 @@
 //= require woco.accordion.min
 //= require cbpFWTabs
 //= require horizon-swiper.min
+//= require jquery.form.min
+//= require jquery.validate.min
 
 
 $(document).ready(function () {
+
+  setTimeout(function(){  $('.alert').remove();}, 2500);
+
+
   $(".radio-test").iCheck({
     checkboxClass: 'icheckbox_flat-yellow',
-    radioClass: 'iradio_flat-yellow '
+    radioClass: 'iradio_flat-yellow'
   });
 
   $("#ex2").slider({
@@ -40,6 +46,8 @@ $(document).ready(function () {
       if (Array.isArray(val)) {
         $(".slide-1").text("$"+ val[0]);
         $(".slide-2").text("$"+ val[1]);
+        $(".price_1").val(val[0]);
+        $(".price_2").val(val[1]);
         return val[0] + " : " + val[1];
       } else {
         return val;
@@ -53,6 +61,7 @@ $(document).ready(function () {
     trigger: "hover", // click or hover
     speed: 500
   });
+
 
   $(".boxContr").flip({
     axis: "y", // y or x
@@ -80,30 +89,6 @@ $(document).ready(function () {
     }else{
       $(this).parent().parent().siblings($('drawer')).css({"display":"block"});
       $($(this).siblings()[0]).data("status", 0);
-    }
-  });
-
-
-  $('.plan-cels-caro').owlCarousel({
-    loop:false,
-    nav:true,
-    margin:20,
-    navigationText:false,
-    rewindNav:false,
-    responsiveClass:true,
-    responsive:{
-      0:{
-          items:1,
-      },
-      600:{
-          items:2,
-      },
-      1000:{
-          items:2,
-      },
-      1200:{
-          items:4,
-      }
     }
   });
 
@@ -147,5 +132,57 @@ $(document).ready(function () {
     new CBPFWTabs( document.getElementById( 'phone-tabs' ) );
   }
 
+  $('input.do-ph-filter').on('ifChecked', function(event){
+    $('#filter-phone').ajaxSubmit( {target: '#phone_container', success: updateReference });
+  });
+
+  $('input.do-ph-filter').on('ifUnchecked', function(event){
+    $('#filter-phone').ajaxSubmit( {target: '#phone_container', success: updateReference });
+  });
+
+  $('input.do-acc-filter').on('ifChecked', function(event){
+    $('#filter-acc').ajaxSubmit( {target: '#acc_container', success: updateReference });
+  });
+
+  $('input.do-acc-filter').on('ifUnchecked', function(event){
+    $('#filter-acc').ajaxSubmit( {target: '#acc_container', success: updateReference });
+  });
+
+  function updateReference (){
+    $(".card").flip({
+      axis: "y", // y or x
+      reverse: false, // true and false
+      trigger: "hover", // click or hover
+      speed: 500
+    });
+  }
+
+  $(".contact-form").validate({
+    rules: {
+      name: "required",
+      tel: "required",
+      email: {
+        required: true,
+        email: true
+      },
+      message: {
+        required: true,
+        minlength: 50
+      }
+    },
+    messages: {
+      name: "Por favor ingrese su nombre",
+      tel: "Por favor ingrese su teléfono",
+      email: {
+        required: "Por favor ingrese su email",
+        minlength: "Por favor ingrese un email válido"
+      },
+      message: {
+        required: "Por favor ingrese mensaje",
+        minlength: "Por favor ingrese al menos 50 caracteres"
+      }
+    }
+  });
 
 });
+

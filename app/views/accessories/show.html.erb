@@ -39,11 +39,23 @@
                 </p>
                 <div class="product-inner-price">
                   <span class="price-acc">Precio:</span>
-                  <ins>$<%= @accessory.new_price%></ins>
+                  <ins>$<%= @accessory.new_price%> <small style="font-size: 53%;color:#9e9e9e"> (IVA inc.)</small> </ins>
                   <% unless @accessory.old_price.blank? %>
                     antes
-                    <del>$<%= @accessory.old_price%></del>
+                    <del>$<%= @accessory.old_price%> <small style="font-size: 53%;color:#9e9e9e"> (IVA inc.)</small></del>
                   <% end -%>
+                  <br>
+                  <span class="price-acc">Stock:</span>
+                  <ins style="color:#89c403"><i class="fa fa-check"></i></ins>
+                </div>
+                <div class="comun-data">
+                  <i class="fa fa-phone-square fa-4x"></i>
+                  <span>47327066</span></br>
+                  <p>comunicate y te lo enviamos</p>
+                </div>
+                <div class="payment-type">
+                  <span>aceptamos todas las tarjetas:</span>
+                  <%= image_tag "/assets/tarjetas.png", :width => "450" %>
                 </div>
               </div>
             </div>

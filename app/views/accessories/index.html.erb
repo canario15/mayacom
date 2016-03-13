@@ -19,118 +19,45 @@
         </h1>
       </div>
       <div class="col-lg-4 col-md-4 col-sm-5 col-xs-12 col-xss-5">
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Buscar un equipo">
+        <div class="input-group long-input">
+          <%= search_form_for @search, :class => "main-search" do |f| %>
+            <%= f.text_field :title_or_access_type_name_or_short_desc_cont, :class => "form-control", :placeholder => "Buscar un accesorio" %>
             <span class="input-group-btn">
-              <button class="btn btn-default btn-searh" type="button">
+              <%= f.button "", :class => "btn btn-default btn-searh" do %>
                 <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-              </button>
+              <% end -%>
             </span>
+          <% end -%>
         </div>
       </div>
     </div>
     <div class="row row-body">
       <div class="col-md-3 col-sm-3 col-xss-4 filters-col">
-        <ul id="accordion">
-          <div class="hd">
-            <span class="glyphicon glyphicon-filter" aria-hidden="true"></span>
-            <h4>Filtrar Accesorios</h4>
-          </div>
-          <li>
-            <div class="acc-panel">
-              <i class="fa fa-caret-down fa-lg"></i>
-              <h5>Categorías</h5>
+         <%= search_form_for @search, :id => "filter-acc" do |f| %>
+          <ul id="accordion">
+            <div class="hd">
+              <span class="glyphicon glyphicon-filter" aria-hidden="true"></span>
+              <h4>Filtrar Accesorios</h4>
             </div>
-            <ul>
-              <% @access_types.each do |acc|%>
-                <li>
-                  <%= check_box_tag(:caract, "#{acc.name}", false, class: "radio-test") %>
-                  <%= label_tag("caract_#{acc.name}", "#{acc.name}") %>
-                </li>
-              <% end -%>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <div class="pull-right col-xs-12 col-md-9 col-sm-9 col-xss-8 phones-col ">
-        <div class="phone-catalog">
-          <div class="row row-header">
-            <div class="my-col-1 col-lg-2 col-md-2 col-sm-3 col-xss-3">
-              <%= page_entries_info @accesories %>
-            </div>
-            <!--<div class="my-col-2 col-lg-4 col-md-6 col-sm-4 col-xss-4">
-              <span>Ver como </span>
-              <span>
-                <i class=" rw-ico fa fa-th fa-2x"></i>
-                <i class=" rw-ico fa fa-th-list fa-2x"></i>
-              </span>
-            </div>-->
-            <div>
-              <%= paginate @accesories, :window => 2 %>
-            </div>
-            <!--<div class="my-col-3 col-lg-6 col-md-4 col-sm-5 col-xss-5">
-              Ordenar por:
-              <span>
-                <select size="1" class="form-control order-data">
-                  <option selected="selected" value="DESTACADO">Destacados</option>
-                  <option value="PRECIO_ASC">Menor precio</option>
-                  <option value="PRECIO_DESC">Mayor precio</option>
-                </select>
-              </span>
-            </div>-->
-          </div>
-          <div class="row row-phones">
-            <% @accesories.each do |acc| %>
-              <div class="col-md-4 card" >
-                <div class="front" style="height: 100%; width: 100%; backface-visibility: hidden; transform-style: preserve-3d; position: absolute; z-index: 1; transition: all 0.5s ease-out 0s; transform: rotateY(0deg);">
-                  <div class="cel-img ">
-                    <%= image_tag acc.accessory_images.first.image(:index) %>
-                  </div>
-                  <div class="name-cel"><%= acc.title %></div>
-                  <div class="name-cel2">$<%= acc.new_price %></div>
-                </div>
-                <div class="back back-card" style="transform: rotateY(-180deg); height: 100%; width: 100%; backface-visibility: hidden; transform-style: preserve-3d; position: absolute; z-index: 0; transition: all 0.5s ease-out 0s;">
-                  <div class="datahover">
-                    <div class="hov-tit"><%= acc.title %></div>
-                    <div class="hov-desc">
-                      <p><%= acc.short_desc %></p>
-                    </div>
-                    <div class="precio">
-                      <div class="bgPrecio"> $<%= acc.new_price %></div>
-                      <span class="titDesde"></span>
-                      <span>
-                        <strong></strong>
-                      </span>
-                    </div>
-                    <div class="items">
-                      <div class="more-details">
-                        <i class="fa fa-plus-circle fa-2x"></i>
-                        <%= link_to "Más detalles", "/accesorios/#{acc.id}"%>
-                      </div>
-                    </div>
-                    <!--
-                    <div class="items">
-                      <div class="pull-right i-want">
-                        <a title="Más detalles" href="#">
-                          <i class="fa fa-cart-arrow-down fa-2x"></i>
-                          Lo quiero
-                        </a>
-                      </div>
-
-                      <div class="pull-left more-details">
-                        <a title="Más detalles" href="/celulares/1">
-                          <i class="fa fa-newspaper-o fa-2x"></i>
-                          Más detalles
-                        </a>
-                      </div>
-                    </div>
-                    -->
-                  </div>
-                </div>
+            <li>
+              <div class="acc-panel">
+                <i class="fa fa-caret-down fa-lg"></i>
+                <h5>Categorías</h5>
               </div>
-            <% end -%>
-          </div>
-        </div>
+              <ul>
+                <% @access_types.each do |acc|%>
+                  <li>
+                    <%= check_box_tag 'q[access_type_id_eq_any][]', acc.id ,false, class: "radio-test do-acc-filter" %>
+                    <%= label_tag("caract_#{acc.name}", "#{acc.name}") %>
+                  </li>
+                <% end -%>
+              </ul>
+            </li>
+          </ul>
+         <% end -%>
+      </div>
+      <div id="acc_container" class="pull-right col-xs-12 col-md-9 col-sm-9 col-xss-8 phones-col ">
+      <%= render partial: "/accessories/filter_data" %>
       </div>
     </div>
   </div>

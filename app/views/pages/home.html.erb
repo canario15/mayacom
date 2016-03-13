@@ -2,53 +2,71 @@
 			<!-- Slider -->
 	<div class="block-slider block-slider4">
 		<ul class="" id="bxslider-home4">
-			<% 6.times do %>
+			<% @slider.each do |slider|%>
 				<li>
-					<img src="assetsh4-slide.png" alt="Slide">
+					<%= image_tag slider.image(:home) %>
 					<div class="caption-group">
 						<h2 class="caption title">
-							iPhone <span class="primary">6 <strong>Plus</strong></span>
+							<span class="primary"><%= slider.phone.title %></span>
 						</h2>
-						<h4 class="caption subtitle">Dual SIM</h4>
-						<a class="caption button-radius" href="#"><span class="icon"></span>Comprar ahora</a>
+						<h4 class="caption subtitle">hoy: $<%= slider.phone.new_price %></h4>
+						<h4 class="caption subtitle">antes: $<%= slider.phone.old_price %></h4>
 					</div>
 				</li>
 			<% end %>
-
-
 		</ul>
 	</div>
 	<!-- ./Slider -->
 </div> <!-- End slider area -->
 
 <div class="maincontent-area">
-	<div class="zigzag-bottom"></div>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<div class="latest-product">
-					<h2 class="section-title">Ultimos Productos</h2>
-					<div class="product-carousel">
-						<% 6.times do %>
-							<div class="single-product">
-								<div class="product-f-image">
-							  	<img src="assetsproduct-3.jpg" alt="">
-									<div class="product-hover">
-										<a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Agregar </a>
-										<a href="/celulares/1" class="view-details-link"><i class="fa fa-link"></i> Ver detalles</a>
-									</div>
-								</div>
-								<h2>LG Leon 2015</h2>
-								<div class="product-carousel-price">
-									<ins>$400.00</ins> <del>$425.00</del>
-								</div>
-							</div>
-						<% end -%>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+  <div class="zigzag-bottom"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="latest-product">
+          <h2 class="section-title">Ultimos Productos</h2>
+          <div class="product-carousel">
+
+            <% @last_phones.each  do |phone| %>
+              <div class="single-product">
+                <div class="product-f-image">
+                  <%= image_tag phone.phone_images.first.image(:index) %>
+                  <div class="product-hover">
+                    <%= link_to  "/celulares/#{phone.id}", :class => "view-details-link" do %>
+                      <i class="fa fa-link"></i> Ver detalles
+                    <% end -%>
+                  </div>
+                </div>
+                <h2><%= phone.title %></h2>
+                <div class="product-carousel-price">
+                  <ins>$<%= phone.new_price %> <small style="font-size: 53%;color:#9e9e9e"> (IVA inc.)</small></ins>
+                  <del><%= "$#{phone.old_price}" unless phone.old_price.blank? %></del>
+                </div>
+              </div>
+            <% end -%>
+
+            <% @last_access.each  do |access| %>
+              <div class="single-product">
+                <div class="product-f-image">
+                  <%= image_tag access.accessory_images.first.image(:index) %>
+                  <div class="product-hover">
+                    <%= link_to "/accesorios/#{access.id}", :class => "view-details-link" do %>
+                      <i class="fa fa-link"></i> Ver detalles
+                    <% end -%>
+                  </div>
+                </div>
+                <h2><%= access.title %></h2>
+                <div class="product-carousel-price">
+                  <ins>$<%= access.new_price %></ins> <del><%= "$#{access.old_price}" unless access.old_price.blank? %></del>
+                </div>
+              </div>
+            <% end -%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div> <!-- End main content area -->
 
 <div class="product-widget-area">
@@ -58,10 +76,14 @@
 			<div class="col-md-4">
 				<div class="single-product-widget">
 					<h2 class="product-wid-title">Top Ventas</h2>
-					<% 3.times.each do  %>
+					<% @top_sell.each do |phone| %>
 						<div class="single-wid-product">
-							<a href="/celulares/1"><img src="assetsproduct-thumb-1.jpg" alt="" class="product-thumb"></a>
-							<h2><a href="/celulares/1">Sony Smart TV - 2015</a></h2>
+							<%= link_to "/celulares/#{phone.id}"  do  %>
+                <%= image_tag phone.phone_images.first.image(:thumb), :class => "product-thumb" %>
+              <% end -%>
+							<h2>
+								<%= link_to "#{phone.brand} #{phone.model} ", "/celulares/#{phone.id}" %>
+							</h2>
 							<div class="product-wid-rating">
 								<i class="fa fa-star"></i>
 								<i class="fa fa-star"></i>
@@ -70,7 +92,16 @@
 								<i class="fa fa-star"></i>
 							</div>
 							<div class="product-wid-price">
-								<ins>$400.00</ins> <del>$425.00</del>
+								<ins>
+									$<%= phone.new_price %>
+									<small style="font-size: 62%;color:#9e9e9e"> (IVA inc.)</small>
+								</ins>
+								<% unless phone.old_price.blank? %>
+									<del>
+										<%= "$#{phone.old_price}"  %>
+										<small style="font-size: 62%;color:#9e9e9e"> (IVA inc.)</small>
+									</del>
+								<% end -%>
 							</div>
 						</div>
 					<% end -%>
@@ -79,10 +110,14 @@
 			<div class="col-md-4">
 				<div class="single-product-widget">
 					<h2 class="product-wid-title">Mas Vistos</h2>
-					<% 3.times.each do  %>
+					<% @top_viwes.each do |phone| %>
 						<div class="single-wid-product">
-							<a href="/celulares/1"><img src="assetsproduct-thumb-4.jpg" alt="" class="product-thumb"></a>
-							<h2><a href="/celulares/1">Sony playstation microsoft</a></h2>
+							<%= link_to "/celulares/#{phone.id}"  do  %>
+                <%= image_tag phone.phone_images.first.image(:thumb), :class => "product-thumb" %>
+              <% end -%>
+							<h2>
+								<%= link_to "#{phone.brand} #{phone.model} ", "/celulares/#{phone.id}" %>
+							</h2>
 							<div class="product-wid-rating">
 								<i class="fa fa-star"></i>
 								<i class="fa fa-star"></i>
@@ -91,7 +126,16 @@
 								<i class="fa fa-star"></i>
 							</div>
 							<div class="product-wid-price">
-								<ins>$400.00</ins> <del>$425.00</del>
+								<ins>
+									$<%= phone.new_price %>
+									<small style="font-size: 62%;color:#9e9e9e"> (IVA inc.)</small>
+								</ins>
+								<% unless phone.old_price.blank? %>
+									<del>
+										<%= "$#{phone.old_price}"  %>
+										<small style="font-size: 62%;color:#9e9e9e"> (IVA inc.)</small>
+									</del>
+								<% end -%>
 							</div>
 						</div>
 					<% end -%>
@@ -100,10 +144,14 @@
 			<div class="col-md-4">
 				<div class="single-product-widget">
 					<h2 class="product-wid-title">Top Nuevos</h2>
-					<% 3.times.each do  %>
+					<% @top_news.each do |phone| %>
 						<div class="single-wid-product">
-							<a href="/celulares/1"><img src="assetsproduct-thumb-3.jpg" alt="" class="product-thumb"></a>
-							<h2><a href="/celulares/1">Apple new i phone 6</a></h2>
+							<%= link_to "/celulares/#{phone.id}"  do  %>
+                <%= image_tag phone.phone_images.first.image(:thumb), :class => "product-thumb" %>
+              <% end -%>
+							<h2>
+								<%= link_to "#{phone.brand} #{phone.model} ", "/celulares/#{phone.id}" %>
+							</h2>
 							<div class="product-wid-rating">
 								<i class="fa fa-star"></i>
 								<i class="fa fa-star"></i>
@@ -112,7 +160,16 @@
 								<i class="fa fa-star"></i>
 							</div>
 							<div class="product-wid-price">
-								<ins>$400.00</ins> <del>$425.00</del>
+								<ins>
+									$<%= phone.new_price %>
+									<small style="font-size: 62%;color:#9e9e9e"> (IVA inc.)</small>
+								</ins>
+								<% unless phone.old_price.blank? %>
+									<del>
+										<%= "$#{phone.old_price}"  %>
+										<small style="font-size: 62%;color:#9e9e9e"> (IVA inc.)</small>
+									</del>
+								<% end -%>
 							</div>
 						</div>
 					<% end -%>

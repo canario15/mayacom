@@ -176,7 +176,7 @@ caption, th {
 }
 
 .slider-selection {
-  background: green none repeat scroll 0 0;
+  background: #fecc00 none repeat scroll 0 0;
 }
 
 .celbox{
@@ -193,17 +193,17 @@ caption, th {
   border-radius: 5px;
   display: block;
   float: left;
-  height: 274px;
   margin-right: 15px;
   position: relative;
-  width: 246px;
+  height: 223px;
+ /* width: 246px;*/
   overflow: hidden;
 }
 
 .ofertbox .ofconte {
   border-bottom: 1px dotted #303967;
   float: left;
-  height: 274px;
+  height: 223px;
   padding: 12px 0;
   position: relative;
   width: 700px;
@@ -396,4 +396,96 @@ span.precio small, span.price small {
 
 .pagination > li > a, .pagination > li > span {
     color: #303967!important;
+}
+
+.offers-tit {
+  margin-top:11px!important;
+}
+
+.error {
+  color:#a94442;
+}
+
+.btn-send-email:hover {
+  background: #fecc00 none repeat scroll 0 0!important;
+  color: #303967!important;
+  border-color: #303967!important;
+  border: 1px solid #303967;
+}
+
+.btn-send-email {
+  border: 1px solid #303967!important;
+  text-shadow: none!important;
+  box-shadow:none!important;
+  font-weight:none!important;
+  border-radius: 8px!important;
+}
+
+.btn {
+  font-family: RobotoCondensed-Regular!important;
+}
+
+.form-control-email{
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #303967;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+  color: #555;
+  display: block;
+  font-size: 14px;
+  height: 34px;
+  line-height: 1.42857;
+  padding: 6px 12px;
+  transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+  width: 100%;
+}
+
+.form-control-email:focus {
+  border-color:#303967;
+  box-shadow:  0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(102, 175, 233, 0.6)!important;
+}
+
+.contact-form input{
+  font-family: RobotoCondensed-Regular!important;
+  transition: none !important;
+  width:100%!important;
+}
+
+.contact-form input:focus{
+  border: 1px solid #303967!important;
+  box-shadow: 0 0 4px #303967!important;
+}
+
+.text-form-control {
+  display: block;
+  font-size: 14px;
+  line-height: 1.42857;
+  width: 100%;
+  font-family: RobotoCondensed-Regular;
+}
+
+.text-form-control:focus {
+  border: 1px solid #303967!important;
+  box-shadow: 0 0 4px #303967!important;
+}
+
+.cel-description ul{
+   list-style-type: none;
+}
+
+.cel-description i{
+  color:#fecc00;
+}
+
+.cel-description h2{
+  color:#303967;
+}
+
+.cel-description span {
+  color:black;
+}
+
+.front span {
+  color:#303967;
 }

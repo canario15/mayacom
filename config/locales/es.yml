@@ -1,3 +1,5 @@
+
+
 es:
   activerecord:
     models:
@@ -11,10 +13,90 @@ es:
       admin_user: "Admnistrador"
       access_type: "Tipo de Accesorio"
       accessory_image: "Imágenes"
+      accessory_images: "Imágenes"
       phone_image: "Imágenes"
       phone_plan: "Teléfonos para el plan"
       offer: "Ofertas"
+      slider: "Slider"
+      network: "Red"
+      launch: "Lanzamiento"
+      status: "Dimenciones"
+      display: "Display"
+      platform: "Plataforma"
+      memory: "Memoria"
+      camera: "Cámara"
+      sound: "Sonido"
+      comm: "Comunes"
+      feature: "Características"
+      battery: "Bateria"
+      misc: "Miscelánea"
+      specification: "Especificaciones"
     attributes:
+      network:
+        tecno: "Tecnología"
+        band4g: "Banda 4G"
+        band3g: "Banda 3G"
+        band2g: "Banda 2G"
+      launch:
+        announced: "Anunciado"
+        status: "Estado"
+      status:
+        dimensions: "Dimensiones"
+        weight: "Peso"
+        build: "Construcción"
+        sim: "SIM"
+      display:
+        disp_type: "Tipo"
+        size: "Tamaño"
+        resolution: "Resolución"
+        multitouch: "Multitouch"
+        protection: "Protección"
+      platform:
+        os: "OS"
+        chipset: "Chipset"
+        cpu: "CPU"
+        gpu: "GPU"
+      memory:
+        internal: "Interna"
+        external: "Externa"
+      camera:
+        primary: "Primaria"
+        features: "Funciones"
+        video: "Video"
+        secondary: "Secundaria"
+      sound:
+        alerts_type: "Tipos de Alertas"
+        loudspeaker: "Altoparlante"
+        jack_port: "3.5mm jack"
+      comm:
+        wlan: "WLAN"
+        bluetooth: "Bluetooth"
+        gps: "GPS"
+        nfc: "NFC"
+        radio: "Radio"
+        usb: "USB"
+      feature:
+        sensors: "Sensores"
+        messaging: "Mensajería"
+        browser: "Navegador"
+        java: "Java"
+        otras: "Otras"
+      battery:
+        bat_type: "Tipo"
+        stand_by: "Stand-by"
+        talk_time: "Tiempo de conversación"
+        music_play: "Tiempo de música"
+      misc:
+        colors: "Colores"
+      slider:
+        active: "Activo"
+        title: "Título"
+        phone: "Teléfono"
+        duration: "Duración"
+        description: "Descripción"
+        created_at: "Fecha creación"
+        updated_at: "Fecha Modificación"
+        image : "Imagen"
       offer:
         phone: "Teléfono"
         title: "Título"
@@ -38,9 +120,9 @@ es:
         is_most_view: "Mas Visto?"
         created_at: "Fecha creación"
         updated_at: "Fecha Modificación"
+        accessory_images: "Imágenes"
         accessory_image: "Imagenes"
         access_type: "Tipo de Accesorio"
-        brand: "Marca"
         phones: "Teléfonos compatibles"
       accessory_image:
         image: "Foto"
@@ -62,7 +144,7 @@ es:
         updated_at: "Fecha Modificación"
         enter_date: "Fecha Ingreso"
         phone_images: "Imágenes"
-      phone_images:
+      phone_image:
         image: "imagen"
       accessory_images:
         image: "imagen"
@@ -108,6 +190,112 @@ es:
         name: "Nombre"
         created_at: "Fecha creación"
         updated_at: "Fecha Modificación"
+    errors:
+      models:
+        access_type:
+          attributes:
+            name:
+              blank: "no puede ser vacío"
+        accessory:
+          attributes:
+              access_type:
+                blank: "no puede ser vacío"
+              title:
+                blank: "no puede ser vacío"
+              new_price:
+                blank: "no puede ser vacío"
+              short_desc:
+                blank: "no puede ser vacía"
+        admin_user:
+          attributes:
+            email:
+              blank: "no puede ser vacío"
+              invalido: "es inválido"
+            password:
+              blank: "no puede ser vacío"
+              too_short: "demaciada corta"
+            password_confirmation:
+              confirmation: "no es válida"
+        brand:
+          attributes:
+            name:
+              blank: "no puede ser vacía"
+        contract:
+          attributes:
+            technology:
+              blank: "no puede ser vacía"
+            title:
+              blank: "no puede ser vacío"
+            short_desc:
+              blank: "no puede ser vacía"
+            logo:
+              blank: "no puede ser vacío"
+        offer:
+          attributes:
+            description:
+              blank: "no puede ser vacía"
+            title:
+              blank: "no puede ser vacío"
+            phone_id:
+              blank: "no puede ser vacío"
+        phone:
+          attributes:
+            title:
+              blank: "no puede ser vacío"
+            phone_type:
+              blank: "no puede ser vacío"
+            mode:
+              blank: "no puede ser vacío"
+            title:
+              blank: "no puede ser vacío"
+            brand_id:
+              blank: "no puede ser vacía"
+            model:
+              blank: "no puede ser vacío"
+            new_price:
+              blank: "no puede ser vacío"
+            short_desc:
+              blank: "no puede ser vacía"
+            long_desc:
+              blank: "no puede ser vacía"
+        plan:
+          attributes:
+            order_number:
+              blank: "no puede ser vacío"
+            contract_id:
+              blank: "no puede ser vacío"
+            title:
+              blank: "no puede ser vacío"
+            price:
+              blank: "no puede ser vacío"
+            item_1:
+              blank: "no puede ser vacío"
+            item_2:
+              blank: "no puede ser vacío"
+            item_3:
+              blank: "no puede ser vacío"
+            description:
+              blank: "no puede ser vacía"
+        phone_plan:
+          attributes:
+            plan_id:
+              blank: "no puede ser vacío"
+            phone:
+              blank: "no puede ser vacío"
+            price:
+              blank: "no puede ser vacío"
+        slider:
+          attributes:
+            title:
+              blank: "no puede ser vacío"
+            description:
+              blank: "no puede ser vacía"
+            image:
+              blank: "no puede ser vacía"
+        technology:
+          attributes:
+            name:
+              blank: "no puede ser vacío"
   time:
     formats:
       long: "%d de %B de %Y"

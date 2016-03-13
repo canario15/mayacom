@@ -361,6 +361,32 @@
 
 .btn-more-details:hover {
   text-decoration: underline;
-
 }
 
+.long-input{
+  width:85%;
+}
+
+.panelPlan {
+  background-color: #FFEFA9;
+  border: 1px solid #303967;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.panelplan-head{
+  padding: 10px;
+}
+.panelPlan .panelplan-head span.tit {
+  color: #303967;
+}
+.panelPlan .panelplan-head span.price {
+  color: #303967;
+  font-size: 30px;
+  line-height: 30px;
+  float: left;
+}
+.panelPlan .panelplan-head span.price small {
+  color: #303967;
+  font-size: 18px;
+  margin: 0;
+}

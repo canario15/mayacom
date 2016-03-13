@@ -2,15 +2,8 @@ colores
 azul: #303967
 amarillo: #fecc00
 
-
-
-
 joaquinboutureira@gmail.com
 ⁠⁠⁠j990080540
-
-
-
-
 
 paginas
 
@@ -47,17 +40,21 @@ galerias con zoom
 tabs
   http://tympanus.net/codrops/2014/03/21/responsive-full-width-tabs/
 
+Froms
+  http://malsup.com/jquery/form/#ajaxSubmit
+
+
+gema de busqueda y filtros Ransack
+#370 Ransack
+https://github.com/activerecord-hackery/ransack/wiki/Basic-Searching
 
 
 backend
-  agregar productos sujeridos a accesorio
+
 
 forntend
-  iconos de las caracteristicas
-  falta red social  y botones de compartir
-  paginacion
-
-
-
-
-15:34 linea
+  2)falta red social  y botones de compartir
+  3)paginacion despues de filtrar los celulares
+  4)paginacion despues de filtrar los accesorios
+  5)filtro cuando mueve el rango de precio
+  6)ver cuando borras cosas se borren los hijos

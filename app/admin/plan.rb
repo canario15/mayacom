@@ -1,7 +1,7 @@
 ActiveAdmin.register Plan do
   menu :label => "Planes"
 
-  permit_params :title, :order_number, :item_1, :item_2, :item_3, :price, :description, :contract_id, phone_plans_attributes: [:id, :phone_id, :price,  :_destroy => true ]
+  permit_params :title, :order_number, :item_1, :item_2, :item_3, :price, :description, :contract_id, phone_plans_attributes: [:phone_id, :price,  :_destroy, :id ]
 
   config.batch_actions = false
 

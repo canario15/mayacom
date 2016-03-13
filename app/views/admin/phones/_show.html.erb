@@ -1,0 +1,370 @@
+<div class="panel">
+  <h3>Detalles de Celulares</h3>
+  <div class="panel_contents">
+    <div id="attributes_table_phone_21" class="attributes_table phone">
+      <table cellspacing="0" cellpadding="0" border="0">
+        <tbody>
+          <tr class="row row-brand">
+            <th>Marca</th>
+            <td>
+              <%= @phone.brand %>
+            </td>
+          </tr>
+          <tr class="row row-phone_type">
+            <th>Tipo</th>
+            <td>
+              <%= @phone.phone_type %>
+            </td>
+          </tr>
+          <tr class="row row-model">
+            <th>Modelo</th>
+            <td>
+              <%= @phone.model %>
+            </td>
+          </tr>
+          <tr class="row row-mode">
+            <th>Modo</th>
+            <td>
+              <%= @phone.mode %>
+            </td>
+          </tr>
+          <tr class="row row-title">
+            <th>Título</th>
+            <td><%= @phone.title %></td>
+          </tr>
+          <tr class="row row-new_price">
+            <th>Precio</th>
+            <td>
+              <%= @phone.new_price %>
+            </td>
+          </tr>
+          <tr class="row row-old_price">
+            <th>Precio Anterior</th>
+            <td>
+              <%= @phone.old_price %>
+            </td>
+          </tr>
+          <tr class="row row-short_desc">
+            <th>Descripción corta</th>
+            <td>
+              <%= @phone.short_desc %>
+            </td>
+          </tr>
+          <tr class="row row-long_desc">
+            <th>Descripción larga</th>
+            <td>
+              <div class= "cel-description">
+                <%= @phone.long_desc.html_safe %>
+              </div>
+            </td>
+          </tr>
+          <tr class="row row-enter_date">
+            <th>Fecha Ingreso</th>
+            <td>
+              <%= @phone.enter_date %>
+            </td>
+          </tr>
+          <tr class="row row-is_most_view">
+            <th>Mas Visto?</th>
+            <td><%= @phone.is_most_view %></td>
+          </tr>
+          <tr class="row row-is_top_sale">
+            <th>Top Venta?</th>
+            <td><%= @phone.is_top_sale %></td>
+          </tr>
+          <tr class="row row-is_top_new">
+            <th>Top Nuevo?</th>
+            <td><%= @phone.is_top_new %></td>
+          </tr>
+          <tr class="row row-created_at">
+            <th>Fecha creación</th>
+            <td><%= @phone.created_at %></td>
+          </tr>
+          <tr class="row row-updated_at">
+            <th>Fecha Modificación</th>
+            <td><%= @phone.updated_at %></td>
+          </tr>
+          <tr class="row row-accesorios_compatibles">
+            <th>Accesorios Compatibles</th>
+            <td>
+            <%= @phone.accessories.map { |ph| "#{ph.access_type}" }.join(",") %>
+            </td>
+          </tr>
+          <tr class="row row-imagenes">
+            <th>Imágenes</th>
+            <td>
+              <ul>
+                <% @phone.phone_images.each do |i| %>
+                  <li> <%= image_tag i.image(:thumb) %> </li>
+                <% end -%>
+              </ul>
+            </td>
+          </tr>
+          <tr class="row row-specifications">
+            <th>Especificaciones</th>
+            <td class="admin-spec">
+              <table cellspacing="0">
+                <% network = @phone.specification.network %>
+                <tbody>
+                  <tr>
+                    <th scope="row" rowspan="15">RED</th>
+                    <td class="ttl">Tecnología</td>
+                    <td class="nfo"><%= network.tecno %></td>
+                  </tr>
+                  <tr>
+                    <td class="ttl">Banda 4G</td>
+                    <td class="nfo"><%= network.band4g %></td>
+                  </tr>
+                  <tr>
+                    <td class="ttl">Banda 3G</td>
+                    <td class="nfo"><%= network.band3g %></td>
+                  </tr>
+                  <tr>
+                    <td class="ttl">Banda 2G</td>
+                    <td class="nfo"><%= network.band2g %></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <table cellspacing="0">
+                <% launch = @phone.specification.launch %>
+                <tbody>
+                  <tr>
+                    <th scope="row" rowspan="2">Lanzamiento</th>
+                    <td class="ttl">Anunciado</td>
+                    <td class="nfo"><%= launch.announced %></td>
+                  </tr>
+                  <tr>
+                    <td class="ttl">Estado</td>
+                    <td class="nfo"><%= launch.status %></td>
+                  </tr>
+                </tbody>
+
+              <table cellspacing="0">
+                <% status = @phone.specification.status %>
+                <tbody>
+                  <tr>
+                    <th scope="row" rowspan="6">Dimenciones</th>
+                    <td class="ttl">Dimensiones</td>
+                    <td class="nfo"><%= status.dimensions %></td>
+                  </tr>
+                  <tr>
+                    <td class="ttl">Peso</td>
+                    <td class="nfo"><%= status.weight %></td>
+                  </tr>
+                  <tr>
+                    <td class="ttl">Construcción</td>
+                    <td class="nfo"><%= status.build %></td>
+                  </tr>
+                  <tr>
+                    <td class="ttl">SIM</td>
+                    <td class="nfo"><%= status.sim %></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <table cellspacing="0">
+                <% display = @phone.specification.display %>
+                <tbody>
+                  <tr>
+                    <th scope="row" rowspan="6">Display</th>
+                    <td class="ttl">Tipo</td>
+                    <td class="nfo"><%= display.disp_type %></td>
+                  </tr>
+                  <tr>
+                    <td class="ttl">Tamaño</td>
+                    <td class="nfo"><%= display.size %></td>
+                  </tr>
+                  <tr>
+                    <td class="ttl">Resolución</td>
+                    <td class="nfo"><%= display.resolution %></td>
+                  </tr>
+                  <tr>
+                    <td class="ttl">Multitouch</td>
+                    <td class="nfo"><%= display.multitouch %></td>
+                  </tr>
+                  <tr>
+                    <td class="ttl">Protección</td>
+                    <td class="nfo"><%= display.protection %></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <table cellspacing="0">
+                <% platform = @phone.specification.platform %>
+                <tbody>
+                  <tr>
+                    <th scope="row" rowspan="4">Plataforma</th>
+                    <td class="ttl">OS</td>
+                    <td class="nfo"><%= platform.os %></td>
+                  </tr>
+                  <tr>
+                    <td class="ttl">Chipset</td>
+                    <td class="nfo"><%= platform.chipset %></td>
+                  </tr>
+                  <tr>
+                    <td class="ttl">CPU</td>
+                    <td class="nfo"><%= platform.cpu %></td>
+                  </tr>
+                  <tr>
+                    <td class="ttl">GPU</td>
+                    <td class="nfo"><%= platform.gpu %></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <table cellspacing="0">
+                <% memory = @phone.specification.memory %>
+                <tbody>
+                  <tr>
+                    <th scope="row" rowspan="5">Memoria</th>
+                    <td class="ttl">Externa</td>
+                    <td class="nfo"><%= memory.external %></td>
+                  </tr>
+                  <tr>
+                    <td class="ttl">Interna</td>
+                    <td class="nfo"><%= memory.internal %></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <table cellspacing="0">
+                <% camera = @phone.specification.camera %>
+                <tbody>
+                  <tr>
+                    <th scope="row" rowspan="4">Cámara</th>
+                    <td class="ttl">Primaria</td>
+                    <td class="nfo"><%= camera.primary %></td>
+                  </tr>
+                  <tr>
+                    <td class="ttl">Funciones</td>
+                    <td class="nfo"><%= camera.features %></td>
+                  </tr>
+                  <tr>
+                    <td class="ttl">Video</td>
+                    <td class="nfo"><%= camera.video %></td>
+                  </tr>
+                  <tr>
+                    <td class="ttl">Secundaria</td>
+                    <td class="nfo"><%= camera.secondary %></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <table cellspacing="0">
+                <% sound = @phone.specification.sound %>
+                <tbody>
+                  <tr>
+                    <th scope="row" rowspan="4">Sonido</th>
+                    <td class="ttl">Tipos de Alertas</td>
+                    <td class="nfo"><%= sound.alerts_type %></td>
+                  </tr>
+                  <tr>
+                    <td class="ttl">Altoparlante </td>
+                    <td class="nfo"><%= sound.loudspeaker %></td>
+                  </tr>
+                  <tr>
+                    <td class="ttl">3.5mm jack </td>
+                    <td class="nfo"><%= sound.jack_port %></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <table cellspacing="0">
+                <% comm = @phone.specification.comm %>
+                <tbody>
+                  <tr>
+                    <th scope="row" rowspan="9">Comunes</th>
+                    <td class="ttl">WLAN</td>
+                    <td class="nfo"><%= comm.wlan %></td>
+                  </tr>
+                  <tr>
+                    <td class="ttl">Bluetooth</td>
+                    <td class="nfo"><%= comm.bluetooth %></td>
+                  </tr>
+                  <tr>
+                    <td class="ttl">GPS</td>
+                    <td class="nfo"><%= comm.gps %></td>
+                  </tr>
+                  <tr>
+                    <td class="ttl">NFC</td>
+                    <td class="nfo"><%= comm.nfc %></td>
+                  </tr>
+                  <tr>
+                    <td class="ttl">Radio</td>
+                    <td class="nfo"><%= comm.radio %></td>
+                  </tr>
+                  <tr>
+                    <td class="ttl">USB</td>
+                    <td class="nfo"><%= comm.usb %></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <table cellspacing="0">
+                <% feature = @phone.specification.feature %>
+                <tbody>
+                  <tr>
+                    <th scope="row" rowspan="12">Características</th>
+                    <td class="ttl">Sensores</td>
+                    <td class="nfo"><%= feature.sensors %></td>
+                  </tr>
+                  <tr>
+                    <td class="ttl">Mensajería</td>
+                    <td class="nfo"><%= feature.messaging %></td>
+                  </tr>
+                  <tr>
+                    <td class="ttl">Navegador</td>
+                    <td class="nfo"><%= feature.browser %></td>
+                  </tr>
+                  <tr>
+                    <td class="ttl">Java</td>
+                    <td class="nfo"><%= feature.java %></td>
+                  </tr>
+                  <tr>
+                    <td class="ttl"></td>
+                    <td class="nfo"><%= feature.otras %></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <table cellspacing="0">
+                <% battery = @phone.specification.battery %>
+                <tbody>
+                  <tr>
+                    <th scope="row" rowspan="9">Bateria</th>
+                    <td class="ttl">Tipo</td>
+                    <td class="nfo"><%= battery.bat_type %></td>
+                  </tr>
+                  <tr>
+                    <td class="ttl">Stand-by</td>
+                    <td class="nfo"><%= battery.stand_by %></td>
+                  </tr>
+                  <tr>
+                    <td class="ttl">Tiempo de conversación</td>
+                    <td class="nfo"><%= battery.talk_time %></td>
+                  </tr>
+                  <tr>
+                    <td class="ttl">Tiempo de música</td>
+                    <td class="nfo"><%= battery.music_play %></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <table cellspacing="0">
+                <% misc = @phone.specification.misc %>
+                <tbody>
+                  <tr>
+                    <th scope="row" rowspan="1">Miscelánea</th>
+                    <td class="ttl">Colores</td>
+                    <td class="nfo"><%= misc.colors %></td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

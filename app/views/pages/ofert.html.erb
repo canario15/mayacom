@@ -15,7 +15,12 @@
   <div class="container catalog-cel-cont">
     <div class="row row-tit">
       <div class="col-lg-8 col-md-8 col-sm-7 col-xs-7 colTit hidden-xs visible-xss">
-        <h1>Nuevas Ofertas</h1>
+        <h1 class="offers-tit">Nuevas Ofertas</h1>
+      </div>
+      <div>
+        <div class="pull-rigth">
+          <%= paginate @offers, :window => 2  %>
+        </div>
       </div>
     </div>
     <% @offers.each do |offer| %>
@@ -23,7 +28,7 @@
         <div class="ofertbox">
           <div class="img">
             <%= link_to "/celulares/#{offer.phone.id}" do %>
-              <%= image_tag offer.phone.phone_images.first.image %>
+              <%= image_tag offer.phone.phone_images.first.image(:index) %>
             <% end -%>
           </div>
           <div class="ofconte">
@@ -46,5 +51,10 @@
         </div>
       </div>
     <% end -%>
+    <div>
+      <div class="pull-rigth">
+        <%= paginate @offers, :window => 2  %>
+      </div>
+    </div>
   </div>
 </div>

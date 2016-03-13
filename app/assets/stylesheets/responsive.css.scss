@@ -445,7 +445,7 @@ body {
 }
 .block-slider .caption-group {
     position: absolute;
-    right: 16%;
+    right: 6%;
     top: 26%;
 }
 .block-slider .caption-group .title {
@@ -707,7 +707,6 @@ body {
     float: left;
     height: 90px;
     margin-right: 15px;
-    width: 100px;
 }
 .single-wid-product h2 {
     font-size: 14px;
@@ -763,6 +762,7 @@ body {
 .footer-bottom-area {
     background: #000 none repeat scroll 0 0;
     color: #fff;
+    padding:5px;
 }
 .footer-about-us span {
     color: #5a88ca;
@@ -1129,7 +1129,6 @@ table.shop_table th {
 }
 td.product-thumbnail img {
     height: auto;
-    width: 70px;
 }
 td.product-name {
     font-size: 18px;

@@ -39,11 +39,12 @@
                 </p>
                 <div class="product-inner-price">
                   <span class="price-acc">Precio:</span>
-                  <ins>$<%= @phone.new_price%></ins>
+                  <ins>$ <%= @phone.new_price %> <small style="font-size: 53%;color:#9e9e9e"> (IVA inc.)</small></ins>
                   <% unless @phone.old_price.blank? %>
                     antes
-                    <del>$<%= @phone.old_price%></del>
+                    <del>$<%= @phone.old_price%> <small style="font-size: 53%;color:#9e9e9e"> (IVA inc.)</small></del>
                   <% end -%>
+                  <br>
                   <span class="price-acc">Stock:</span>
                   <ins style="color:#89c403"><i class="fa fa-check"></i></ins>
                 </div>
@@ -73,215 +74,22 @@
                 </nav>
                 <div class="content">
                   <section id="section-1">
-                    <%= @phone.long_desc.html_safe %>
-                  </section>
-                  <section id="section-2">
-                    <div class="caract p-v">
-                      <div class="caract-inn">
-                        <table cellspacing="0" class="caract-table" summary="">
-                          <tbody>
-                            <tr>
-                              <th>General</th>
-                              <td>
-                                <table cellspacing="0">
-                                  <tbody>
-                                    <tr>
-                                      <th>Red</th>
-                                      <td>GSM 850/900/1800/1900</td>
-                                    </tr>
-                                    <tr>
-                                      <th>3G</th>
-                                      <td>850/900/1900/2100</td>
-                                    </tr>
-                                    <tr>
-                                      <th>LTE</th>
-                                      <td>2600/2100/1900/1800/1700/850/700</td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                              </td>
-                            </tr>
-                            <tr class="par">
-                              <th>Dimensiones</th>
-                              <td>
-                                <table cellspacing="0">
-                                  <tbody>
-                                    <tr>
-                                      <th>Medidas / peso</th>
-                                      <td>138.1 x 67 x 6.9 mm / 129 g</td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                              </td>
-                            </tr>
-                            <tr class="par">
-                              <th>Display</th>
-                              <td>
-                                <table cellspacing="0">
-                                  <tbody>
-                                    <tr>
-                                      <th>Pantalla táctil</th>
-                                      <td>Si (Capacitiva)</td>
-                                    </tr>
-                                    <tr>
-                                      <th>Resolución</th>
-                                      <td>750 x 1334 píxeles</td>
-                                    </tr>
-                                    <tr>
-                                      <th>Tamaño</th>
-                                      <td>4.7 pulgadas</td>
-                                    </tr>
-                                    <tr>
-                                      <th>Colores</th>
-                                      <td>16 M colores</td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                              </td>
-                            </tr>
-                            <tr class="par">
-                              <th>Cámara</th>
-                              <td>
-                                <table cellspacing="0">
-                                  <tbody>
-                                    <tr>
-                                      <th>Resolución</th>
-                                      <td>8 Mpx</td>
-                                    </tr>
-                                    <tr>
-                                      <th>Video</th>
-                                      <td>Si</td>
-                                    </tr>
-                                    <tr>
-                                      <th>Flash</th>
-                                      <td>dual LED flash</td>
-                                    </tr>
-                                    <tr>
-                                      <th>Videoconferencia</th>
-                                      <td>Si</td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                              </td>
-                            </tr>
-                            <tr class="par" >
-                              <th>Memoria</th>
-                              <td>
-                                <table cellspacing="0">
-                                  <tbody>
-                                    <tr>
-                                      <th>Interna *</th>
-                                      <td>64 GB</td>
-                                    </tr>
-                                    <tr>
-                                      <th>Externa</th>
-                                      <td>No</td>
-                                    </tr>
-                                    <tr>
-                                      <th>Expandible hasta</th>
-                                      <td>No</td>
-                                    </tr>
-                                    <tr>
-                                      <td colspan="2">(*) El sistema operativo&nbsp; y demás aplicaciones utilizan parte de esta memoria</td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                              </td>
-                            </tr>
-                            <tr class="par">
-                              <th>Agenda</th>
-                              <td>
-                                <table cellspacing="0">
-                                  <tbody>
-                                    <tr>
-                                      <th>Cantidad contactos</th>
-                                      <td>Practicamente ilimitados</td>
-                                    </tr>
-                                    <tr>
-                                      <th>Registro llamadas</th>
-                                      <td>Practicamente ilimitado</td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                              </td>
-                            </tr>
-                            <tr class="par">
-                              <th>Datos</th>
-                              <td>
-                                <table cellspacing="0">
-                                  <tbody>
-                                    <tr>
-                                      <th>WiFi</th>
-                                      <td>Si</td>
-                                    </tr>
-                                    <tr>
-                                      <th>Bluetooth</th>
-                                      <td>4.0</td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                              </td>
-                            </tr>
-                            <tr class="par">
-                              <th>Audio</th>
-                              <td>
-                                <table cellspacing="0">
-                                  <tbody>
-                                    <tr>
-                                      <th>MP3</th>
-                                      <td>Si</td>
-                                    </tr>
-                                    <tr>
-                                      <th>Radio</th>
-                                      <td>No</td>
-                                    </tr>
-                                    <tr>
-                                      <th>Puerto Jack</th>
-                                      <td>Si</td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                              </td>
-                            </tr>
-                            <tr class="par">
-                              <th>Otros</th>
-                              <td>
-                                <table cellspacing="0">
-                                  <tbody>
-                                    <tr>
-                                      <th>Teclado QWERTY</th>
-                                      <td>No</td>
-                                    </tr>
-                                    <tr>
-                                      <th>Sistema operativo</th>
-                                      <td>iOS 8</td>
-                                    </tr>
-                                    <tr>
-                                      <th>A-GPS</th>
-                                      <td>Si</td>
-                                    </tr>
-                                    <tr>
-                                      <th>TV</th>
-                                      <td>No</td>
-                                    </tr>
-                                    <tr>
-                                      <th>Doble Chip</th>
-                                      <td>No</td>
-                                    </tr>
-                                    <tr>
-                                      <th>Otras características</th>
-                                      <td></td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
+                    <div class="cel-description">
+                      <%= @phone.long_desc.html_safe %>
                     </div>
                   </section>
+                  <section id="section-2">
+                  <%= render partial: "spec" %>
+                  </section>
                   <section id="section-3">
+                    <% @phone.phone_plans.each do |pp| %>
+                      <div class="panelPlan">
+                        <div class="panel-heading panelplan-head">
+                          <span class="tit"> Con <%= pp.plan.title %></span>
+                          <span class="pull-right price"><%= pp.price %> </span>
+                        </div>
+                      </div>
+                    <% end -%>
                   </section>
                   <section id="section-4">
                     <% @phone.accessories.each do |a| %>
@@ -321,7 +129,7 @@
       </div>
     </div>
   </div>
-
+ <!--
   <div class="container">
     <div class="row">
       <div class="col-md-12">
@@ -347,5 +155,5 @@
         </div>
       </div>
     </div>
-  </div>
+  </div>-->
 </div>
