@@ -4,15 +4,8 @@ class PhonesController < ApplicationController
     @hover_menu = CONSTANT_MENU_PHONES
     @brands = Brand.all
     @search = Phone.search(params[:q])
+    @search.sorts = 'new_price asc' if @search.sorts.empty?
     @phones = @search.result.page params[:page]
-    respond_to do |format|
-      if request.xhr?
-        format.html  { render partial: 'filter_data.html', :layout => false}
-      else
-        format.html
-      end
-    end
-
   end
 
   def show

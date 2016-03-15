@@ -1,7 +1,7 @@
 class AccessoriesController < ApplicationController
 
   def index
-   @hover_menu = CONSTANT_MENU_ACCESORIOES
+    @hover_menu = CONSTANT_MENU_ACCESORIOES
     @access_types = AccessType.all
     @search = Accessory.search(params[:q])
     @search.sorts = 'new_price asc' if @search.sorts.empty?

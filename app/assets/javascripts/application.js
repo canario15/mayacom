@@ -114,11 +114,11 @@ $(document).on('page:change', function() {
   }
 
   $('input.do-ph-filter').on('ifChecked', function(event){
-    $('#filter-phone').ajaxSubmit( {target: '#phone_container', success: updateReference });
+    $("#submit_filter").click();
   });
 
   $('input.do-ph-filter').on('ifUnchecked', function(event){
-    $('#filter-phone').ajaxSubmit( {target: '#phone_container', success: updateReference });
+    $("#submit_filter").click();
   });
 
   $('input.do-acc-filter').on('ifChecked', function(event){
@@ -128,15 +128,6 @@ $(document).on('page:change', function() {
   $('input.do-acc-filter').on('ifUnchecked', function(event){
     $("#submit_filter").click();
   });
-
-  function updateReference (e,arguments){
-    $(".card").flip({
-      axis: "y", // y or x
-      reverse: false, // true and false
-      trigger: "hover", // click or hover
-      speed: 500
-    });
-  }
 
   $(".contact-form").validate({
     rules: {

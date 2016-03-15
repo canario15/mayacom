@@ -1,8 +1,9 @@
 class Accessory < ActiveRecord::Base
 
+  paginates_per 9
+
   belongs_to :access_type
   has_many :accessory_images, :dependent => :destroy
-
   has_and_belongs_to_many :phones, class_name: 'Phone', join_table: 'accessories_phones'
 
   accepts_nested_attributes_for :accessory_images, :allow_destroy => true
@@ -11,7 +12,6 @@ class Accessory < ActiveRecord::Base
   validate :validate_images
   validates_presence_of :access_type, :title, :new_price, :short_desc
 
-  paginates_per 9
 
   def compatible_phones
     data = {}

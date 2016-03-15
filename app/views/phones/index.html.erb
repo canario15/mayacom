@@ -33,7 +33,7 @@
     </div>
     <div class="row row-body">
       <div class="col-md-3 col-sm-3 col-xss-4 filters-col">
-        <%= search_form_for @search, :id => "filter-phone" do |f| %>
+        <%= search_form_for @search, id: "filter-phone", :remote=> :true, url: phones_path, :method => :get do |f| %>
           <ul id="accordion">
             <div class="hd">
               <span class="glyphicon glyphicon-filter" aria-hidden="true"></span>
@@ -112,10 +112,11 @@
               </ul>
             </li>
           </ul>
+          <input type="submit"id="submit_filter" style="display:none" value="Submit">
         <% end -%>
       </div>
-      <div id="phone_container" class="pull-right col-xs-12 col-md-9 col-sm-9 col-xss-8 phones-col ">
-        <%= render partial: "/phones/filter_data" %>
+      <div id="phones" class="pull-right col-xs-12 col-md-9 col-sm-9 col-xss-8 phones-col ">
+        <%= render "phones" %>
       </div>
     </div>
   </div>

@@ -1,21 +1,14 @@
 <div class="phone-catalog">
   <div class="row row-header">
-    <div class="my-col-1 col-lg-3 col-md-2 col-sm-3 col-xss-3">
+    <div class="my-col-1 col-lg-4">
       <%= page_entries_info @accessories %>
     </div>
-    <!--<div class="my-col-2 col-lg-4 col-md-6 col-sm-4 col-xss-4">
-      <span>Ver como </span>
-      <span>
-        <i class=" rw-ico fa fa-th fa-2x"></i>
-        <i class=" rw-ico fa fa-th-list fa-2x"></i>
-      </span>
-    </div>-->
-    <div>
-      <%= paginate @accessories, :window => 2, :remote => true %>
-    </div>
-    <div class="my-col-3 col-lg-6 col-md-4 col-sm-5 col-xss-5">
+    <div class="my-col-2 col-lg-3 sort-col">
       Ordenar por:
       <%= sort_link @search, :new_price, {}, { :remote => true, :method => :get } %>
+    </div>
+    <div class="my-col-3 col-lg-4">
+      <%= paginate @accessories, :window => 2, :remote => true %>
     </div>
   </div>
   <div class="row row-phones">
