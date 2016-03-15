@@ -20,7 +20,7 @@
       </div>
       <div class="col-lg-4 col-md-4 col-sm-5 col-xs-12 col-xss-5">
         <div class="input-group long-input">
-          <%= search_form_for @search, :class => "main-search" do |f| %>
+          <%= search_form_for @search, :class => "main-search", :remote=> :true, url: phones_path, :method => :get do |f| %>
             <%= f.text_field :title_or_phone_type_or_brand_name_or_model_or_mode_cont, :class => "form-control", :placeholder => "Buscar un equipo" %>
             <span class="input-group-btn">
               <%= f.button "", :class => "btn btn-default btn-searh" do %>
