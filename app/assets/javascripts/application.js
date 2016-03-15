@@ -20,7 +20,6 @@
 //= require jquery.sticky
 //= require main
 //= require owl.carousel.min
-//= require bootstrap-slider
 //= require jquery.flip
 //= require jquery.elevatezoom
 //= require woco.accordion.min
@@ -28,6 +27,7 @@
 //= require horizon-swiper.min
 //= require jquery.form.min
 //= require jquery.validate.min
+//= require ion.rangeSlider.min
 
 
 //$(document).ready(function () {
@@ -40,18 +40,22 @@ $(document).on('page:change', function() {
     radioClass: 'iradio_flat-yellow'
   });
 
-  $("#ex2").slider({
-    formatter: function formatter(val) {
-      if (Array.isArray(val)) {
-        $(".slide-1").text("$"+ val[0]);
-        $(".slide-2").text("$"+ val[1]);
-        $(".price_1").val(val[0]);
-        $(".price_2").val(val[1]);
-        return val[0] + " : " + val[1];
-      } else {
-        return val;
-      }
+  $("#slide-range-price").ionRangeSlider({
+    type: "double",
+    min: 0,
+    max: 65000,
+    from: 0,
+    to: 65000,
+    prefix: "$",
+    onChange: function (data) {
+      $(".price_1").val(data.from);
+      $(".price_2").val(data.to);
+      $(".slide-1").text("$"+ data.from);
+      $(".slide-2").text("$"+ data.to);
     },
+    onFinish: function (data) {
+      $("#submit_filter").click();
+    }
   });
 
   $(".card").flip({
@@ -128,6 +132,7 @@ $(document).on('page:change', function() {
   $('input.do-acc-filter').on('ifUnchecked', function(event){
     $("#submit_filter").click();
   });
+
 
   $(".contact-form").validate({
     rules: {
