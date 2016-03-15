@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160310205657) do
+ActiveRecord::Schema.define(version: 20160315033310) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,8 +25,8 @@ ActiveRecord::Schema.define(version: 20160310205657) do
   create_table "accessories", force: :cascade do |t|
     t.string   "title"
     t.integer  "brand_id"
-    t.string   "new_price"
-    t.string   "old_price"
+    t.integer  "new_price"
+    t.integer  "old_price"
     t.text     "short_desc"
     t.text     "long_desc"
     t.boolean  "is_most_view"

@@ -1,13 +1,15 @@
-jQuery(document).ready(function($){
+$(document).on('page:change', function() {
 
 
 	$(".mainmenu-area").sticky({topSpacing:0});
 
   $('.product-carousel').owlCarousel({
-    loop:true,
-    nav:true,
-    margin:20,
-    responsiveClass:true,
+    navText: ['<i class="fa fa-angle-left"></i>',"<i class='fa fa-angle-right'></i>"],
+    loop: true,
+    nav: true,
+    margin: 20,
+    responsiveClass: true,
+    autoPlay: 2000,
     responsive:{
       0:{
           items:1,
@@ -21,21 +23,9 @@ jQuery(document).ready(function($){
     }
   });
 
-
   // Bootstrap Mobile Menu fix
   $(".navbar-nav li a").click(function(){
       $(".navbar-collapse").removeClass('in');
-  });
-
-  // jQuery Scroll effect
-  $('.navbar-nav li a, .scroll-to-up').bind('click', function(event) {
-      var $anchor = $(this);
-      var headerH = $('.header-area').outerHeight();
-      $('html, body').stop().animate({
-          scrollTop : $($anchor.attr('href')).offset().top - headerH + "px"
-      }, 1200, 'easeInOutExpo');
-
-      event.preventDefault();
   });
 
 });

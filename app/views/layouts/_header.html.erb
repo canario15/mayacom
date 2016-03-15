@@ -1,113 +1,120 @@
-  <!--
-  <div class="header-area">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-7">
-        </div>
-        <div class="">
-          <div class="header-right">
-            <div class="user-menu">
-              <ul>
-                <li><a href="#"><i class="fa fa-user"></i> Mi Cuenta</a></li>
-                <li><a href="cart.html"><i class="fa fa-user"></i> Carrito</a></li>
-                <li><a href="checkout.html"><i class="fa fa-user"></i> Checkout</a></li>
-                <li><a href="#"><i class="fa fa-user"></i> Login</a></li>
-              </ul>
-            </div>
-          </div>
+<div class="site-branding-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="logo">
+          <h1>
+            <%= link_to "/" do %>
+              <%= image_tag "/assets/logo.png", class: "logo-img" %>
+            <% end -%>
+          </h1>
         </div>
       </div>
+      <div class="col-sm-9 cities-cont">
+        <ul class="local-list local-list1">
+          <li class="city">SALTO </li>
+          <li>
+             <i class="fa fa-check"></i>
+             Brasil 802, 47325781
+          </li>
+          <li>
+            <i class="fa fa-check"></i>
+            Sarandi 44, 47327066
+          </li>
+          <li>
+            <i class="fa fa-check"></i>
+            Uruguay 746, 47340056
+          </li>
+          <li>
+            <i class="fa fa-check"></i>
+            Uruguay 934, 47329449
+          </li>
+          <li>
+            <i class="fa fa-check"></i>
+            Salto Shopping, 47331658
+          </li>
+          <li>
+            <i class="fa fa-check"></i>
+            Terminal Shopping, 47352509
+          </li>
+        </ul>
+        <ul class="local-list">
+          <li class="city">⁠⁠⁠PAYSANDU </li>
+          <li>
+            <i class="fa fa-check"></i>
+            Mac Center Shopping, 47221991
+          </li>
+          <li>
+            <i class="fa fa-check"></i>
+            Leandro Gomez 1009, 47221968
+          </li>
+          <li>
+            <i class="fa fa-check"></i>
+            Setembrino Pereda 880, 47224125
+          </li>
+        </ul>
+        <ul class="local-list">
+          <li class="city">⁠⁠⁠YOUNG </li>
+          <li>
+            <i class="fa fa-check"></i>
+            Rincón 1699, 45675073
+          </li>
+        </ul>
+      </div>
     </div>
-  </div> <!-- End header area -->
-  <div class="site-branding-area">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-3">
-          <div class="logo">
-            <h1>
-              <a href="/">
-                <img class="logo-img" src="/assets/logo.png">
-              </a>
-            </h1>
-          </div>
-        </div>
+  </div>
+</div>
 
-        <div class="col-sm-9 cities-cont">
-          <ul class="local-list local-list1">
-            <li class="city">SALTO </li>
-            <li>
-               <i class="fa fa-check"></i>
-               Brasil 802, 47325781
-            </li>
-            <li>
-              <i class="fa fa-check"></i>
-              Sarandi 44, 47327066
-            </li>
-            <li>
-              <i class="fa fa-check"></i>
-              Uruguay 746, 47340056
-            </li>
-            <li>
-              <i class="fa fa-check"></i>
-              Uruguay 934, 47329449
-            </li>
-            <li>
-              <i class="fa fa-check"></i>
-              Salto Shopping, 47331658
-            </li>
-            <li>
-              <i class="fa fa-check"></i>
-              Terminal Shopping, 47352509
-            </li>
-          </ul>
-          <ul class="local-list">
-            <li class="city">⁠⁠⁠PAYSANDU </li>
-            <li>
-              <i class="fa fa-check"></i>
-              Mac Center Shopping, 47221991
-            </li>
-            <li>
-              <i class="fa fa-check"></i>
-              Leandro Gomez 1009, 47221968
-            </li>
-            <li>
-              <i class="fa fa-check"></i>
-              Setembrino Pereda 880, 47224125
-            </li>
-          </ul>
-          <ul class="local-list">
-            <li class="city">⁠⁠⁠YOUNG </li>
-            <li>
-              <i class="fa fa-check"></i>
-              Rincón 1699, 45675073
-            </li>
-          </ul>
-        </div>
+<div class="mainmenu-area">
+  <div class="container">
+    <div class="row">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class="<%=@hover_menu == CONSTANT_MENU_HOME_ID ? 'active' : " " %>">
+            <%= link_to "Inicio", "/" %>
+          </li>
+          <li class="<%=@hover_menu == CONSTANT_MENU_PHONES ? 'active' : " " %>">
+            <%= link_to "Celulares", "/celulares" %>
+          </li>
+          <li class="<%=@hover_menu == CONSTANT_MENU_ACCESORIOES ? 'active' : " " %>">
+            <%= link_to "Accesorios", "/accesorios" %>
+          </li>
+          <li class="<%=@hover_menu == CONSTANT_MENU_CONTRACTS ? 'active' : " " %>">
+            <%= link_to "Contratos", "/contratos" %>
+          </li>
+          <li class="<%=@hover_menu == CONSTANT_MENU_OFFER ? 'active' : " " %>">
+            <%= link_to "Ofertas", "/ofertas" %>
+          </li>
+          <li class="<%=@hover_menu == CONSTANT_MENU_CONTACT_ID ? 'active' : " " %>">
+            <%= link_to "Contacto", "/contacto" %>
+          </li>
+        </ul>
       </div>
     </div>
-  </div> <!-- End site branding area -->
+  </div>
+</div>
+<script type="text/javascript">
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '581042098737672',
+      xfbml      : true,
+      version    : 'v2.5'
+    });
+  };
 
-  <div class="mainmenu-area">
-    <div class="container">
-      <div class="row">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="<%=@hover_menu == CONSTANT_MENU_HOME_ID ? 'active' : " " %>"> <a href="/">Inicio</a></li>
-            <li class="<%=@hover_menu == CONSTANT_MENU_PHONES ? 'active' : " " %>"><a href="/celulares">Celulares</a></li>
-            <li class="<%=@hover_menu == CONSTANT_MENU_ACCESORIOES ? 'active' : " " %>"><a href="/accesorios">Accesorios</a></li>
-            <li class="<%=@hover_menu == CONSTANT_MENU_CONTRACTS ? 'active' : " " %>"><a href="/contratos">Contratos</a></li>
-            <li class="<%=@hover_menu == CONSTANT_MENU_OFFER ? 'active' : " " %>"><a href="/ofertas">Ofertas</a></li>
-            <li class="<%=@hover_menu == CONSTANT_MENU_CONTACT_ID ? 'active' : " " %>"><a href="/contacto">Contacto</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div> <!-- End mainmenu area -->
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {return;}
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.4&appId=131568497179574";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>

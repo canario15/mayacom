@@ -384,7 +384,7 @@ body {
     display: none;
 }
 .block-slider .bx-prev, .block-slider .bx-next {
-    border: 1px solid #eaeaea;
+    border: 1px solid #fecc00;
     border-radius: 50%;
     display: block;
     font-size: 30px;
@@ -393,10 +393,10 @@ body {
     position: absolute;
     text-align: center;
     top: 50%;
-    transform: translateY(-50%);
-    transition: all 0.45s ease 0s;
     width: 32px;
+    color:#303967;
 }
+
 .block-slider img {
     height: auto;
     width: 100%;
@@ -410,15 +410,15 @@ body {
     right: 0;
 }
 .block-slider:hover .bx-prev {
-    left: 10px;
+
 }
 .block-slider:hover .bx-next {
-    right: 10px;
+
 }
 .block-slider .bx-prev:hover, .block-slider .bx-next:hover {
-    background: #5a88ca none repeat scroll 0 0;
-    border-color: #5a88ca;
-    color: #fff;
+    background: #303967 none repeat scroll 0 0;
+    border-color: #303967;
+    color: #fecc00;
 }
 .block-slider .bx-pager {
     display: block;
@@ -434,19 +434,19 @@ body {
     width: 15px;
 }
 .block-slider .bx-pager-item a {
-    background: #999 none repeat scroll 0 0;
+    background: #fecc00 none repeat scroll 0 0;
     border-radius: 50%;
     display: block;
     height: 100%;
     width: 100%;
 }
 .block-slider .bx-pager-item a.active {
-    background: #1bd172 none repeat scroll 0 0;
+    background: #303967 none repeat scroll 0 0;
 }
 .block-slider .caption-group {
     position: absolute;
-    right: 6%;
-    top: 26%;
+    right: 25%;
+    top: 13%;
 }
 .block-slider .caption-group .title {
     margin: 0;
@@ -464,9 +464,9 @@ body {
 }
 .button-radius {
     background: #fff none repeat scroll 0 0;
-    border: 1px solid #eaeaea;
+    border: 1px solid #fecc00;
     border-radius: 17px;
-    color: #666666;
+    color: #303967!important;
     display: inline-block;
     font-size: 14px;
     line-height: 30px;
@@ -485,7 +485,7 @@ body {
     transition: all 1s ease-out 0s;
 }
 .button-radius .icon::before {
-    background-color: #5a88ca;
+    background-color: #303967;
     border-radius: 90%;
     color: #fff;
     content: "";
@@ -565,7 +565,6 @@ body {
     position: relative;
 }
 .product-hover {
-    border: 1px solid #ddd;
     height: 100%;
     left: 0;
     overflow: hidden;
@@ -574,7 +573,7 @@ body {
     width: 100%;
 }
 .product-hover::after {
-    background: #000 none repeat scroll 0 0;
+    background: white none repeat scroll 0 0;
     content: "";
     height: 100%;
     left: -100%;
@@ -628,6 +627,7 @@ body {
     line-height: 25px;
     margin-bottom: 10px;
     margin-top: 15px;
+    color: #303967;
 }
 .single-product h2 a {
     color: #222;
@@ -654,20 +654,30 @@ body {
     //padding-top: 40px;
 }
 .latest-product .owl-nav {
-    position: absolute;
+    text-align: center;
     right: 0;
     top: 0;
 }
 .latest-product .owl-nav div, .related-products-wrapper .owl-nav div {
-    background: #303967 none repeat scroll 0 0;
-    color: #fecc00;
+    border: 1px solid #fecc00;
+    border-radius:50%;
+    color: #303967;
+
+    font-size:24px;
+    height:32px;
+    line-height:29px;
+
+    text-align: center;
+    width:32px;
+
     display: inline-block;
     margin-left: 15px;
-    padding: 1px 10px;
+
 }
 .latest-product .owl-nav div:hover, .brand-wrapper .owl-nav div:hover, .related-products-wrapper .owl-nav div:hover {
-    background: #fecc00 none repeat scroll 0 0;
-    color: #303967;
+    background: #303967 none repeat scroll 0 0;
+    color: #fecc00;
+    border: 1px solid #303967;
 }
 
 .brand-list .owl-nav {
@@ -694,7 +704,7 @@ body {
     padding-top: 20px;
 }
 .product-wid-title {
-    font-family: raleway;
+    font-family: "Raleway",sans-serif;
     font-size: 30px;
     font-weight: 100;
     margin-bottom: 40px;

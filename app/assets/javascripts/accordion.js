@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).on('page:change', function() {
   $("#accordion > li > div").click(function(){
 
     if(false == $(this).next().is(':visible')) {

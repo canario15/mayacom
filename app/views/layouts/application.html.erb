@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Mayacom</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <%= favicon_link_tag 'favicon.ico' %>
-</head>
-<body>
-  <% flash.each do |key, value| %>
-    <div class="alert alert-<%= key %>"><%= value %></div>
-  <% end %>
-  <%= render partial: "/layouts/header" %>
-  <%= yield %>
-  <%= render partial: "/layouts/footer" %>
-</body>
-<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <head>
+    <title>Mayacom</title>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+    <%= favicon_link_tag 'favicon.ico' %>
+  </head>
+  <body>
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>"><%= value %></div>
+    <% end %>
+    <%= render partial: "/layouts/header" %>
+    <%= yield %>
+    <%= render partial: "/layouts/footer" %>
+  </body>
 </html>

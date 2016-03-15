@@ -20,7 +20,6 @@
 //= require jquery.sticky
 //= require main
 //= require owl.carousel.min
-//= require script.slider
 //= require bootstrap-slider
 //= require jquery.flip
 //= require jquery.elevatezoom
@@ -31,10 +30,10 @@
 //= require jquery.validate.min
 
 
-$(document).ready(function () {
+//$(document).ready(function () {
+$(document).on('page:change', function() {
 
   setTimeout(function(){  $('.alert').remove();}, 2500);
-
 
   $(".radio-test").iCheck({
     checkboxClass: 'icheckbox_flat-yellow',
@@ -62,14 +61,12 @@ $(document).ready(function () {
     speed: 500
   });
 
-
   $(".boxContr").flip({
     axis: "y", // y or x
     reverse: false, // true and false
     trigger: "hover", // click or hover
     speed: 500
   });
-
 
   $(".plan-accordion").accordion({
     //whether the first section is expanded or not
@@ -82,7 +79,7 @@ $(document).ready(function () {
     dropDownIcon: "&#9660",
   });
 
-  $(".accordion-header  ").click(function() {
+  $(".accordion-header ").click(function() {
     if($($(this).siblings()[0]).data("status") == "0"){
       $(this).parent().parent().siblings($('drawer')).css({"display":"none"});
       $($(this).siblings()[0]).data("status", 1);
@@ -108,25 +105,9 @@ $(document).ready(function () {
     return false;
   });
 
-  $(".arrow-plan").click(function(e) {
-    e.preventDefault();
-    var plan_id = $(this).data('plan-id');
-    var option = $(this).data('option');
-    $.ajax({
-      type: "GET",
-      data: {plan_id: plan_id, option: option },
-      url: "/nextorprevplan",
-      success: function (data) {
-        $("#partial_plan").html(data);
-
-      }
-    });
-  });
-
   $("#go_phones").click(function() {
     $('html, body').animate({scrollTop: $(".cels-plan").offset().top}, 2000);
   });
-
 
   if ( $( "#phone-tabs" ).length ) {
     new CBPFWTabs( document.getElementById( 'phone-tabs' ) );
@@ -141,14 +122,14 @@ $(document).ready(function () {
   });
 
   $('input.do-acc-filter').on('ifChecked', function(event){
-    $('#filter-acc').ajaxSubmit( {target: '#acc_container', success: updateReference });
+    $("#submit_filter").click();
   });
 
   $('input.do-acc-filter').on('ifUnchecked', function(event){
-    $('#filter-acc').ajaxSubmit( {target: '#acc_container', success: updateReference });
+    $("#submit_filter").click();
   });
 
-  function updateReference (){
+  function updateReference (e,arguments){
     $(".card").flip({
       axis: "y", // y or x
       reverse: false, // true and false
@@ -184,5 +165,46 @@ $(document).ready(function () {
     }
   });
 
+  $('#bxslider-home4').bxSlider({
+    nextText:'<i class="fa fa-angle-right"></i>',
+    prevText:'<i class="fa fa-angle-left"></i>',
+    auto: true,
+    onSliderLoad:function(currentIndex){
+        $('#bxslider-home4 li').find('.caption').each(function(i){
+            $(this).show().addClass('animated fadeInRight').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+                $(this).removeClass('fadeInRight animated');
+            });
+        })
+    },
+    onSlideBefore:function(slideElement, oldIndex, newIndex){
+        slideElement.find('.sl-description').hide();
+        slideElement.find('.caption').each(function(){
+           $(this).hide().removeClass('animated fadeInRight');
+        });
+    },
+    onSlideAfter: function(slideElement, oldIndex, newIndex){
+        slideElement.find('.sl-description').show();
+        setTimeout(function(){
+            slideElement.find('.caption').each(function(){
+               $(this).show().addClass('animated fadeInRight').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+                    $(this).removeClass('fadeInRight animated');
+                });
+            });
+        }, 500);
+    }
+  });
+
+
+
 });
+
+/*
+$(document).on('page:fetch', function() {
+  $(".loading-indicator").show();
+});
+$(document).on('page:change', function() {
+  $(".loading-indicator").hide();
+});*/
+
+
 

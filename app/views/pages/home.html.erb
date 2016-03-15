@@ -1,23 +1,21 @@
 <div class="slider-area">
-			<!-- Slider -->
-	<div class="block-slider block-slider4">
-		<ul class="" id="bxslider-home4">
-			<% @slider.each do |slider|%>
-				<li>
-					<%= image_tag slider.image(:home) %>
-					<div class="caption-group">
-						<h2 class="caption title">
-							<span class="primary"><%= slider.phone.title %></span>
-						</h2>
-						<h4 class="caption subtitle">hoy: $<%= slider.phone.new_price %></h4>
-						<h4 class="caption subtitle">antes: $<%= slider.phone.old_price %></h4>
-					</div>
-				</li>
-			<% end %>
-		</ul>
-	</div>
-	<!-- ./Slider -->
-</div> <!-- End slider area -->
+  <div class="block-slider block-slider4">
+    <ul class="" id="bxslider-home4">
+      <% @slider.each do |slider|%>
+        <li>
+          <%= image_tag slider.image(:home) %>
+          <div class="caption-group">
+            <h2 class="caption title">
+              iPhone <span class="primary">6 <strong>Plus</strong></span>
+            </h2>
+            <h4 class="caption subtitle">Dual SIM</h4>
+            <a class="caption button-radius" href="#"><span class="icon"></span>Ver detalles</a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
 
 <div class="maincontent-area">
   <div class="zigzag-bottom"></div>
@@ -27,7 +25,6 @@
         <div class="latest-product">
           <h2 class="section-title">Ultimos Productos</h2>
           <div class="product-carousel">
-
             <% @last_phones.each  do |phone| %>
               <div class="single-product">
                 <div class="product-f-image">
@@ -45,7 +42,6 @@
                 </div>
               </div>
             <% end -%>
-
             <% @last_access.each  do |access| %>
               <div class="single-product">
                 <div class="product-f-image">
@@ -67,7 +63,7 @@
       </div>
     </div>
   </div>
-</div> <!-- End main content area -->
+</div>
 
 <div class="product-widget-area">
 	<div class="zigzag-bottom"></div>
