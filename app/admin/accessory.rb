@@ -13,7 +13,6 @@ ActiveAdmin.register Accessory do
   filter :is_top_new
 
   index :title => "Accesorios"  do
-    column :brand
     column :access_type
     column :title
     column :new_price
