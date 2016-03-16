@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160315033310) do
+ActiveRecord::Schema.define(version: 20160316012055) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -172,13 +172,28 @@ ActiveRecord::Schema.define(version: 20160315033310) do
     t.string  "band2g"
   end
 
+  create_table "offer_images", force: :cascade do |t|
+    t.integer  "offer_id"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
   create_table "offers", force: :cascade do |t|
     t.string   "title"
     t.integer  "phone_id"
     t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
     t.boolean  "active"
+    t.integer  "accessory_id"
+    t.integer  "price"
+    t.datetime "finish_date"
+    t.string   "slider_image_file_name"
+    t.string   "slider_image_content_type"
+    t.integer  "slider_image_file_size"
+    t.datetime "slider_image_updated_at"
   end
 
   create_table "phone_images", force: :cascade do |t|

@@ -25,7 +25,6 @@
                     <% end -%>
                   <% end -%>
                 </div>
-
               </div>
               <div class="col-sm-9">
                 <%= image_tag @phone.phone_images.first.image(:medium),:id => "zoom_01", :data => { :zoom_image => "#{@phone.phone_images.first.image}"} %>
@@ -47,10 +46,19 @@
                   <br>
                   <span class="price-acc">Stock:</span>
                   <ins style="color:#89c403"><i class="fa fa-check"></i></ins>
+                  <%= link_to("#", class: "fb-share-btn",
+                                                    :"data-name" => "#{@phone.title} a tan solo #{ @phone.new_price}" ,
+                                                    :"data-caption" => "",
+                                                    :"data-link" => request.original_url,
+                                                    :"data-picture" => asset_url(@phone.phone_images.first.image),
+                                                    :"data-description" => "#{@phone.short_desc}" ) do %>
+                    <%= image_tag 'publicarlo-en-fb.png', class: "btn-share", width: 100 %>
+                  <% end -%>
+                  <%= render partial: "/layouts/facebook_share" %>
                 </div>
                 <div class="comun-data">
                   <i class="fa fa-phone-square fa-4x"></i>
-                  <span>47327066</span></br>
+                  <span>47327066</span><br>
                   <p>comunicate y te lo enviamos</p>
                 </div>
                 <div class="payment-type">
@@ -121,39 +129,12 @@
                       </div>
                     <% end -%>
                   </section>
-                </div><!-- /content -->
-              </div><!-- /tabs -->
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
- <!--
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="related-products-wrapper">
-          <h2 class="related-products-title">Productos relacionados</h2>
-          <div class="product-carousel">
-            <% 6.times do %>
-              <div class="single-product">
-                <div class="product-f-image">
-                  <img src="/assets/product-3.jpg" alt="">
-                  <div class="product-hover">
-                    <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Agregar </a>
-                    <a href="/celulares/1" class="view-details-link"><i class="fa fa-link"></i> Ver detalles</a>
-                  </div>
-                </div>
-                <h2>LG Leon 2015</h2>
-                <div class="product-carousel-price">
-                  <ins>$400.00</ins> <del>$425.00</del>
-                </div>
-              </div>
-            <% end -%>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>-->
 </div>

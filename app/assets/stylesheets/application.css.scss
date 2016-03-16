@@ -180,12 +180,15 @@ caption, th {
 }
 
 .celbox{
-  margin-bottom: 37px;
+  margin-bottom: 14px;
   margin-left: 27px;
+  margin-right: 27px;
+  border-bottom: 1px dotted #303967;
 }
 
 .ofertbox {
   font-family: "RobotoCondensed-Regular";
+  width:90%;
 }
 
 .ofertbox .img {
@@ -195,66 +198,33 @@ caption, th {
   float: left;
   margin-right: 15px;
   position: relative;
-  height: 223px;
- /* width: 246px;*/
   overflow: hidden;
+  margin-bottom: 8px;
 }
 
 .ofertbox .ofconte {
-  border-bottom: 1px dotted #303967;
   float: left;
-  height: 223px;
   padding: 12px 0;
   position: relative;
-  width: 700px;
 }
 
-.ofertbox h2 {
-  font-size: 23px;
+.ofconte h4 {
   font-weight: bold;
-  margin: 0;
-  padding-top: 0;
 }
 
-.ofertbox h2 a{
+.ofconte h4 a{
   color: #303967;
 }
 
-.ofertbox h2 a:hover{
+.ofconte h4 a:hover{
   color: #fecc00;
 }
 
 .ofertbox .price {
-  bottom: 13px;
-  display: block;
+  color: #000;
   font-size: 16px;
   font-weight: bold;
   line-height: 20px;
-  color: #000;
-  position: absolute;
-  right: 0;
-}
-
-.ofertbox .price .oldPrice {
-  clear: both;
-  color: #777;
-  display: block;
-  float: right;
-  font-size: 13px;
-  margin-right: 50px;
-}
-
-.ofertbox .price .oldPrice strong {
-  color: #777;
-  font-size: 13px;
-  text-decoration: line-through;
-  line-height: 20px;
-}
-
-.ofertbox .price .currentPrice {
-  clear: both;
-  display: block;
-  float: right;
 }
 
 .ofertbox .price strong {
@@ -291,6 +261,75 @@ span.precio small, span.price small {
 
 .description{
   margin-top:13px;
+}
+
+.show-details{
+  float:right;
+}
+
+.countdown {
+  float: left;
+}
+
+.countdown.lite .cont-num {
+  margin: 0 5px 0 0;
+  width: 42px;
+  float: left;
+  text-align: center;
+}
+
+.countdown.lite .cont-num .num {
+  background-color: #303967;
+  border-radius: 10px;
+  color: #fff;
+  font-family: "RobotoCondensed-Regular";
+  font-size: 32px;
+}
+
+.countdown .cont-num span {
+  color: #303967;
+  font-family: "RobotoCondensed-Regular";
+  font-size: 15px;
+}
+
+.off-pho-des a {
+  color: #303967;
+  font-weight: bold
+}
+
+.off-pho-des a:hover {
+  color: #fecc00;
+  font-weight: bold
+}
+
+#count-shw-of {
+  margin-top: 20px;
+}
+
+#count-shw-of {
+  margin-left: 26%;
+  margin-top: 10%;
+}
+
+#count-shw-of .cont-num {
+  float: left;
+  margin: 0 8px 0 0;
+  text-align: center;
+  width: 64px;
+}
+
+#count-shw-of .cont-num .num {
+  background-color: #303967;
+  border-radius: 9px;
+  color: #fff;
+  font-family: "RobotoCondensed-Regular";
+  font-size: 47px;
+}
+
+#count-shw-of .cont-num span {
+  color: #303967;
+  font-family: "RobotoCondensed-Regular";
+  font-size: 18px;
 }
 
 .container-footer {
@@ -349,7 +388,6 @@ span.precio small, span.price small {
   border: 1px solid #ccc;
 }
 
-
 .subplanes p:hover {
   text-decoration:underline;
 }
@@ -388,7 +426,6 @@ span.precio small, span.price small {
 .inac-right-link-arrow i{
   color: #ccc!important;
 }
-
 
 .pagination {
   margin: 11px!important;

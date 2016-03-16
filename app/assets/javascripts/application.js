@@ -15,23 +15,34 @@
 //= require turbolinks
 //= require accordion
 //= require bxslider.min
+//= require cbpFWTabs
+//= require countdown
+//= require horizon-swiper.min
 //= require icheck
+//= require ion.rangeSlider.min
 //= require jquery.easing.1.3.min
 //= require jquery.sticky
+//= require jquery.elevatezoom
+//= require jquery.flip
+//= require jquery.form.min
+//= require jquery.simpleGallery.min
+//= require jquery.simpleLens.min
+//= require jquery.sticky
+//= require jquery.validate.min
 //= require main
 //= require owl.carousel.min
-//= require jquery.flip
-//= require jquery.elevatezoom
 //= require woco.accordion.min
-//= require cbpFWTabs
-//= require horizon-swiper.min
-//= require jquery.form.min
-//= require jquery.validate.min
-//= require ion.rangeSlider.min
 
-
-//$(document).ready(function () {
 $(document).on('page:change', function() {
+
+  $('#zoom_gallery .simpleLens-thumbnails-container img').simpleGallery({
+    loading_image: '/assets/loading.gif',
+    show_event: 'click'
+  });
+
+  $('#zoom_gallery .simpleLens-big-image').simpleLens({
+    loading_image: '/assets/loading.gif',
+  });
 
   setTimeout(function(){  $('.alert').remove();}, 2500);
 

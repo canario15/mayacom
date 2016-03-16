@@ -1,9 +1,9 @@
 <div class="slider-area">
   <div class="block-slider block-slider4">
     <ul class="" id="bxslider-home4">
-      <% @slider.each do |slider|%>
+      <% @offers.each do |offer|%>
         <li>
-          <%= image_tag slider.image(:home) %>
+          <%= image_tag offer.slider_image(:home) %>
           <div class="caption-group">
             <h2 class="caption title">
               iPhone <span class="primary">6 <strong>Plus</strong></span>

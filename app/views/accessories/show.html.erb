@@ -4,6 +4,13 @@
       <div class="col-md-12">
         <div class="product-bit-title text-center">
           <h2><%= @accessory.title%></h2>
+          <meta property="og:url"         content="<%= request.original_url %>" />
+          <meta property="og:type"        content="article" />
+          <meta property="og:title"       content="<%= @accessory.title %>" />
+          <meta property="og:description" content="<%= @accessory.short_desc %>" />
+          <meta property="og:image"       content="<%= asset_url(@accessory.accessory_images.first.image)%>" />
+          <meta property="og:site_name"   content="mayacom.com.uy" />
+          <meta property="fb:app_id"      content="581042098737672" />
         </div>
       </div>
     </div>
@@ -38,6 +45,15 @@
                   <%= @accessory.long_desc  %>
                 </p>
                 <div class="product-inner-price">
+                 <%= link_to("#", class: "fb-share-btn",
+                                    :"data-name" => "#{@accessory.title} a tan solo #{ @accessory.new_price}" ,
+                                    :"data-caption" => "",
+                                    :"data-link" => request.original_url,
+                                    :"data-picture" => asset_url(@accessory.accessory_images.first.image),
+                                    :"data-description" => "#{@accessory.short_desc}" ) do %>
+                    <%= image_tag 'publicarlo-en-fb.png', class: "btn-share", width: 100 %>
+                  <% end -%>
+                  <%= render partial: "/layouts/facebook_share" %>
                   <span class="price-acc">Precio:</span>
                   <ins>$<%= @accessory.new_price%> <small style="font-size: 53%;color:#9e9e9e"> (IVA inc.)</small> </ins>
                   <% unless @accessory.old_price.blank? %>

@@ -1,0 +1,124 @@
+<div class="product-big-title-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="product-bit-title text-center">
+          <h2><%= @offer.title%></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="single-product-area">
+  <div class="zigzag-bottom"></div>
+  <div class="container phone-container">
+    <div class="row">
+      <div class="col-md-11">
+        <div class="product-content-right">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="col-sm-12">
+                <div class="simpleLens-gallery-container" id="zoom_gallery">
+                  <div class="simpleLens-container">
+                    <div class="simpleLens-big-image-container">
+                      <a class="simpleLens-lens-image" data-lens-image="<%= @offer.offer_images.first.image.url(:original) %>">
+                        <img src="<%= @offer.offer_images.first.image.url(:medium) %>" class="simpleLens-big-image">
+                      </a>
+                    </div>
+                  </div>
+                  <div class="simpleLens-thumbnails-container">
+                    <% @offer.offer_images.each do |img| %>
+                      <a href="javascript:void(0)" class="simpleLens-thumbnail-wrapper" data-lens-image="<%= img.image.url(:original) %>" data-big-image="<%= img.image.url(:medium) %>">
+                        <img src="<%= img.image.url(:thumb) %>">
+                      </a>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+              <div calss="col-sm-12">
+                <% unless @offer.finish_date.blank?%>
+                  <div id="count-shw-of" class="countdown lite clearfix countboxlite" data-day ="<%= @offer.finish_date.day %>" data-month="<%= @offer.finish_date.strftime('%B') %>" data-year="<%= @offer.finish_date.year %>">
+                    <div class="cont-num">
+                      <div class="num days" id="days">0</div>
+                      <span>Días</span>
+                    </div>
+                    <div class="cont-num">
+                      <div class="num hours" id="hours">0</div>
+                      <span>Horas</span>
+                    </div>
+                    <div class="cont-num">
+                      <div class="num minutes" id="mins">0</div>
+                      <span>Min.</span>
+                    </div>
+                    <div class="cont-num">
+                      <div class="num seconds" id="secs">0</div>
+                      <span>Seg.</span>
+                    </div>
+                  </div>
+                <% end -%>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="product-inner">
+                <h2 class="product-name"><%= @offer.title%></h2>
+                <p>
+                  <%= @offer.description  %>
+                </p>
+                <% unless @offer.phone.blank? %>
+                  <div class="off-pho-des">
+                    <p>
+                      <span>
+                        <%= link_to "/celulares/#{@offer.phone.id}" do %>
+                          <%= @offer.phone.title %>
+                        <% end -%>
+                      </span><br>
+                      <%= @offer.phone.short_desc %>
+                    </p>
+                  </div>
+                <% end -%>
+                <% unless @offer.accessory.blank? %>
+                  <div class="off-pho-des">
+                    <p>
+                      <span>
+                        <%= link_to "/accessorios/#{@offer.accessory.id}" do %>
+                          <%= @offer.accessory.title %>
+                        <% end -%>
+                      </span><br>
+                      <%= @offer.accessory.short_desc %>
+                    </p>
+                  </div>
+                <% end -%>
+                <div class="product-inner-price">
+                  <span class="price-acc">Precio:</span>
+                  <ins>$<%= @offer.price %> <small style="font-size: 53%;color:#9e9e9e"> (IVA inc.)</small> </ins>
+                  <span class="price-acc">Stock:</span>
+                  <ins style="color:#89c403"><i class="fa fa-check"></i></ins>
+                </div>
+                <div class="comun-data">
+                  <i class="fa fa-phone-square fa-4x"></i>
+                  <span>47327066</span><br>
+                  <p>comunicate y te lo enviamos</p>
+                </div>
+                <div class="payment-type">
+                  <span>aceptamos todas las tarjetas:</span>
+                  <%= image_tag "/assets/tarjetas.png", :width => "450" %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+
+
+  $( ".countboxlite" ).each(function() {
+    $(this).countdown({
+      date:   $(this).data("day") +" "+ $(this).data("month") +" "+ $(this).data("year") +" "+" 18:00:00",
+      format: "on"
+    });
+  });
+</script>

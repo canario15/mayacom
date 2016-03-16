@@ -9,12 +9,7 @@ class PagesController < ApplicationController
     @top_viwes = Phone.where(is_most_view: true).last(3)
     @top_sell = Phone.where(is_top_sale: true).last(3)
     @top_news = Phone.where(is_top_new: true).last(3)
-    @slider = Slider.where(active: true).last(6)
-  end
-
-  def ofert
-    @hover_menu = CONSTANT_MENU_OFFER
-    @offers = Offer.active.page params[:page]
+    @offers = Offer.where(active: true).last(4)
   end
 
   def contact
@@ -29,6 +24,14 @@ class PagesController < ApplicationController
     ContactFormMailer.new_message(@name,@email,@phone,@message).deliver_now
     flash[:success] = "su mensaje ha sido enviado correctamente"
     redirect_to contacto_path
+  end
+
+  def en_construccion
+
+    respond_to do |format|
+      format.html { render partial: 'en_construccion', :layout => false}
+    end
+
   end
 
 end

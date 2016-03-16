@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  get '/' => 'pages#home'
+  get '/' => 'pages#en_construccion'
+
+  get '/home' => 'pages#home'
   get '/celulares'      => 'phones#index'
   get '/celulares/:id'  => 'phones#show'
 
@@ -13,7 +15,8 @@ Rails.application.routes.draw do
   get '/contratos/'     => 'contracts#index'
   get '/contratos/:id/plan/:plan_id'  => 'contracts#show'
 
-  get '/ofertas'       => 'pages#ofert'
+  get '/ofertas'       => 'offers#index'
+  get '/ofertas/:id' => 'offers#show'
 
   get '/contacto'      => 'pages#contact'
 

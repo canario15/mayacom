@@ -1,0 +1,62 @@
+<% @offers.each do |offer| %>
+  <div class="row celbox">
+    <div class="ofertbox">
+      <div class="img">
+        <%= link_to "/ofertas/#{offer.id}" do %>
+          <%= image_tag offer.offer_images.first.image(:index), width: 150 %>
+        <% end -%>
+      </div>
+      <div class="ofconte">
+        <h4>
+          <%= link_to "/ofertas/#{offer.id}" do %>
+            <%= offer.title %>
+          <% end -%>
+        </h4>
+        <div class="description">
+          <p>
+            <%= offer.description %>
+          </p>
+        </div>
+        <div>
+          <p class="price">
+            <span class="currentPrice">Precio: <strong>$<%= offer.price %> <small>(IVA inc.)</small></strong></span>
+          </p>
+        </div>
+        <div class="time-data">
+          <% unless offer.finish_date.blank?%>
+            <div class="countdown lite clearfix countboxlite" data-day ="<%= offer.finish_date.day %>" data-month="<%= offer.finish_date.strftime('%B') %>" data-year="<%= offer.finish_date.year %>">
+              <div class="cont-num">
+                <div class="num days" id="days">0</div>
+                <span>Días</span>
+              </div>
+              <div class="cont-num">
+                <div class="num hours" id="hours">0</div>
+                <span>Horas</span>
+              </div>
+              <div class="cont-num">
+                <div class="num minutes" id="mins">0</div>
+                <span>Min.</span>
+              </div>
+              <div class="cont-num">
+                <div class="num seconds" id="secs">0</div>
+                <span>Seg.</span>
+              </div>
+            </div>
+          <% end -%>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end -%>
+<div class="pull-rigth">
+  <%= paginate @offers, :window => 2, :remote=> :true %>
+</div>
+
+<script type="text/javascript">
+  $( ".countboxlite" ).each(function() {
+    $(this).countdown({
+      date:   $(this).data("day") +" "+ $(this).data("month") +" "+ $(this).data("year") +" "+" 18:00:00",
+      format: "on"
+    });
+  });
+</script>

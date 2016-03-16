@@ -14,6 +14,8 @@ es:
       access_type: "Tipo de Accesorio"
       accessory_image: "Imágenes"
       accessory_images: "Imágenes"
+      offer_images: "Imágenes"
+      offer_image: "Imágenes"
       phone_image: "Imágenes"
       phone_plan: "Teléfonos para el plan"
       offer: "Ofertas"
@@ -98,12 +100,20 @@ es:
         updated_at: "Fecha Modificación"
         image : "Imagen"
       offer:
-        phone: "Teléfono"
+        phone_id: "Teléfono"
+        accessory_id: "Accesorio"
+        price: "Precio"
         title: "Título"
         description: "Descripción"
         active: "Activo"
         created_at: "Fecha creación"
         updated_at: "Fecha Modificación"
+        finish_date: "Fecha Fin"
+        offer_image: "Imágenes"
+        offer_images: "Imágenes"
+        slider_imags: "Imagen para Slider"
+        phone: "Teléfono"
+        accessory: "Accesorios"
       phone_plan:
         phone: "Teléfono"
         title: "Título"
@@ -145,9 +155,11 @@ es:
         enter_date: "Fecha Ingreso"
         phone_images: "Imágenes"
       phone_image:
-        image: "imagen"
+        image: "Imagen"
       accessory_images:
-        image: "imagen"
+        image: "Imagen"
+      offer_image:
+        image: "Imagen"
       plan:
         title: "Título"
         item_1: "Item 1"
