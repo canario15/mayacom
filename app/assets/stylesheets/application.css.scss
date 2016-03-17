@@ -46,22 +46,20 @@ a {
 .local-list{
   float: left;
   list-style: outside none none;
-  padding: 0;
-  text-align: center;
-  width: 28%;
-  /*border-right: 1px solid #ccc;*/
-  height: 149px;
+  margin: 0 0 10px;
   font-family: RobotoCondensed-Regular;
 }
 
 .local-list1{
-  margin-left:68px;
+  margin-left:45px;
 }
 
 .local-list .city {
   color: #303967;
   font-weight: 600;
   font-family: RobotoCondensed-Bold;
+  //margin-left: 17px;
+  text-align: center;
 }
 
 .local-list i {

@@ -17,6 +17,22 @@
   padding: 7px 20px!important;
 }
 
+.btn-searh:hover {
+  background: #fecc00!important;
+  color: #303967!important;
+  padding: 7px 20px!important;
+}
+
+#phone_search input {
+  border: 1px solid #303967;
+  border-radius: 5px 0 0 5px;
+}
+
+#accessory_search input {
+  border: 1px solid #303967;
+  border-radius: 5px 0 0 5px;
+}
+
 .row-tit {
   margin-bottom:30px;
 }
@@ -370,8 +386,9 @@
   text-decoration: underline;
 }
 
-.long-input{
-  width:85%;
+.long-input {
+  width:45%;
+  margin-right: 52px;
 }
 
 .panelPlan {

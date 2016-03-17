@@ -14,12 +14,12 @@
   <div class="zigzag-bottom"></div>
   <div class="container catalog-cel-cont">
     <div class="row row-tit">
-      <div class="col-lg-8 col-md-8 col-sm-7 col-xs-7 colTit hidden-xs visible-xss">
+      <div class="col-lg-5 col-md-8 col-sm-7 col-xs-7 colTit hidden-xs visible-xss">
         <h1>Catálogo de equipos
         </h1>
       </div>
-      <div class="col-lg-4 col-md-4 col-sm-5 col-xs-12 col-xss-5">
-        <div class="input-group long-input">
+      <div class="col-lg-7 col-md-4 col-sm-5 col-xs-12 col-xss-5">
+        <div class="input-group long-input pull-right">
           <%= search_form_for @search, :class => "main-search", :remote=> :true, url: phones_path, :method => :get do |f| %>
             <%= f.text_field :title_or_phone_type_or_brand_name_or_model_or_mode_cont, :class => "form-control", :placeholder => "Buscar un equipo" %>
             <span class="input-group-btn">
