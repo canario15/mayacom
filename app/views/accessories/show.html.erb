@@ -27,7 +27,7 @@
               <div class="col-sm-3">
                 <div id="gal1_zoom_01" class="galery-acces">
                   <% @accessory.accessory_images.each do |img| %>
-                    <%= link_to "#", :data => { :image => "#{img.image(:medium)}", :zoom_image => "#{img.image}"} do %>
+                    <%= link_to "javascript:void(0)", :data => { :image => "#{img.image(:medium)}", :zoom_image => "#{img.image}"} do %>
                       <%= image_tag img.image(:thumb)%>
                     <% end -%>
                   <% end -%>
@@ -45,7 +45,7 @@
                   <%= @accessory.long_desc  %>
                 </p>
                 <div class="product-inner-price">
-                 <%= link_to("#", class: "fb-share-btn",
+                 <%= link_to("javascript:void(0)", class: "fb-share-btn",
                                     :"data-name" => "#{@accessory.title} a tan solo #{ @accessory.new_price}" ,
                                     :"data-caption" => "",
                                     :"data-link" => request.original_url,

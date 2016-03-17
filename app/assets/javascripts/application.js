@@ -17,7 +17,6 @@
 //= require bxslider.min
 //= require cbpFWTabs
 //= require countdown
-//= require horizon-swiper.min
 //= require icheck
 //= require ion.rangeSlider.min
 //= require jquery.easing.1.3.min

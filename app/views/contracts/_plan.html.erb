@@ -15,7 +15,7 @@
               <i class="fa fa-chevron-right"></i>
             </p>
           <% else -%>
-            <%= link_to "#", class: "pull-right arrow-plan", data: { plan_id: "#{@plan.id}", option: "mayor" }  do %>
+            <%= link_to "javascript:void(0)", class: "pull-right arrow-plan", data: { plan_id: "#{@plan.id}", option: "mayor" }  do %>
               <p>
                 subir de plan
                 <i class="fa fa-chevron-right"></i>
@@ -28,7 +28,7 @@
               bajar de plan
             </p>
           <% else -%>
-            <%= link_to "#", class: "pull-right ft arrow-plan", data: { plan_id: "#{@plan.id}", option: "menor"} do %>
+            <%= link_to "javascript:void(0)", class: "pull-right ft arrow-plan", data: { plan_id: "#{@plan.id}", option: "menor"} do %>
               <p>
                 <i class="fa fa-chevron-left"></i>
                 bajar de plan

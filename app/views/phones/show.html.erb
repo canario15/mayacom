@@ -20,7 +20,7 @@
               <div class="col-sm-3">
                 <div id="gal1_zoom_01" class="galery-acces">
                   <% @phone.phone_images.each do |img| %>
-                    <%= link_to "#", :data => { :image => "#{img.image(:medium)}", :zoom_image => "#{img.image}"} do %>
+                    <%= link_to "javascript:void(0)", :data => { :image => "#{img.image(:medium)}", :zoom_image => "#{img.image}"} do %>
                       <%= image_tag img.image(:thumb)%>
                     <% end -%>
                   <% end -%>
@@ -46,7 +46,7 @@
                   <br>
                   <span class="price-acc">Stock:</span>
                   <ins style="color:#89c403"><i class="fa fa-check"></i></ins>
-                  <%= link_to("#", class: "fb-share-btn",
+                  <%= link_to("javascript:void(0)", class: "fb-share-btn",
                                                     :"data-name" => "#{@phone.title} a tan solo #{ @phone.new_price}" ,
                                                     :"data-caption" => "",
                                                     :"data-link" => request.original_url,
@@ -74,10 +74,10 @@
               <div id="phone-tabs" class="tabs">
                 <nav>
                   <ul>
-                    <li><a href="#section-1" class=""><span>Descripción</span></a></li>
-                    <li><a href="#section-2" class=""><span>Especificaciones</span></a></li>
-                    <li><a href="#section-3" class=""><span>Planes</span></a></li>
-                    <li><a href="#section-4" class=""><span>Accesorios Compatibles</span></a></li>
+                    <li><a href="#section-1" class="icon icon-file-text"><span>Descripción</span></a></li>
+                    <li><a href="#section-2" class="icon icon-list2"><span>Especificaciones</span></a></li>
+                    <li><a href="#section-3" class="icon icon-price-tags"><span>Planes</span></a></li>
+                    <li><a href="#section-4" class="icon icon-attachment"><span>Accesorios Compatibles</span></a></li>
                   </ul>
                 </nav>
                 <div class="content">
