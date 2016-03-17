@@ -6,7 +6,7 @@ class ContactFormMailer < ApplicationMailer
     @email = email
     @tel = tel
     @message = message
-
+    mail(from: email, subject: 'CONTACTOOOOOOOOOOO')
   end
 
 end
