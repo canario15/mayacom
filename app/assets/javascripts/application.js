@@ -19,29 +19,58 @@
 //= require countdown
 //= require icheck
 //= require ion.rangeSlider.min
-//= require jquery.easing.1.3.min
+  //= require jquery.easing.1.3.min
 //= require jquery.sticky
-//= require jquery.elevatezoom
+  //= require jquery.elevatezoom
 //= require jquery.flip
 //= require jquery.form.min
 //= require jquery.simpleGallery.min
 //= require jquery.simpleLens.min
 //= require jquery.sticky
 //= require jquery.validate.min
-//= require main
 //= require owl.carousel.min
 //= require woco.accordion.min
 
 $(document).on('page:change', function() {
 
-  $('#zoom_gallery .simpleLens-thumbnails-container img').simpleGallery({
-    loading_image: '/assets/loading.gif',
-    show_event: 'click'
+  $(".mainmenu-area").sticky({topSpacing:0});
+
+  $('.product-carousel').owlCarousel({
+    navText: ['<i class="fa fa-angle-left"></i>',"<i class='fa fa-angle-right'></i>"],
+    loop: true,
+    nav: true,
+    margin: 20,
+    responsiveClass: true,
+    autoPlay: 2000,
+    responsive:{
+      0:{
+          items:1,
+      },
+      600:{
+          items:3,
+      },
+      1000:{
+          items:5,
+      }
+    }
   });
 
-  $('#zoom_gallery .simpleLens-big-image').simpleLens({
-    loading_image: '/assets/loading.gif',
+  // Bootstrap Mobile Menu fix
+  $(".navbar-nav li a").click(function(){
+      $(".navbar-collapse").removeClass('in');
   });
+
+
+  if ( $( "#zoom_gallery" ).length ) {
+    $('#zoom_gallery .simpleLens-thumbnails-container img').simpleGallery({
+      loading_image: '/assets/loading.gif',
+      show_event: 'click'
+    });
+
+    $('#zoom_gallery .simpleLens-big-image').simpleLens({
+      loading_image: '/assets/loading.gif',
+    });
+  }
 
   setTimeout(function(){  $('.alert').remove();}, 2500);
 
