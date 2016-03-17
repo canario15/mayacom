@@ -19,12 +19,10 @@
 //= require countdown
 //= require icheck
 //= require ion.rangeSlider.min
-  //= require jquery.easing.1.3.min
 //= require jquery.sticky
-  //= require jquery.elevatezoom
 //= require jquery.flip
 //= require jquery.form.min
-//= require jquery.simpleGallery.min
+//= require jquery.simpleGallery
 //= require jquery.simpleLens.min
 //= require jquery.sticky
 //= require jquery.validate.min
@@ -130,22 +128,6 @@ $(document).on('page:change', function() {
       $(this).parent().parent().siblings($('drawer')).css({"display":"block"});
       $($(this).siblings()[0]).data("status", 0);
     }
-  });
-
-  //initiate the plugin and pass the id of the div containing gallery images
-  $("#zoom_01").elevateZoom({
-    gallery:'gal1_zoom_01',
-    galleryActiveClass: 'active_zoom',
-    zoomType : "inner",
-    cursor: "crosshair",
-    imageCrossfade: true
-  });
-
-  //pass the images to Fancybox
-  $("#zoom_01").bind("click", function(e) {
-    var ez = $('#zoom_01').data('elevateZoom');
-    $.fancybox(ez.getGalleryList());
-    return false;
   });
 
   $("#go_phones").click(function() {

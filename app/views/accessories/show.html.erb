@@ -24,18 +24,23 @@
         <div class="product-content-right">
           <div class="row">
             <div class="col-sm-6">
-              <div class="col-sm-3">
-                <div id="gal1_zoom_01" class="galery-acces">
-                  <% @accessory.accessory_images.each do |img| %>
-                    <%= link_to "javascript:void(0)", :data => { :image => "#{img.image(:medium)}", :zoom_image => "#{img.image}"} do %>
-                      <%= image_tag img.image(:thumb)%>
-                    <% end -%>
-                  <% end -%>
+              <div class="col-sm-12">
+                <div class="simpleLens-gallery-container" id="zoom_gallery">
+                  <div class="simpleLens-container">
+                    <div class="simpleLens-big-image-container">
+                      <a class="simpleLens-lens-image" data-lens-image="<%= @accessory.accessory_images.first.image.url(:original) %>">
+                        <img src="<%= @accessory.accessory_images.first.image.url(:medium) %>" class="simpleLens-big-image">
+                      </a>
+                    </div>
+                  </div>
+                  <div class="simpleLens-thumbnails-container">
+                    <% @accessory.accessory_images.each do |img| %>
+                      <a href="javascript:void(0)" class="simpleLens-thumbnail-wrapper" data-lens-image="<%= img.image.url(:original) %>" data-big-image="<%= img.image.url(:medium) %>">
+                        <img src="<%= img.image.url(:thumb) %>">
+                      </a>
+                    <% end %>
+                  </div>
                 </div>
-
-              </div>
-              <div class="col-sm-9">
-                <%= image_tag @accessory.accessory_images.first.image(:medium),:id => "zoom_01", :data => { :zoom_image => "#{@accessory.accessory_images.first.image}"} %>
               </div>
             </div>
             <div class="col-sm-6">

@@ -52,8 +52,8 @@ SOFTWARE.
                 lens_image = parent_anchor.attr(opts.lens_image_attr);
             var image_container = $(this).parents(opts.gallery_container).find(opts.big_image_container);
 
-            var loading_image = $('<img>', {'src': opts.loading_image});
-            image_container.html(loading_image);
+          //  var loading_image = $('<img>', {'src': opts.loading_image});
+           // image_container.html(loading_image);
 
             var a = $('<a>').attr('data-lens-image', lens_image).addClass(opts.parent_anchor_class);
             var img = $('<img>').load(function(){
