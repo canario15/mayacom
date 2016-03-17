@@ -1,5 +1,6 @@
 class ChangeColumnTypeNewPricePhone < ActiveRecord::Migration
   def change
-    change_column :phones, :new_price, :integer
+    remove_column :phones, :new_price, :string
+    add_column  :phones, :new_price, :integer
   end
 end

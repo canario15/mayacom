@@ -1,5 +1,6 @@
 class ChangeAccessoryNewPriceColumnType < ActiveRecord::Migration
   def change
-    change_column :accessories, :new_price, :integer
+    remove_column :accessories, :new_price, :string
+    add_column  :accessories, :new_price, :integer
   end
 end
