@@ -25,8 +25,6 @@ ActiveRecord::Schema.define(version: 20160316012055) do
   create_table "accessories", force: :cascade do |t|
     t.string   "title"
     t.integer  "brand_id"
-    t.integer  "new_price"
-    t.integer  "old_price"
     t.text     "short_desc"
     t.text     "long_desc"
     t.boolean  "is_most_view"
@@ -35,6 +33,8 @@ ActiveRecord::Schema.define(version: 20160316012055) do
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.integer  "access_type_id"
+    t.integer  "new_price"
+    t.integer  "old_price"
   end
 
   create_table "accessories_phones", force: :cascade do |t|
@@ -220,8 +220,6 @@ ActiveRecord::Schema.define(version: 20160316012055) do
     t.string   "title"
     t.integer  "brand_id"
     t.string   "model"
-    t.integer  "new_price"
-    t.integer  "old_price"
     t.text     "short_desc"
     t.text     "long_desc"
     t.boolean  "is_most_view"
@@ -230,6 +228,8 @@ ActiveRecord::Schema.define(version: 20160316012055) do
     t.date     "enter_date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "new_price"
+    t.integer  "old_price"
   end
 
   create_table "plans", force: :cascade do |t|

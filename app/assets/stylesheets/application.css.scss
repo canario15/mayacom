@@ -20,23 +20,23 @@ a {
 
 @font-face {
   font-family: "RobotoCondensed-Bold";
-  src: url(/assets/RobotoCondensed-Bold.ttf) format("truetype");
+  src: font-url(RobotoCondensed-Bold) format("truetype");
 }
 @font-face {
   font-family: "RobotoCondensed-BoldItalic";
-  src: url(/assets/RobotoCondensed-BoldItalic.ttf) format("truetype");
+  src: font-url(RobotoCondensed-BoldItalic) format("truetype");
 }
 @font-face {
   font-family: "RobotoCondensed-Italic";
-  src: url(/assets/RobotoCondensed-Italic.ttf) format("truetype");
+  src: font-url(RobotoCondensed-Italic) format("truetype");
 }
 @font-face {
   font-family: "RobotoCondensed-LightItalic";
-  src: url(/assets/RobotoCondensed-LightItalic.ttf) format("truetype");
+  src: font-url(RobotoCondensed-LightItalic) format("truetype");
 }
 @font-face {
   font-family: "RobotoCondensed-Regular";
-  src: url(/assets/RobotoCondensed-Regular.ttf) format("truetype");
+  src: font-url(RobotoCondensed-Regular) format("truetype");
 }
 
 .cities-cont{
