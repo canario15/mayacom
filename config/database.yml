@@ -18,5 +18,5 @@ production:
   encoding: unicode
   database: mayacom_production
   pool: 5
-  username: postgres
-  password: password
+  username: mayacom
+  password:
