@@ -45,7 +45,7 @@ ActiveAdmin.register Plan do
       row :item_3
       row :created_at
       row :updated_at
-      row "Planes" do
+      row "Teléfonos" do
         ul do
           co.phone_plans.each do |pp|
             li do
