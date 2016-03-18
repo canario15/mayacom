@@ -67,6 +67,11 @@ namespace :deploy do
     end
   end
 
+  desc "build missing paperclip styles"
+  task :build_missing_paperclip_styles, :roles=> :app do
+    run "cd #{current_path}; RAILS_ENV=production bundle exec rake paperclip:refresh:missing_styles"
+  end
+
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
@@ -75,6 +80,7 @@ namespace :deploy do
   end
 
   before :starting,     :check_revision
+  after "deploy", "deploy:build_missing_paperclip_styles"
   after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
   after  :finishing,    :restart
