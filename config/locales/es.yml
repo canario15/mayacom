@@ -183,6 +183,7 @@ es:
         logo: "Logo"
         created_at: "Fecha creación"
         updated_at: "Fecha Modificación"
+        order: "Orden"
       brand:
         name: "Nombre"
         created_at: "Fecha creación"
@@ -241,6 +242,8 @@ es:
             short_desc:
               blank: "no puede ser vacía"
             logo:
+              blank: "no puede ser vacío"
+            order:
               blank: "no puede ser vacío"
         offer:
           attributes:

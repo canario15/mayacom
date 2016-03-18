@@ -1,7 +1,7 @@
 ActiveAdmin.register Contract do
   menu :label => "Contratos"
 
-  permit_params :technology_id, :title, :short_desc, :logo
+  permit_params :technology_id, :title, :short_desc, :logo, :order
 
   filter :technology, collection: proc { Technology.all }, as: :select
   filter :title
@@ -9,6 +9,7 @@ ActiveAdmin.register Contract do
   config.batch_actions = false
 
   index :title => "Contratos"  do
+    column :order
     column :technology
     column :title
     actions
@@ -16,6 +17,7 @@ ActiveAdmin.register Contract do
 
   form do |f|
     f.inputs "Contrato",  :multipart => true do
+      f.input :order
       f.input :technology, :as => :select, :collection => Technology.all.collect {|tec| [tec.name, tec.id] }
       f.input :title
       f.input :short_desc
@@ -27,6 +29,7 @@ ActiveAdmin.register Contract do
 
   show :title => :title do |co|
     attributes_table do
+      row :order
       row :technology
       row :title
       row :short_desc
