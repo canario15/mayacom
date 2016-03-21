@@ -14,7 +14,7 @@ class Contract < ActiveRecord::Base
     unless plans.first.blank?
       plans.first.price
     else
-      0
+      "0"
     end
   end
 

@@ -31,7 +31,7 @@
                 <%= c.short_desc %>
               </p>
               <div class="cost mens">
-                <% if c.lower_plan == 0 %>
+                <% if c.lower_plan == "0" %>
                   <p style="margin-top: 9px">Sin costo mensual</p>
                 <% else %>
                   <p>
@@ -75,8 +75,8 @@
                           </span>
                         <% end -%>
                         <div class="info pull-right">
-                          <% if p.price == 0 %>
-                            <p>
+                          <% if p.price == "0" %>
+                            <p style="margin-top: 10px">
                               Sin costo mensual
                             </p>
                           <% else %>
