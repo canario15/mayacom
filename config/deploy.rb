@@ -18,6 +18,7 @@ set :puma_state,      "#{shared_path}/tmp/pids/puma.state"
 set :puma_pid,        "#{shared_path}/tmp/pids/puma.pid"
 set :puma_access_log, "#{release_path}/log/puma.error.log"
 set :puma_error_log,  "#{release_path}/log/puma.access.log"
+set :linked_dirs, fetch(:linked_dirs, []).push('public/system')
 set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/id_rsa.pub) }
 set :puma_preload_app, true
 set :puma_worker_timeout, nil
@@ -67,13 +68,6 @@ namespace :deploy do
     end
   end
 
-  desc "build missing paperclip styles"
-  task :build_missing_paperclip_styles do
-    on roles(:app) do
-      execute "cd #{current_path}; RAILS_ENV=production bundle exec rake paperclip:refresh:missing_styles"
-    end
-  end
-
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
@@ -82,7 +76,6 @@ namespace :deploy do
   end
 
   before :starting,     :check_revision
-  after "deploy", "deploy:build_missing_paperclip_styles"
   after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
   after  :finishing,    :restart
