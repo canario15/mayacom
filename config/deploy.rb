@@ -1,3 +1,4 @@
+# deploy conf
 # Change these
 server '159.203.101.36', roles: [:web, :app, :db], primary: true
 
