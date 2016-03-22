@@ -30,18 +30,20 @@ class Specification < ActiveRecord::Base
   after_create :create_data
 
   def create_data
-    self.network = Network.create if self.network.nil?
-    self.launch = Launch.create if self.launch.nil?
-    self.status = Status.create if self.status.nil?
-    self.display = Display.create if self.display.nil?
-    self.platform = Platform.create if self.platform.nil?
-    self.memory = Memory.create if self.memory.nil?
-    self.camera = Camera.create if self.camera.nil?
-    self.sound = Sound.create if self.sound.nil?
-    self.comm = Comm.create if self.comm.nil?
-    self.feature = Feature.create if self.feature.nil?
-    self.battery = Battery.create if self.battery.nil?
-    self.misc = Misc.create if self.misc.nil?
+    self.network = Network.create(tecno: "", band4g: "", band3g: "", band2g: "" ) if self.network.nil?
+    self.launch = Launch.create(announced: "", status: "") if self.launch.nil?
+    self.status = Status.create(dimensions: "", weight: "", build: "", sim: "" ) if self.status.nil?
+    self.display = Display.create(disp_type: "", size: "", resolution: "", multitouch: "", protection: "" ) if self.display.nil?
+    self.platform = Platform.create(os: "", chipset: "", cpu: "", gpu: "" ) if self.platform.nil?
+    self.memory = Memory.create(internal: "", external: "" ) if self.memory.nil?
+    self.camera = Camera.create(primary: "", features: "", video: "", secondary: "" ) if self.camera.nil?
+    self.sound = Sound.create(alerts_type: "", loudspeaker: "", jack_port: "" ) if self.sound.nil?
+    self.comm = Comm.create(wlan: "", bluetooth: "", gps: "", nfc: "", radio: "", usb: "" ) if self.comm.nil?
+    self.feature = Feature.create(sensors: "", messaging: "", browser: "", java: "", otras: "" ) if self.feature.nil?
+    self.battery = Battery.create(bat_type: "", stand_by: "", talk_time: "", music_play: "" ) if self.battery.nil?
+    self.misc = Misc.create(colors: "") if self.misc.nil?
   end
 
 end
+
+
