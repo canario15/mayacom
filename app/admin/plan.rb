@@ -27,7 +27,7 @@ ActiveAdmin.register Plan do
       f.input :item_3, :hint => "5 destinos GRATIS. ej"
       f.input :description, :hint => "en código HTML"
       f.has_many :phone_plans, allow_destroy: true  do |r|
-        r.input :phone, as: :select, :collection => Phone.all.collect {|ph| ["#{ph.brand} #{ph.model}", ph.id] }
+        r.input :phone, as: :select, :input_html => { :class => 'plan-phone-plans-phone'}, :collection => Phone.all.collect {|ph| ["#{ph.brand} #{ph.model}", ph.id] }
         r.input :price, :hint => "Incluido o $1500. ej"
       end
     end
