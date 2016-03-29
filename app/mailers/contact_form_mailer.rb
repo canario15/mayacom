@@ -5,7 +5,7 @@ class ContactFormMailer < ApplicationMailer
     @email = email
     @tel = tel
     @message = message
-    mail(subject: 'CONTACTOOOOOOOOOOO')
+    mail(subject: 'Nuevo mensaje desde mayacom.com.uy')
   end
 
 end

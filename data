@@ -2,8 +2,6 @@ colores
 azul: #303967
 amarillo: #fecc00
 
-joaquinboutureira@gmail.com
-⁠⁠⁠j990080540
 
 paginas
 
@@ -11,7 +9,7 @@ checkboxes
   http://icheck.fronteed.com/#skin-line
 
 slide
-  http://www.jqueryscript.net/form/Highly-Customizable-Range-Slider-Plugin-For-Bootstrap-Bootstrap-Slider.html
+  http://ionden.com/a/plugins/ion.rangeSlider/demo_interactions.html
 
 fuente iconos
   http://fortawesome.github.io/Font-Awesome/icons/
@@ -20,7 +18,7 @@ carusel
   http://owlgraphic.com/owlcarousel/index.html
 
 foto zoom
-  http://www.elevateweb.co.uk/image-zoom/examples
+  http://www.jqueryscript.net/zoom/jQuery-Plugins-For-Simple-Image-Gallery-with-Magnifying-Glass-Effect.html
 
 jqery flip
   https://nnattawat.github.io/flip/
@@ -43,18 +41,117 @@ tabs
 Froms
   http://malsup.com/jquery/form/#ajaxSubmit
 
+jchosen
+  https://harvesthq.github.io/chosen/
+
+plugins sote
+  http://ionden.com/plugins.html
+
 
 gema de busqueda y filtros Ransack
 #370 Ransack
 https://github.com/activerecord-hackery/ransack/wiki/Basic-Searching
 
 
-backend
+para comparar
+http://tympanus.net/Blueprints/ProductComparison/
+http://tympanus.net/codrops/category/blueprints/ -> todos
 
 
-forntend
-  2)falta red social  y botones de compartir
-  3)paginacion despues de filtrar los celulares
-  4)paginacion despues de filtrar los accesorios
-  5)filtro cuando mueve el rango de precio
-  6)ver cuando borras cosas se borren los hijos
+servidores
+ https://www.ralfebert.de/tutorials/rails-deployment/
+
+
+
+Tu pago con Cuenta Personal se realizó exitosamente.  Se debitó de tu Cuenta Personal: 4,571.70. Tu clave de pago es:   4044708b891240041.
+
+
+https://www.digitalocean.com/community/tutorials/how-to-deploy-a-rails-app-with-unicorn-and-nginx-on-ubuntu-14-04
+
+
+descripcion de plan ejemplo
+<div class="row">
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-6 col-sm-6">
+        <ul class="lista">
+          <li>
+            <i class=" chk-ico fa fa-check fa-2x"></i>
+            <h3>3 GB para navegar a 20/2 mb de velocidad</h3>
+            <p>Navegá hasta 10 veces más rápido que en 3G. Descargá archivos, mirá videos HD, jugá en línea, subí tus fotos y mucho más sin interrupciones.</p>
+          </li>
+          <li>
+            <i class=" chk-ico fa fa-check fa-2x"></i>
+            <h3>Equipo a precio promocional</h3>
+            <p>Llevate el equipo que quieras y navegá a la mayor velocidad. Consultá los equipos incluidos en nuestro catálogo.</p>
+          </li>
+          <li>
+            <i class=" chk-ico fa fa-check fa-2x"></i>
+            <h3>5 destinos gratis</h3>
+            <p>Mantenete siempre en contacto con los que mas querés.</p>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-6 col-sm-6">
+        <div class="data">
+          <div class="col1">
+            <div>
+              <p>$ <span> 630 </span> </p>
+              <p><small>mensuales</small></p>
+            </div>
+          </div>
+          <a class="col2" href="javascript:void(0)">
+            <span class="icon-catalogo"></span>
+            <p id="go_phones">ver equipos <small>compatibles con el plan</small></p>
+            <i class="fa fa-down fa-2x"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="plan-descripcion">
+      <h3>Descripción</h3>
+      <div class="ulLista">
+        <p> Con vera LTE vas a tener una mejor experiencia en Internet ¡podrás navegar hasta 10 veces más rápido que en 3G! Además, es un plan con límite de crédito por lo que podrás tener el control de lo que pagás por mes. Contratando este plan accedés a los siguientes beneficios:
+        </p>
+        <ul>
+          <li>
+            <i class="fa fa-check"></i>
+            3 GB para navegar a una velocidad de 20Mbps / 2Mbps.
+          </li>
+          <li>
+            <i class="fa fa-check"></i>
+            Rinde hasta 140 minutos para hablar a destinos fijos y móviles de Antel.
+          </li>
+          <li>
+            <i class="fa fa-check"></i>
+            5 destinos gratis (1.000 minutos a 1 fijo, 2.000 minutos a 2 móviles de Antel y 1.000 SMS a 2 móviles de Antel).
+          </li>
+          <li>
+            <i class="fa fa-check"></i>
+            5 amigos para hablar a $0,99 el minuto.
+          </li>
+          <li>
+            <i class="fa fa-check"></i>
+            Llevate un equipo a precio promocional.
+          </li>
+          <li>
+            <i class="fa fa-check"></i>
+            Tarifica cada 20 segundos.
+          </li>
+        </ul>
+        <p> Podrás consultar tu saldo, enviando un SMS sin costo al 226 con el texto SALDO.<br> Una vez consumido los datos incluidos podrás recargar enviando un SMS al 226 con el texto de la acreditación que querés destinar.<br> Por ejemplo:
+        </p>
+        <ul>
+          <li> <i class="fa fa-check"></i> 450 Mb Enviá "100" al 226 · 30 días de vigencia </li>
+          <li> <i class="fa fa-check"></i> 922 Mb Enviá "200" al 226 · 60 días de vigencia</li>
+          <li> <i class="fa fa-check"></i> 1.382 Mb Enviá "300" al 226 · 90 días de vigencia</li>
+          <li> <i class="fa fa-check"></i> 2.304 Mb Enviá "500" al 226 · 90 días de vigencia</li>
+          <li> <i class="fa fa-check"></i> 13,5 Gb Enviá "900" al 226 · 180 días de vigencia</li>
+        </ul>
+        <p><b>Condiciones comerciales </b></p>
+        <p> Contrato a 2 años. Las velocidades de conexión están sujetas a los recursos disponibles y cobertura de la red LTE de Antel.<br>
+        <a target="_blank" href="http://www.antel.com.uy/antel/personas-y-hogares/novedades/cobertura-lte">Conozca la cobertura LTE de Antel</a>. Luego de traficados los GB incluidos en el plan, la velocidad de bajada será de hasta 1 Mbps. </p> <p>Todos los valores incluyen IVA.</p>
+      </div>
+    </div>
+  </div>
+</div>

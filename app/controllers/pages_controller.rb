@@ -21,8 +21,12 @@ class PagesController < ApplicationController
     @email = params[:email]
     @phone = params[:tel]
     @message = params[:message]
-    ContactFormMailer.new_message(@name,@email,@phone,@message).deliver_later
-    flash[:success] = "su mensaje ha sido enviado correctamente"
+    begin
+      ContactFormMailer.new_message(@name,@email,@phone,@message).deliver_later
+      flash[:success] = "Su mensaje ha sido enviado correctamente"
+    rescue => ex
+      flash[:error] = "Su mensaje no ha sido enviado. Intente nuevamente o comuníquese telefónicamente"
+    end
     redirect_to contacto_path
   end
 
