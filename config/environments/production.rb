@@ -82,14 +82,14 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { :host => 'mayacom.com.uy' }
   config.action_mailer.delivery_method = :smtp
-  ActionMailer::Base.perform_deliveries = true
-  ActionMailer::Base.raise_delivery_errors = true
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
   config.action_mailer.smtp_settings = {
     :address              => 'smtp.gmail.com',
     :port                 => 587,
-    :domain               => 'mayacom.com.uy',
+    :domain               => 'gmail.com',
     :authentication       => "plain",
-    :user_name            => 'info@mayacom.com',
+    :user_name            => 'joaquinboutureira@gmail.com',
     :password             => '',
     :enable_starttls_auto => :true
   }
