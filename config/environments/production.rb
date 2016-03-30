@@ -92,7 +92,7 @@ Rails.application.configure do
     :authentication       => :plain,
     :enable_starttls_auto => :true,
     :user_name            => 'correcam1515@gmail.com',
-    :password             => 'Germæn15'
+    :password             => 'Germ@n15'
   }
 
 end
