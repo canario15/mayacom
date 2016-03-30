@@ -91,8 +91,8 @@ Rails.application.configure do
     :domain               => 'mayacom.com.uy',
     :authentication       => :plain,
     :enable_starttls_auto => :true,
-    :user_name            => Rails.application.secrets.gmail_username,
-    :password             => Rails.application.secrets.gmail_password
+    :user_name            => 'correcam1515@gmail.com',
+    :password             => 'Germæn15'
   }
 
 end
