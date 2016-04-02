@@ -31,9 +31,9 @@ ActiveAdmin.register Phone do
       f.input :model
       f.input :mode, :as => :select, :collection => [ "Libre" , "Contrato", "Prepago" ]
       f.input :title
-      f.input :new_price
-      f.input :old_price
-      f.input :short_desc
+      f.input :new_price, :hint => "precio por el equipo libre, si es vacio aparacece mensaje para consultar el precio"
+      f.input :old_price, :hint => "si se carga este precio aparecera tachado"
+      f.input :short_desc, :as => :string, :hint => "no menos de 140 caracteres"
       f.input :long_desc
       f.input :enter_date
       f.input :is_most_view

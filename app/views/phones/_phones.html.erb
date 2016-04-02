@@ -21,8 +21,13 @@
           <div class="name-cel"><%= p %></div>
           <% title = ""%>
           <% if p.phone_plans.blank? %>
-            <% price = "$ #{p.new_price}" %>
-            <% title = "A tan solo <span>#{price}</span> <small style='font-size: 80%'> (IVA inc.)</small>" %>
+            <% if p.new_price.blank? %>
+              <% title = "Consulte el precio" %>
+              <% price = "Consulte el precio" %>
+            <% else %>
+              <% price = "$ #{p.new_price} <small style='font-size: 80%'> (IVA inc.)</small>" %>
+              <% title = "A tan solo <span>#{price}</span> <small style='font-size: 80%'> (IVA inc.)</small>" %>
+            <% end -%>
           <% else %>
             <% title = "Con plan <span>#{p.phone_plans.first.plan.title}</span> " %>
             <% price = p.phone_plans.first.price %>
@@ -38,8 +43,7 @@
             </div>
             <div class="precio">
 
-              <div class="bgPrecio"> <%= price %> <small style='font-size: 80%'> (IVA inc.)</small></div>
-
+              <div class="bgPrecio"> <%= price.html_safe %></div>
               <span class="titDesde"></span>
               <span>
                 <strong></strong>

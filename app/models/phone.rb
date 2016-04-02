@@ -16,7 +16,7 @@ class Phone < ActiveRecord::Base
   accepts_nested_attributes_for :accessories
   accepts_nested_attributes_for :specification, :allow_destroy => true
 
-  validates_presence_of :phone_type, :mode, :title, :brand_id, :model, :new_price, :short_desc, :long_desc
+  validates_presence_of :phone_type, :mode, :title, :brand_id, :model, :short_desc, :long_desc
   validate :validate_images
 
 
