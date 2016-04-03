@@ -15,3 +15,9 @@
 /log/*
 !/log/.keep
 /tmp
+privATE_DATA
+test/*
+rbenv-vars/*
+public/system/*
+.byebug_history
+data

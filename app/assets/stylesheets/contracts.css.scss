@@ -114,31 +114,33 @@
   margin-top:30px;
 }
 
-
 .cost2 {
-  background: #303967 none repeat scroll 0 0;
-  bottom: 0;
-  display: block;
-  max-height: 70px;
-  padding-bottom: 10px;
   padding-top: 10px;
-  position: relative;
-  width: 108%;
+}
+.btn-mo-det {
+  float:right;
+  margin-top: 10px;
 }
 
-.cost2 span.ctabtn {
+.btn-mo-det a{
   background: #fecc00 none repeat scroll 0 0;
   border-radius: 5px;
   color: #303967;
   font-size: 16px;
-  margin: 0 10px 0 0;
   padding: 10px 16px;
 }
+
+.btn-mo-det a:hover{
+  text-decoration: underline;
+  color: #303967;
+}
+
 
 .cost2 .info {
   padding-right: 10px;
   text-align: right;
   width: 55%;
+  float:right;
 }
 
 .cost2 .info p {

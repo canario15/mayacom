@@ -20,39 +20,40 @@
     </div>
     <div clas="row rowContracts">
       <% @contracts.each do |c| %>
-        <div class="col-md-4 col-sm-4 col-xss-6 boxContr">
-          <div class="contract">
-            <div class="frente front">
-              <div class="cont-img">
-                <%= image_tag c.logo(:index)%>
-              </div>
+        <div class="contr-card scroll ">
+          <div class="contr-card-wrapper">
+            <div class="div-contr-img">
+              <%= image_tag c.logo(:index) %>
+            </div>
+            <div class="div-contr-tit">
               <h3><%= c.title %></h3>
-              <p>
-                <%= c.short_desc %>
-              </p>
-              <div class="cost mens">
-                <% if c.lower_plan == "0" %>
-                  <p style="margin-top: 9px">Sin costo mensual</p>
-                <% else %>
-                  <p>
-                    Desde <span class="clear visible-sm visible-xss"></span> <strong>
+            </div>
+            <div class="div-contr-desc">
+              <p><%= c.short_desc %></p>
+            </div>
+            <div class="div-contr-price">
+              <% if c.lower_plan == "0" %>
+                <p>Sin costo mensual</p>
+              <% else %>
+                <p>
+                  Desde
+                  <strong>
                     <small>$</small>
                     <%= c.lower_plan %>
-                    </strong> <span> mensuales </span>
-                  </p>
-                <% end -%>
-              </div>
-              <span class="icon-arrow-up-2"></span>
-              <div class="clear"></div>
+                  </strong>
+                  <span> mensuales </span>
+                </p>
+              <% end -%>
             </div>
-            <div class="atras back">
-              <div class="contInfo">
+            <div class="contr-card-detail">
+              <div class="div-plan-tit">
                 <h3><%= c.title %></h3>
                 <h4>Elegí tu plan</h4>
-                <div class="plan-accordion">
-                  <% c.plans.each do |p| %>
-                    <h1><%= p.title %></h1>
-                    <div class="listdata" data-status="0">
+              </div>
+              <div class=" plan-accordion div-plan-acord">
+                <% c.plans.each do |p| %>
+                  <h1><%= p.title %></h1>
+                  <div class="listdata" data-status="0">
                     <ul>
                       <li>
                         <i class="fa fa-check"></i>
@@ -68,39 +69,35 @@
                       </li>
                     </ul>
                     <div class="cost2">
-                      <div class="oMenu">
+                      <div class="btn-mo-det">
                         <%= link_to "/contratos/#{c.id}/plan/#{p.id}" do %>
-                          <span class="ctabtn pull-right">
-                            Más detalles
-                          </span>
+                          Más detalles
                         <% end -%>
-                        <div class="info pull-right">
-                          <% if p.price == "0" %>
-                            <p style="margin-top: 10px">
-                              Sin costo mensual
-                            </p>
-                          <% else %>
-                            <div>
-                              <p>
-                                A solo <strong><small>$</small>  <%= p.price %> </strong>
-                              </p>
-                              <span>mensuales</span>
-                            </div>
-                          <% end %>
-                        </div>
+                      </div>
+                      <div class="info">
+                        <% if p.price == "0" %>
+                          <p style="margin-top: 10px">
+                            Sin costo mensual
+                          </p>
+                        <% else %>
+                          <p style="float:left">
+                            A solo
+                          </p>
+                          <p>
+                            <strong><small>$</small>  <%= p.price %> </strong>
+                            <span style="font-size: 12px">mensuales</span>
+                          </p>
+                        <% end %>
                       </div>
                       <div class="clear"></div>
                     </div>
-                    </div>
-                  <% end -%>
-                </div>
+                  </div>
+                <% end -%>
               </div>
             </div>
           </div>
         </div>
       <% end -%>
-
     </div>
   </div>
 </div>
-
