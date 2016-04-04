@@ -1,0 +1,101 @@
+<style type="text/css">
+  .page-container {
+    color: #565a5c;
+    font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.43;
+    background: #FFF;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+    width: 1045px;
+  }
+  .row::before, .row::after {
+    content: " ";
+    display: table;
+  }
+  *, *::before, *::after, hr, hr::before, hr::after, input[type="search"], input[type="search"]::before, input[type="search"]::after {
+    box-sizing: border-box;
+  }
+  .row::after {
+    clear: both;
+  }
+  .row::before, .row::after {
+    content: " ";
+    display: table;
+  }
+  .row.row-table {
+    width: calc(100% + 25px);
+  }
+  .row-space-top-8 {
+    margin-top: 50px;
+  }
+  .row-space-8 {
+    margin-bottom: 50px;
+  }
+  .row {
+    margin-left: -12.5px;
+    margin-right: -12.5px;
+  }
+  .row-table {
+    display: table;
+  }
+  .col-5 {
+    width: 41.6667%;
+  }
+  .col-middle {
+    vertical-align: middle;
+  }
+  .col-top, .col-middle, .col-bottom {
+    display: table-cell;
+    float: none;
+  }
+  .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
+    float: left;
+    min-height: 1px;
+    position: relative;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+  .text-jumbo {
+    font-size: 60px;
+    font-weight: 900;
+  }
+  h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child {
+    margin-top: 0;
+  }
+  .text-jumbo {
+    font-size: 60px;
+    font-weight: 900;
+  }
+  .code-err {
+    color: #82888a;
+    font-size: 14px;
+    margin-bottom:24px;
+  }
+
+  .list-unstyled, .list-layout, .subnav-list, .sidenav-list {
+    list-style: outside none none;
+    padding-left: 0;
+  }
+  ul, ol {
+    margin-bottom: 15px;
+    margin-top: 0;
+    padding-left: 25px;
+  }
+  .list-unstyled, .list-layout, .subnav-list, .sidenav-list {
+    list-style: outside none none;
+  }
+  a {
+    color: #303967;
+    text-decoration: none;
+  }
+  a {
+    background: transparent none repeat scroll 0 0;
+  }
+</style>
+
+<%= yield %>
