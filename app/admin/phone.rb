@@ -123,36 +123,3 @@ ActiveAdmin.register Phone do
   end
 
 end
-
-
-#  show :title => :title do |ac|
-#    attributes_table do
-#      row :brand
-#      row :phone_type
-#      row :model
-#      row :mode
-#      row :title
-#      row :new_price
-#      row :old_price
-#      row :short_desc
-#      row :long_desc
-#      row :enter_date
-#      row :is_most_view
-#      row :is_top_sale
-#      row :is_top_new
-#      row :created_at
-#      row :updated_at
-#      row 'Accesorios compatibles' do |acce|
-#        (acce.accessories.map { |ph| "#{ph.brand} #{ph.access_type}" }).join(", ")
-#      end
-#      row "Imágenes" do
-#        ul do
-#          ac.phone_images.each do |img|
-#            li do
-#              image_tag(img.image.url(:thumb))
-#            end
-#          end
-#        end
-#      end
-#    end
-#  end

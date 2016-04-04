@@ -30,4 +30,8 @@ class Accessory < ActiveRecord::Base
     errors.add(:accessory_images, "no puede ser vacía") if accessory_images.size < 1
   end
 
+  def to_s
+    "#{self.title}"
+  end
+
 end
