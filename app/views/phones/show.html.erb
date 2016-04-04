@@ -58,8 +58,13 @@
                   <% end -%>
                   <span class="price-acc">Stock:</span>
                   <ins style="color:#89c403"><i class="fa fa-check"></i></ins>
+                  <% if @phone.new_price.blank? %>
+                    <% name_fb = @phone.title %>
+                  <% else %>
+                    <% name_fb = "#{@phone.title} a tan solo #{@phone.new_price}" %>
+                  <% end -%>
                   <%= link_to("javascript:void(0)", class: "fb-share-btn",
-                                                    :"data-name" => "#{@phone.title} #{@phone.new_price.blank? ? "" : "a tan solo " @phone.new_price}",
+                                                    :"data-name" => name_fb,
                                                     :"data-caption" => "",
                                                     :"data-link" => request.original_url,
                                                     :"data-picture" => asset_url(@phone.phone_images.first.image),
