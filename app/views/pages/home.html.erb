@@ -36,10 +36,12 @@
                   </div>
                 </div>
                 <h2><%= phone.title %></h2>
-                <div class="product-carousel-price">
-                  <ins>$<%= phone.new_price %> <small style="font-size: 53%;color:#9e9e9e"> (IVA inc.)</small></ins>
-                  <del><%= "$#{phone.old_price}" unless phone.old_price.blank? %></del>
-                </div>
+                <% unless phone.new_price.blank? %>
+                  <div class="product-carousel-price">
+                    <ins>$<%= phone.new_price %> <small style="font-size: 53%;color:#9e9e9e"> (IVA inc.)</small></ins>
+                    <del><%= "$#{phone.old_price}" unless phone.old_price.blank? %></del>
+                  </div>
+                <% end -%>
               </div>
             <% end -%>
             <% @last_access.each  do |access| %>
@@ -87,18 +89,20 @@
 								<i class="fa fa-star"></i>
 								<i class="fa fa-star"></i>
 							</div>
-							<div class="product-wid-price">
-								<ins>
-									$<%= phone.new_price %>
-									<small style="font-size: 62%;color:#9e9e9e"> (IVA inc.)</small>
-								</ins>
-								<% unless phone.old_price.blank? %>
-									<del>
-										<%= "$#{phone.old_price}"  %>
-										<small style="font-size: 62%;color:#9e9e9e"> (IVA inc.)</small>
-									</del>
-								<% end -%>
-							</div>
+              <% unless phone.new_price.blank? %>
+  							<div class="product-wid-price">
+  								<ins>
+  									$<%= phone.new_price %>
+  									<small style="font-size: 62%;color:#9e9e9e"> (IVA inc.)</small>
+  								</ins>
+  								<% unless phone.old_price.blank? %>
+  									<del>
+  										<%= "$#{phone.old_price}"  %>
+  										<small style="font-size: 62%;color:#9e9e9e"> (IVA inc.)</small>
+  									</del>
+  								<% end -%>
+  							</div>
+              <% end -%>
 						</div>
 					<% end -%>
 				</div>
@@ -121,18 +125,20 @@
 								<i class="fa fa-star"></i>
 								<i class="fa fa-star"></i>
 							</div>
-							<div class="product-wid-price">
-								<ins>
-									$<%= phone.new_price %>
-									<small style="font-size: 62%;color:#9e9e9e"> (IVA inc.)</small>
-								</ins>
-								<% unless phone.old_price.blank? %>
-									<del>
-										<%= "$#{phone.old_price}"  %>
-										<small style="font-size: 62%;color:#9e9e9e"> (IVA inc.)</small>
-									</del>
-								<% end -%>
-							</div>
+              <% unless phone.new_price.blank? %>
+  							<div class="product-wid-price">
+  								<ins>
+  									$<%= phone.new_price %>
+  									<small style="font-size: 62%;color:#9e9e9e"> (IVA inc.)</small>
+  								</ins>
+  								<% unless phone.old_price.blank? %>
+  									<del>
+  										<%= "$#{phone.old_price}"  %>
+  										<small style="font-size: 62%;color:#9e9e9e"> (IVA inc.)</small>
+  									</del>
+  								<% end -%>
+  							</div>
+              <% end -%>
 						</div>
 					<% end -%>
 				</div>
@@ -155,18 +161,20 @@
 								<i class="fa fa-star"></i>
 								<i class="fa fa-star"></i>
 							</div>
-							<div class="product-wid-price">
-								<ins>
-									$<%= phone.new_price %>
-									<small style="font-size: 62%;color:#9e9e9e"> (IVA inc.)</small>
-								</ins>
-								<% unless phone.old_price.blank? %>
-									<del>
-										<%= "$#{phone.old_price}"  %>
-										<small style="font-size: 62%;color:#9e9e9e"> (IVA inc.)</small>
-									</del>
-								<% end -%>
-							</div>
+              <% unless phone.new_price.blank? %>
+  							<div class="product-wid-price">
+  								<ins>
+  									$<%= phone.new_price %>
+  									<small style="font-size: 62%;color:#9e9e9e"> (IVA inc.)</small>
+  								</ins>
+  								<% unless phone.old_price.blank? %>
+  									<del>
+  										<%= "$#{phone.old_price}"  %>
+  										<small style="font-size: 62%;color:#9e9e9e"> (IVA inc.)</small>
+  									</del>
+  								<% end -%>
+  							</div>
+              <% end -%>
 						</div>
 					<% end -%>
 				</div>
