@@ -20,4 +20,5 @@ test/*
 rbenv-vars/*
 public/system/*
 .byebug_history
+config/secrets.yml
 data
