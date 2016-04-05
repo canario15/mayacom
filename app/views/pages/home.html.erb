@@ -66,7 +66,6 @@
     </div>
   </div>
 </div>
-
 <div class="product-widget-area">
 	<div class="zigzag-bottom"></div>
 	<div class="container">
@@ -74,109 +73,22 @@
 			<div class="col-md-4">
 				<div class="single-product-widget">
 					<h2 class="product-wid-title">Top Ventas</h2>
-					<% @top_sell.each do |phone| %>
-						<div class="single-wid-product">
-							<%= link_to "/celulares/#{phone.id}"  do  %>
-                <%= image_tag phone.phone_images.first.image(:thumb), :class => "product-thumb" %>
-              <% end -%>
-							<h2>
-								<%= link_to "#{phone.brand} #{phone.model} ", "/celulares/#{phone.id}" %>
-							</h2>
-							<div class="product-wid-rating">
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-							</div>
-              <% unless phone.new_price.blank? %>
-  							<div class="product-wid-price">
-  								<ins>
-  									$<%= phone.new_price %>
-  									<small style="font-size: 62%;color:#9e9e9e"> (IVA inc.)</small>
-  								</ins>
-  								<% unless phone.old_price.blank? %>
-  									<del>
-  										<%= "$#{phone.old_price}"  %>
-  										<small style="font-size: 62%;color:#9e9e9e"> (IVA inc.)</small>
-  									</del>
-  								<% end -%>
-  							</div>
-              <% end -%>
-						</div>
-					<% end -%>
+          <%= render partial: "top_pho_views", :locals => { data: @top_pho_sell } %>
+          <%= render partial: "top_acc_views", :locals => { data: @top_acc_sell } %>
 				</div>
 	   	</div>
 			<div class="col-md-4">
 				<div class="single-product-widget">
 					<h2 class="product-wid-title">Mas Vistos</h2>
-					<% @top_viwes.each do |phone| %>
-						<div class="single-wid-product">
-							<%= link_to "/celulares/#{phone.id}"  do  %>
-                <%= image_tag phone.phone_images.first.image(:thumb), :class => "product-thumb" %>
-              <% end -%>
-							<h2>
-								<%= link_to "#{phone.brand} #{phone.model} ", "/celulares/#{phone.id}" %>
-							</h2>
-							<div class="product-wid-rating">
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-							</div>
-              <% unless phone.new_price.blank? %>
-  							<div class="product-wid-price">
-  								<ins>
-  									$<%= phone.new_price %>
-  									<small style="font-size: 62%;color:#9e9e9e"> (IVA inc.)</small>
-  								</ins>
-  								<% unless phone.old_price.blank? %>
-  									<del>
-  										<%= "$#{phone.old_price}"  %>
-  										<small style="font-size: 62%;color:#9e9e9e"> (IVA inc.)</small>
-  									</del>
-  								<% end -%>
-  							</div>
-              <% end -%>
-						</div>
-					<% end -%>
+          <%= render partial: "top_pho_views", :locals => { data: @top_pho_viwes } %>
+          <%= render partial: "top_acc_views", :locals => { data: @top_acc_sell } %>
 				</div>
 			</div>
 			<div class="col-md-4">
 				<div class="single-product-widget">
 					<h2 class="product-wid-title">Top Nuevos</h2>
-					<% @top_news.each do |phone| %>
-						<div class="single-wid-product">
-							<%= link_to "/celulares/#{phone.id}"  do  %>
-                <%= image_tag phone.phone_images.first.image(:thumb), :class => "product-thumb" %>
-              <% end -%>
-							<h2>
-								<%= link_to "#{phone.brand} #{phone.model} ", "/celulares/#{phone.id}" %>
-							</h2>
-							<div class="product-wid-rating">
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-							</div>
-              <% unless phone.new_price.blank? %>
-  							<div class="product-wid-price">
-  								<ins>
-  									$<%= phone.new_price %>
-  									<small style="font-size: 62%;color:#9e9e9e"> (IVA inc.)</small>
-  								</ins>
-  								<% unless phone.old_price.blank? %>
-  									<del>
-  										<%= "$#{phone.old_price}"  %>
-  										<small style="font-size: 62%;color:#9e9e9e"> (IVA inc.)</small>
-  									</del>
-  								<% end -%>
-  							</div>
-              <% end -%>
-						</div>
-					<% end -%>
+          <%= render partial: "top_pho_views", :locals => { data: @top_pho_news } %>
+          <%= render partial: "top_acc_views", :locals => { data: @top_acc_sell } %>
 				</div>
 			</div>
 		</div>

@@ -1,0 +1,31 @@
+<% data.each do |accessory| %>
+  <div class="single-wid-product">
+    <%= link_to "/accesorios/#{accessory.id}"  do  %>
+      <%= image_tag accessory.accessory_images.first.image(:thumb), :class => "product-thumb" %>
+    <% end -%>
+    <h2>
+      <%= link_to "#{accessory.title} ", "/accesorios/#{accessory.id}" %>
+    </h2>
+    <div class="product-wid-rating">
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+    </div>
+    <% unless accessory.new_price.blank? %>
+      <div class="product-wid-price">
+        <ins>
+          $<%= accessory.new_price %>
+          <small style="font-size: 62%;color:#9e9e9e"> (IVA inc.)</small>
+        </ins>
+        <% unless accessory.old_price.blank? %>
+          <del>
+            <%= "$#{accessory.old_price}"  %>
+            <small style="font-size: 62%;color:#9e9e9e"> (IVA inc.)</small>
+          </del>
+        <% end -%>
+      </div>
+    <% end -%>
+  </div>
+<% end -%>

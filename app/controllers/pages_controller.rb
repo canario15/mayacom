@@ -6,9 +6,12 @@ class PagesController < ApplicationController
     @hover_menu = CONSTANT_MENU_HOME_ID
     @last_phones = Phone.last(5)
     @last_access = Accessory.last(5)
-    @top_viwes = Phone.where(is_most_view: true).last(3)
-    @top_sell = Phone.where(is_top_sale: true).last(3)
-    @top_news = Phone.where(is_top_new: true).last(3)
+    @top_pho_viwes = Phone.where(is_most_view: true).last(2)
+    @top_pho_sell = Phone.where(is_top_sale: true).last(2)
+    @top_pho_news = Phone.where(is_top_new: true).last(2)
+    @top_acc_viwes = Accessory.where(is_most_view: true).last(2)
+    @top_acc_sell = Accessory.where(is_top_sale: true).last(2)
+    @top_acc_news = Accessory.where(is_top_new: true).last(2)
     @offers = Offer.where(active: true).last(4)
   end
 
