@@ -22,7 +22,8 @@
 			$(this).find("h1").wrap("<div class='accordion-header'></div>");
 			$(this).find("h1").after("<div class='accordion-header-icon'>"+settings.dropDownIcon+"</div>");
 			$(this).children('.accordion-item').wrap('<div class="drawer"></div>');
-			if(settings.firstChildExpand==true)
+
+			if(settings.firstChildExpand==true || $(this).children().length == 1)
 			{
 				$(this).find(".accordion-header:first").toggleClass("accordion-header-active");
 				$(this).find(".accordion-header:first").parent().toggleClass("accordion-item-active");
