@@ -1,4 +1,7 @@
 ActiveAdmin.register Contract do
+
+  actions :index, :edit, :show, :update
+
   menu :label => "Contratos"
 
   permit_params :technology_id, :title, :short_desc, :logo, :order
@@ -12,7 +15,9 @@ ActiveAdmin.register Contract do
     column :order
     column :technology
     column :title
-    actions
+    actions defaults: true do |contr|
+      link_to "Ver en Página", contracts_path(), :target => "_blank"
+    end
   end
 
   form do |f|
@@ -25,7 +30,6 @@ ActiveAdmin.register Contract do
     end
     f.actions
   end
-
 
   show :title => :title do |co|
     attributes_table do

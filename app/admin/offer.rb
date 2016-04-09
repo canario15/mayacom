@@ -1,10 +1,16 @@
 ActiveAdmin.register Offer do
 
+  actions :index, :edit, :show, :update
+
   permit_params :title, :description, :phone_id, :active, :finish_date, :accessory_id, :price, :slider_image, offer_images_attributes: [:image, :image_file_name, :image_content_type, :image_file_size, :image_updated_at, :_destroy, :id]
 
   config.batch_actions = false
 
   filter :active
+
+  action_item only: :show do
+    link_to 'Ver en la página', offer_path(offer), :target => "_blank"
+  end
 
   index :title => "Ofertas"  do
     column :active
@@ -12,7 +18,9 @@ ActiveAdmin.register Offer do
     column :phone
     column :accessory
     column :finish_date
-    actions
+    actions defaults: true do |off|
+      link_to "Ver en Página", offer_path(off), :target => "_blank"
+    end
   end
 
   form do |f|

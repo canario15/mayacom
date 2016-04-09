@@ -1,5 +1,7 @@
 ActiveAdmin.register Technology do
 
+  actions :index, :edit, :show, :update
+
   menu :label => "Tecnologías"
   menu parent: "Administración"
 

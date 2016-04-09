@@ -1,4 +1,7 @@
 ActiveAdmin.register Brand do
+
+  actions :index, :edit, :show, :update
+
   menu :label => "Marcas"
   menu parent: "Administración"
 

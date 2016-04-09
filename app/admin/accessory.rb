@@ -1,4 +1,7 @@
 ActiveAdmin.register Accessory do
+
+  actions :index, :edit, :show, :update
+
   menu :label => "Accesorios"
   menu parent: "Productos"
 
@@ -12,11 +15,17 @@ ActiveAdmin.register Accessory do
   filter :is_top_sale
   filter :is_top_new
 
+  action_item only: :show do
+    link_to 'Ver en la página', accessory_path(accessory), :target => "_blank"
+  end
+
   index :title => "Accesorios"  do
     column :access_type
     column :title
     column :new_price
-    actions
+    actions defaults: true do |acc|
+      link_to "Ver en Página", accessory_path(acc), :target => "_blank"
+    end
   end
 
 

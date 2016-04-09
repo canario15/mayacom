@@ -1,4 +1,7 @@
 ActiveAdmin.register Plan do
+
+  actions :index, :edit, :show, :update
+
   menu :label => "Planes"
 
   permit_params :title, :order_number, :item_1, :item_2, :item_3, :price, :description, :contract_id, phone_plans_attributes: [:phone_id, :price,  :_destroy, :id ]

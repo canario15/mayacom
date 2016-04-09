@@ -1,4 +1,7 @@
 ActiveAdmin.register Phone do
+
+  actions :index, :edit, :show, :update
+
   menu :label => "Celulares"
   menu parent: "Productos"
 
@@ -13,6 +16,10 @@ ActiveAdmin.register Phone do
   filter :is_top_sale
   filter :is_top_new
 
+  action_item only: :show do
+    link_to 'Ver en la página', phone_path(phone), :target => "_blank"
+  end
+
   index :title => "Celulares"  do
     column :brand
     column :phone_type
@@ -20,7 +27,9 @@ ActiveAdmin.register Phone do
     column :mode
     column :new_price
     column :created_at
-    actions
+    actions defaults: true do |phone|
+      link_to "Ver en Página", phone_path(phone), :target => "_blank"
+    end
   end
 
   form do |f|

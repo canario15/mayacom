@@ -10,17 +10,17 @@ Rails.application.routes.draw do
   get '/' => 'pages#en_construccion'
 
   get '/home' => 'pages#home'
-  get '/celulares'      => 'phones#index'
-  get '/celulares/:id'  => 'phones#show'
+  get '/celulares'      => 'phones#index', as: :phones
+  get '/celulares/:id'  => 'phones#show', as: :phone
 
-  get '/accesorios/'    => 'accessories#index'
-  get '/accesorios/:id' => 'accessories#show'
+  get '/accesorios/'    => 'accessories#index', as: :accessories
+  get '/accesorios/:id' => 'accessories#show', as: :accessory
 
-  get '/contratos/'     => 'contracts#index'
+  get '/contratos/'     => 'contracts#index', as: :contracts
   get '/contratos/:id/plan/:plan_id'  => 'contracts#show'
 
-  get '/ofertas'       => 'offers#index'
-  get '/ofertas/:id' => 'offers#show'
+  get '/ofertas'       => 'offers#index', as: :offers
+  get '/ofertas/:id' => 'offers#show', as: :offer
 
   get '/contacto'      => 'pages#contact'
 
@@ -31,8 +31,6 @@ Rails.application.routes.draw do
   match "/404", :to => "errors#not_found", :via => :all
   match "/500", :to => "errors#internal_server_error", :via => :all
 
-  resources :phones
-  resources :accessories
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
