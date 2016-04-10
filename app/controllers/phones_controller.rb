@@ -13,4 +13,21 @@ class PhonesController < ApplicationController
     @hover_menu = CONSTANT_MENU_PHONES
   end
 
+  def compare
+    @phones = Phone.all
+    @hover_menu = CONSTANT_MENU_PHONES
+  end
+
+  def spec_comp
+    @phone = nil
+    @phone = Phone.find(params[:phone_id]) unless params[:phone_id].blank?
+    respond_to do |format|
+      if request.xhr?
+        format.html { render partial: 'spec_comp', :layout => false}
+      else
+        format.html
+      end
+    end
+  end
+
 end

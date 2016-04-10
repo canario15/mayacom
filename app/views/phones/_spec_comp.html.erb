@@ -1,0 +1,146 @@
+<% unless @phone.blank? %>
+
+  <tr>
+    <td class='nfo tooltip-init' title='<%= @phone.specification.network.tecno.html_safe %>' style='border-bottom: 1px solid #e3e3e3;' >
+      <%= truncate( @phone.specification.network.tecno.html_safe, :length => 45) %>
+    </td>
+  </tr>
+  <tr>
+    <td class='nfo tooltip-init' title='<%= @phone.specification.status.dimensions.html_safe %>'>
+      <%= truncate( @phone.specification.status.dimensions.html_safe, :length => 45) %>
+    </td>
+  </tr>
+  <tr>
+    <td class='nfo tooltip-init' title='<%= @phone.specification.status.weight.html_safe %>'>
+      <%= truncate( @phone.specification.status.weight.html_safe, :length => 45) %>
+    </td>
+  </tr>
+  <tr>
+    <td class='nfo tooltip-init' title='<%= @phone.specification.status.build.html_safe %>'>
+      <%= truncate( @phone.specification.status.build.html_safe, :length => 45) %>
+    </td>
+  </tr>
+  <tr>
+    <td class='nfo tooltip-init' title='<%= @phone.specification.status.sim.html_safe %>' style='border-bottom: 1px solid #e3e3e3;'>
+      <%= truncate( @phone.specification.status.sim.html_safe, :length => 45) %>
+    </td>
+  </tr>
+  <tr>
+    <td class='nfo tooltip-init' title='<%= @phone.specification.display.disp_type.html_safe %>'>
+      <%= truncate( @phone.specification.display.disp_type.html_safe, :length => 45) %>
+    </td>
+  </tr>
+  <tr>
+    <td class='nfo tooltip-init' title='<%= @phone.specification.display.size.html_safe %>'>
+      <%= truncate( @phone.specification.display.size.html_safe, :length => 45) %>
+    </td>
+  </tr>
+  <tr>
+    <td class='nfo tooltip-init' title='<%= @phone.specification.display.resolution.html_safe %>'>
+      <%= truncate( @phone.specification.display.resolution.html_safe, :length => 45) %>
+    </td>
+  </tr>
+  <tr>
+    <td class='nfo tooltip-init' title='<%= @phone.specification.display.multitouch.html_safe %>'>
+      <%= truncate( @phone.specification.display.multitouch.html_safe, :length => 45) %>
+    </td>
+  </tr>
+  <tr>
+    <td class='nfo tooltip-init' title='<%= @phone.specification.display.protection.html_safe %>' style='border-bottom: 1px solid #e3e3e3;'>
+      <%= truncate( @phone.specification.display.protection.html_safe, :length => 45) %>
+    </td>
+  </tr>
+  <tr>
+    <td class='nfo tooltip-init' title='<%= @phone.specification.platform.os.html_safe %>'>
+      <%= truncate( @phone.specification.platform.os.html_safe, :length => 45) %>
+    </td>
+  </tr>
+  <tr>
+    <td class='nfo tooltip-init' title='<%= @phone.specification.platform.chipset.html_safe %>'>
+      <%= truncate( @phone.specification.platform.chipset.html_safe, :length => 45) %>
+    </td>
+  </tr>
+  <tr>
+    <td class='nfo tooltip-init' title='<%= @phone.specification.platform.cpu.html_safe %>'>
+      <%= truncate( @phone.specification.platform.cpu.html_safe, :length => 45) %>
+    </td>
+  </tr>
+  <tr>
+    <td class='nfo tooltip-init' title='<%= @phone.specification.platform.gpu.html_safe %>' style='border-bottom: 1px solid #e3e3e3;'>
+      <%= truncate( @phone.specification.platform.gpu.html_safe, :length => 45) %>
+    </td>
+  </tr>
+  <tr>
+    <td class='nfo tooltip-init' title='<%= @phone.specification.memory.external.html_safe %>'>
+      <%= truncate( @phone.specification.memory.external.html_safe, :length => 45) %>
+    </td>
+  </tr>
+  <tr>
+    <td class='nfo tooltip-init' title='<%= @phone.specification.memory.internal.html_safe %>' style='border-bottom: 1px solid #e3e3e3;'>
+      <%= truncate( @phone.specification.memory.internal.html_safe, :length => 45) %>
+    </td>
+  </tr>
+  <tr>
+    <td class='nfo tooltip-init' title='<%= @phone.specification.camera.primary.html_safe %>'>
+      <%= truncate( @phone.specification.camera.primary.html_safe, :length => 45) %>
+    </td>
+  </tr>
+  <tr>
+    <td class='nfo tooltip-init' title='<%= @phone.specification.camera.features.html_safe %>'>
+      <%= truncate( @phone.specification.camera.features.html_safe, :length => 45) %>
+    </td>
+  </tr>
+  <tr>
+    <td class='nfo tooltip-init' title='<%= @phone.specification.camera.video.html_safe %>'>
+      <%= truncate( @phone.specification.camera.video.html_safe, :length => 45) %>
+    </td>
+  </tr>
+  <tr>
+    <td class='nfo tooltip-init' title='<%= @phone.specification.camera.secondary.html_safe %>' style='border-bottom: 1px solid #e3e3e3;'>
+      <%= truncate( @phone.specification.camera.secondary.html_safe, :length => 45) %>
+    </td>
+  </tr>
+  <tr>
+    <td class='nfo tooltip-init' title='<%= @phone.specification.comm.wlan.html_safe %>'>
+      <%= truncate( @phone.specification.comm.wlan.html_safe, :length => 45) %>
+    </td>
+  </tr>
+  <tr>
+    <td class='nfo tooltip-init' title='<%= @phone.specification.comm.bluetooth.html_safe %>'>
+      <%= truncate( @phone.specification.comm.bluetooth.html_safe, :length => 45) %>
+    </td>
+  </tr>
+  <tr>
+    <td class='nfo tooltip-init' title='<%= @phone.specification.comm.gps.html_safe %>'>
+      <%= truncate( @phone.specification.comm.gps.html_safe, :length => 45) %>
+    </td>
+  </tr>
+  <tr>
+    <td class='nfo tooltip-init' title='<%= @phone.specification.comm.nfc.html_safe %>'>
+      <%= truncate( @phone.specification.comm.nfc.html_safe, :length => 45) %>
+    </td>
+  </tr>
+  <tr>
+    <td class='nfo tooltip-init' title='<%= @phone.specification.comm.radio.html_safe %>'>
+      <%= truncate( @phone.specification.comm.radio.html_safe, :length => 45) %>
+    </td>
+  </tr>
+  <tr>
+    <td class='nfo tooltip-init' title='<%= @phone.specification.comm.usb.html_safe %>' style='border-bottom: 1px solid #e3e3e3;'>
+      <%= truncate( @phone.specification.comm.usb.html_safe, :length => 45) %>
+    </td>
+  </tr>
+  <%= hidden_field_tag "src_image_photo_#{@phone.id}", @phone.phone_images.first.image(:index) %>
+
+<% end -%>
+<script type='text/javascript'>
+  $(document).ready(function() {
+      $('.tooltip-init').tooltipster({
+        animation: 'grow',
+        delay: 200,
+        //theme: 'tooltipster-default',
+        touchDevices: false,
+        //trigger: 'hover'
+      });
+  });
+</script>

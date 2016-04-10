@@ -10,8 +10,12 @@ Rails.application.routes.draw do
   get '/' => 'pages#en_construccion'
 
   get '/home' => 'pages#home'
+
   get '/celulares'      => 'phones#index', as: :phones
   get '/celulares/:id'  => 'phones#show', as: :phone
+  get '/comparador'  => 'phones#compare'
+  get '/spec_comp' => 'phones#spec_comp'
+
 
   get '/accesorios/'    => 'accessories#index', as: :accessories
   get '/accesorios/:id' => 'accessories#show', as: :accessory

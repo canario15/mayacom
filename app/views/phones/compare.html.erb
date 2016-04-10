@@ -1,0 +1,310 @@
+<div class="product-big-title-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="product-bit-title text-center">
+          <h2>Comparador de equipos</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="single-product-area">
+  <div class="zigzag-bottom"></div>
+  <div class="container catalog-cel-cont">
+    <div class="row row-tit">
+      <div class="col-lg-8">
+        <h1>Seleccione los equipos a comparar</h1>
+      </div>
+    </div>
+    <div class="row row-body">
+      <div class="row row-comp-select">
+        <div class="col-md-comp-titles"></div>
+        <div class="col-md-custom">
+          <%= collection_select(:select_phone, :one, @phones, :id, :title, {:include_blank => 'seleccione un equipo'}, {:class => 'sel-comp-phone', :data => { :phone => 'phone_1' } } ) %>
+        </div>
+        <div class="col-md-custom">
+          <%= collection_select(:select_phone, :two, @phones, :id, :title, {:include_blank => 'seleccione un equipo'}, {:class => 'sel-comp-phone', :data => { :phone => 'phone_2' } }) %>
+        </div>
+      </div>
+      <div class="row row-comp-select">
+        <div class="col-md-comp-titles"></div>
+        <div id="photo_image_1" class="col-md-custom">
+
+        </div>
+        <div id="photo_image_2" class="col-md-custom">
+
+        </div>
+        <div class="col-md-comp-titles"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-comp-titles">
+          <div id="specs-list-comp">
+
+            <table cellspacing="0">
+              <tbody>
+                <tr>
+                  <td class="grp" rowspan="1">RED</td>
+                  <td class="ttl">Tecnología</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table cellspacing="0">
+              <tbody>
+                <tr>
+                  <td class="grp" rowspan="4">Dimensiones</td>
+                  <td class="ttl">Dimensiones</td>
+                </tr>
+                <tr>
+                  <td class="ttl">Peso</td>
+                </tr>
+                <tr>
+                  <td class="ttl">Construcción</td>
+                </tr>
+                <tr>
+                  <td class="ttl">SIM</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table cellspacing="0">
+              <tbody>
+                <tr>
+                  <td class="grp" rowspan="6">Display</td>
+                  <td class="ttl">Tipo</td>
+                </tr>
+                <tr>
+                  <td class="ttl">Tamaño</td>
+                </tr>
+                <tr>
+                  <td class="ttl">Resolución</td>
+                </tr>
+                <tr>
+                  <td class="ttl">Multitouch</td>
+                </tr>
+                <tr>
+                  <td class="ttl">Protección</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table cellspacing="0">
+              <tbody>
+                <tr>
+                  <td class="grp" rowspan="4">Plataforma</td>
+                  <td class="ttl">OS</td>
+                </tr>
+                <tr>
+                  <td class="ttl">Chipset</td>
+                </tr>
+                <tr>
+                  <td class="ttl">CPU</td>
+                </tr>
+                <tr>
+                  <td class="ttl">GPU</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table cellspacing="0">
+              <tbody>
+                <tr>
+                  <td class="grp" rowspan="2">Memoria</td>
+                  <td class="ttl">Externa</td>
+                </tr>
+                <tr>
+                  <td class="ttl">Interna</td>
+                </tr>
+              </tbody>
+            </table>
+            <table cellspacing="0">
+              <tbody>
+                <tr>
+                  <td class="grp" rowspan="4">Cámara</td>
+                  <td class="ttl">Primaria</td>
+                </tr>
+                <tr>
+                  <td class="ttl">Funciones</td>
+                </tr>
+                <tr>
+                  <td class="ttl">Video</td>
+                </tr>
+                <tr>
+                  <td class="ttl">Secundaria</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table cellspacing="0">
+              <tbody>
+                <tr>
+                  <td class="grp" rowspan="6" style="border-bottom: 1px solid #e3e3e3;">Comunes</td>
+                  <td class="ttl">WLAN</td>
+                </tr>
+                <tr>
+                  <td class="ttl">Bluetooth</td>
+                </tr>
+                <tr>
+                  <td class="ttl">GPS</td>
+                </tr>
+                <tr>
+                  <td class="ttl">NFC</td>
+                </tr>
+                <tr>
+                  <td class="ttl">Radio</td>
+                </tr>
+                <tr>
+                  <td class="ttl" style="border-bottom: 1px solid #e3e3e3;">USB</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="col-md-custom">
+          <div id="specs-list-comp">
+            <table>
+              <tbody id="phone_1">
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="col-md-custom">
+          <div id="specs-list-comp-right">
+            <table>
+              <tbody id="phone_2">
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="col-md-comp-titles">
+          <div id="specs-list-comp-right">
+
+            <table cellspacing="0">
+              <tbody>
+                <tr>
+                  <td class="ttl">Tecnología</td>
+                  <td class="grp" rowspan="1">RED</td>
+                </tr>
+              </tbody>
+            </table>
+            <table cellspacing="0">
+              <tbody>
+                <tr>
+                  <td class="ttl">Dimensiones</td>
+                  <td class="grp" rowspan="4">Dimensiones</td>
+                </tr>
+                <tr>
+                  <td class="ttl">Peso</td>
+                </tr>
+                <tr>
+                  <td class="ttl">Construcción</td>
+                </tr>
+                <tr>
+                  <td class="ttl">SIM</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table cellspacing="0">
+              <tbody>
+                <tr>
+                  <td class="ttl">Tipo</td>
+                  <td class="grp" rowspan="6">Display</td>
+                </tr>
+                <tr>
+                  <td class="ttl">Tamaño</td>
+                </tr>
+                <tr>
+                  <td class="ttl">Resolución</td>
+                </tr>
+                <tr>
+                  <td class="ttl">Multitouch</td>
+                </tr>
+                <tr>
+                  <td class="ttl">Protección</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table cellspacing="0">
+              <tbody>
+                <tr>
+                  <td class="ttl">OS</td>
+                  <td class="grp" rowspan="4">Plataforma</td>
+                </tr>
+                <tr>
+                  <td class="ttl">Chipset</td>
+                </tr>
+                <tr>
+                  <td class="ttl">CPU</td>
+                </tr>
+                <tr>
+                  <td class="ttl">GPU</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table cellspacing="0">
+              <tbody>
+                <tr>
+                  <td class="ttl">Externa</td>
+                  <td class="grp" rowspan="2">Memoria</td>
+                </tr>
+                <tr>
+                  <td class="ttl">Interna</td>
+                </tr>
+              </tbody>
+            </table>
+            <table cellspacing="0">
+              <tbody>
+                <tr>
+                  <td class="ttl">Primaria</td>
+                  <td class="grp" rowspan="4">Cámara</td>
+                </tr>
+                <tr>
+                  <td class="ttl">Funciones</td>
+                </tr>
+                <tr>
+                  <td class="ttl">Video</td>
+                </tr>
+                <tr>
+                  <td class="ttl">Secundaria</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table cellspacing="0">
+              <tbody>
+                <tr>
+                  <td class="ttl">WLAN</td>
+                  <td class="grp" rowspan="6" style="border-bottom: 1px solid #e3e3e3;">Comunes</td>
+                </tr>
+                <tr>
+                  <td class="ttl">Bluetooth</td>
+                </tr>
+                <tr>
+                  <td class="ttl">GPS</td>
+                </tr>
+                <tr>
+                  <td class="ttl">NFC</td>
+                </tr>
+                <tr>
+                  <td class="ttl">Radio</td>
+                </tr>
+                <tr>
+                  <td class="ttl" style="border-bottom: 1px solid #e3e3e3;">USB</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="row row-foot-center">
+        <p>No podemos garantizar que la información de esta página es 100% correcta.</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -31,6 +31,8 @@
 //= require jquery.easing.1.3
 //= require modernizr.2.5.3.min
 //= require my_flip
+//= require chosen.jquery.min
+//= require jquery.tooltipster.min
 
 $(document).on('page:change', function() {
 
@@ -213,7 +215,33 @@ $(document).on('page:change', function() {
     }
   });
 
+  $('.sel-comp-phone').chosen({
+    allow_single_deselect: true,
+    no_results_text: "no hay resultados",
+    placeholder_text_single: "Selecione un teléfono",
+    width: "80%"
+  });
 
+  $('.sel-comp-phone').chosen().change(function(){
+    var phone_id = $(this).chosen().val();
+    var phone_table = $(this).data('phone');
+    $.ajax({
+      method: "GET",
+      url: "/spec_comp",
+      data: { phone_id: phone_id }
+    }).done(function( data ) {
+      $('#'+ phone_table).html(data);
+      if(phone_table == 'phone_1'){
+        var scr = $('#src_image_photo_'+phone_id).val();
+        $('#photo_image_1').html("<img src="+ scr+" class='cel-img-comp'>")
+      }else{
+        if(phone_table == 'phone_2'){
+          var scr = $('#src_image_photo_'+phone_id).val();
+          $('#photo_image_2').html("<img src="+ scr+" class='cel-img-comp'>")
+        }
+      }
+    });
+  });
 
 });
 
