@@ -1,13 +1,13 @@
 ActiveAdmin.register Phone do
 
-  actions :index, :edit, :show, :update
+  actions :index, :new, :create, :edit, :show, :update
 
   menu :label => "Celulares"
   menu parent: "Productos"
 
   config.batch_actions = false
 
-  permit_params :brand_id, :phone_type, :model, :mode, :title, :new_price, :old_price, :short_desc, :long_desc, :enter_date, :is_most_view, :is_top_sale, :is_top_new, phone_images_attributes: [:image, :image_file_name, :image_content_type, :image_file_size, :image_updated_at, :_destroy, :id], specification_attributes: [ :network_attributes => [ :tecno, :band4g, :band3g, :band2g ], :launch_attributes => [:announced, :status], :status_attributes => [ :dimensions, :weight, :build, :sim ], :display_attributes => [ :disp_type, :size, :resolution, :multitouch, :protection ], :platform_attributes => [ :os, :chipset, :cpu, :gpu ], :memory_attributes => [ :internal, :external ], :camera_attributes => [ :primary, :features, :video, :secondary ], :sound_attributes => [ :alerts_type, :loudspeaker, :jack_port ], :comm_attributes => [ :wlan, :bluetooth, :gps, :nfc, :radio, :usb ], :feature_attributes => [ :sensors, :messaging, :browser, :java, :otras ], :battery_attributes => [ :bat_type, :stand_by, :talk_time, :music_play ], :misc_attributes => [ :colors ] ]
+  permit_params :brand_id, :phone_type, :model, :mode, :title, :new_price, :old_price, :short_desc, :long_desc, :enter_date, :is_most_view, :is_top_sale, :is_top_new, phone_images_attributes: [:image, :image_file_name, :image_content_type, :image_file_size, :image_updated_at, :_destroy, :id], specification_attributes: [ :network_attributes => [ :tecno, :band4g, :band3g, :band2g ], :launch_attributes => [:announced, :status], :status_attributes => [ :dimensions, :weight, :build, :sim ], :display_attributes => [ :disp_type, :size, :resolution, :multitouch, :protection ], :platform_attributes => [ :os, :chipset, :cpu, :gpu ], :memory_attributes => [ :internal, :external ], :camera_attributes => [ :primary, :features, :video, :secondary ], :sound_attributes => [ :alerts_type, :loudspeaker, :jack_port ], :comm_attributes => [ :wlan, :bluetooth, :gps, :nfc, :radio, :usb ], :feature_attributes => [ :sensors, :messaging, :browser, :java, :otras ], :battery_attributes => [ :bat_type, :stand_by, :talk_time, :music_play ], :misc_attributes => [ :colors ] ], phone_plans_attributes: [:plan_id, :price,  :_destroy, :id ]
 
   filter :brand, collection: proc { Brand.all }, as: :select
   filter :model
@@ -51,7 +51,10 @@ ActiveAdmin.register Phone do
       f.has_many :phone_images, allow_destroy: true do |r|
         r.input :image, :as => :file, :hint => r.object.image.present? ? image_tag(r.object.image.url(:thumb)) : content_tag(:span, "todavía no hay foto (entre 767px y 1100px cuadrada)")
       end
-
+      f.has_many :phone_plans, allow_destroy: true do |p|
+        p.input :plan, as: :select, :input_html => { :class => 'plans-phone-select'}, :collection => Plan.all.collect {|p| [p.title, p.id] }
+        p.input :price, :hint => "Incluido o $1500. ej"
+      end
       f.has_many :specification do |s|
         s.has_many :network do |n|
           n.input :tecno

@@ -91,6 +91,16 @@
             </td>
           </tr>
           <tr class="row row-imagenes">
+            <th>Planes</th>
+            <td>
+              <ul>
+                <% @phone.phone_plans.each do |pp| %>
+                  <li> <%= "#{pp.price} con #{pp.plan.title}" %> </li>
+                <% end -%>
+              </ul>
+            </td>
+          </tr>
+          <tr class="row row-imagenes">
             <th>Imágenes</th>
             <td>
               <ul>

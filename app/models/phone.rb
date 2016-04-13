@@ -6,7 +6,7 @@ class Phone < ActiveRecord::Base
 
   belongs_to :brand
   has_many   :phone_images, :dependent => :destroy
-  has_many   :phone_plans
+  has_many   :phone_plans, :dependent => :destroy
   has_one    :specification, :dependent => :delete
   has_many   :offer, :dependent => :destroy
   has_many   :slider, :dependent => :destroy
@@ -15,6 +15,7 @@ class Phone < ActiveRecord::Base
   accepts_nested_attributes_for :phone_images, :allow_destroy => true
   accepts_nested_attributes_for :accessories
   accepts_nested_attributes_for :specification, :allow_destroy => true
+  accepts_nested_attributes_for :phone_plans, :allow_destroy => true
 
   validates_presence_of :phone_type, :mode, :title, :brand_id, :model, :short_desc, :long_desc
   validate :validate_images
