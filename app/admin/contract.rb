@@ -1,6 +1,6 @@
 ActiveAdmin.register Contract do
 
-  actions :index, :edit, :show, :update
+  actions :index, :new, :create, :edit, :show, :update
 
   menu :label => "Contratos"
 

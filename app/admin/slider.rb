@@ -1,5 +1,7 @@
 ActiveAdmin.register Slider do
 
+  actions :index, :new, :create, :edit, :show, :update
+
   permit_params :title, :description, :phone_id, :active, :image, :duration
 
   config.batch_actions = false

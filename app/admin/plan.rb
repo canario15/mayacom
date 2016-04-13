@@ -1,6 +1,6 @@
 ActiveAdmin.register Plan do
 
-  actions :index, :edit, :show, :update
+  actions :index, :new, :create, :edit, :show, :update
 
   menu :label => "Planes"
 

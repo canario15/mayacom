@@ -2,6 +2,8 @@ ActiveAdmin.register AdminUser do
 
   menu parent: "Administración"
 
+  actions :index, :new, :create, :edit, :show, :update
+
   permit_params :email, :password, :password_confirmation
 
   config.filters = false

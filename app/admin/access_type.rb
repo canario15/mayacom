@@ -1,6 +1,6 @@
 ActiveAdmin.register AccessType do
 
-  actions :index, :edit, :show, :update
+  actions :index, :new, :create, :edit, :show, :update
 
   menu :label => "Tipos de accesorios"
   menu parent: "Administración"

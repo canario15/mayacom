@@ -1,6 +1,6 @@
 ActiveAdmin.register Offer do
 
-  actions :index, :edit, :show, :update
+  actions :index, :new, :create, :edit, :show, :update
 
   permit_params :title, :description, :phone_id, :active, :finish_date, :accessory_id, :price, :slider_image, offer_images_attributes: [:image, :image_file_name, :image_content_type, :image_file_size, :image_updated_at, :_destroy, :id]
 
