@@ -21,7 +21,11 @@
       <div class="row row-comp-select">
         <div class="col-md-comp-titles"></div>
         <div class="col-md-custom">
-          <%= collection_select(:select_phone, :one, @phones, :id, :title, {:include_blank => 'seleccione un equipo'}, {:class => 'sel-comp-phone', :data => { :phone => 'phone_1' } } ) %>
+          <% if @phone.blank?   %>
+            <%= collection_select(:select_phone, :one, @phones, :id, :title, { :include_blank => 'seleccione un equipo'}, {:class => 'sel-comp-phone', :data => { :phone => 'phone_1' }}) %>
+          <% else %>
+            <%= collection_select(:select_phone, :one, @phones, :id, :title, {selected: @phone.id }, {:class => 'sel-comp-phone', :data => { :phone => 'phone_1' }, :include_blank => 'seleccione un equipo' }) %>
+          <% end -%>
         </div>
         <div class="col-md-custom">
           <%= collection_select(:select_phone, :two, @phones, :id, :title, {:include_blank => 'seleccione un equipo'}, {:class => 'sel-comp-phone', :data => { :phone => 'phone_2' } }) %>
@@ -30,7 +34,9 @@
       <div class="row row-comp-select">
         <div class="col-md-comp-titles"></div>
         <div id="photo_image_1" class="col-md-custom">
-
+        <% unless @phone.blank? %>
+          <img src="<%= @phone.phone_images.first.image(:index) %>" class='cel-img-comp'>
+        <% end -%>
         </div>
         <div id="photo_image_2" class="col-md-custom">
 
@@ -165,7 +171,7 @@
           <div id="specs-list-comp">
             <table>
               <tbody id="phone_1">
-
+              <%= render 'spec_comp'%>
               </tbody>
             </table>
           </div>

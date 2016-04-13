@@ -14,6 +14,7 @@ class PhonesController < ApplicationController
   end
 
   def compare
+    @phone = Phone.find_by_id(params[:phone_id]) unless params[:phone_id].blank?
     @phones = Phone.all
     @hover_menu = CONSTANT_MENU_PHONES
   end

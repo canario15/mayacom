@@ -130,6 +130,11 @@
       <%= truncate( @phone.specification.comm.usb.html_safe, :length => 45) %>
     </td>
   </tr>
+  <tr>
+    <td class='nfo' style="border-bottom:none">
+      <%= link_to "Más Detalles", "/celulares/#{@phone.id}"%>
+    </td>
+  </tr>
   <%= hidden_field_tag "src_image_photo_#{@phone.id}", @phone.phone_images.first.image(:index) %>
 
 <% end -%>

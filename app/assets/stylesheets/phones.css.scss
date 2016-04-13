@@ -180,7 +180,6 @@
   position: relative;
   text-align: center;
   width: 277px;
-  cursor: pointer;
 }
 
 .name-cel {
@@ -214,8 +213,8 @@
   color: #bfdfff;
   display: block;
   font-size: 12px;
-  margin-bottom: 17px;
-  padding-left: 12px;
+  margin-bottom: 8px;
+  padding: 0 12px;
   text-align: left;
   font-family: "RobotoCondensed-LightItalic";
 }
@@ -225,9 +224,9 @@
   font-family: Arial,sans-serif;
   font-size: 14px;
   overflow: hidden;
-  padding-left: 12px;
-  padding-right: 40px;
+  padding: 0 12px;
   text-align: left;
+  min-height:110px;
 }
 
 .precio {
@@ -236,34 +235,77 @@
   font-size: 20px;
   text-align: center;
   border-top: 1px solid #fecc00;
-  padding: 8px;
+  padding: 12px;
+  min-height: 53px;
+}
+
+.cons-price {
+  color: #fecc00!important;
+  text-decoration:none;
+}
+.cons-price:hover {
+  text-decoration:underline!important;
 }
 
 .items {
   background: #303967 none repeat scroll 0 0;
   border-top: 1px solid #fecc00;
-  height: 45px;
-  width: 100%;
+  min-height: 51px;
   font-family: "RobotoCondensed-Regular";
+
+}
+.items-block-left {
+  width:50%;
+  height:50px;
+  float:left;
+  padding-top: 11px;
+  background: #fecc00 none repeat scroll 0 0;
+  color:  #303967;
 }
 
-.more-details {
-  color: #fecc00;
-  padding: 7px;
+.items-block-right {
+  width:50%;
+  float:left;
+  height:50px;
+  border-left: 1px solid #fecc00;
+  padding-top: 11px;
 }
 
-.more-details a {
+.items-block-left .items-icons {
+  color: #303967 !important;
+  float: left;
+  margin-left:12px;
+}
+.items-block-right .items-icons {
   color: #fecc00 !important;
-  margin-left: 5px;
-  text-decoration: none;
+  float: left;
+  margin-left:12px;
+}
+
+.items-links {
+  margin-top:4px;
+}
+
+.items-block-left .items-links p {
+  color: #303967 !important;
   text-transform: uppercase;
   font-weight: bold;
 }
 
-.more-details a:hover {
-  text-decoration: underline;
+.items-block-right .items-links p {
+  color: #fecc00 !important;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
+.items-block-right:hover {
+  color: #fecc00 !important;
+  text-decoration: underline!important;
+}
+.items-block-left:hover {
+  color: #303967 !important;
+  text-decoration: underline!important;
+}
 
 .i-want {
   color: yellow !important;
@@ -275,11 +317,9 @@
   color: #fecc00!important;
 }
 
-
 .phone-container {
    font-family: "RobotoCondensed-Regular";
 }
-
 
 .boxEquipo {
   border: 1px solid #f3ae00;

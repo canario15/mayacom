@@ -19,18 +19,18 @@
            <%= image_tag p.phone_images.first.image(:index) %>
           </div>
           <div class="name-cel"><%= p %></div>
-          <% title = ""%>
+          <% title = "" %>
           <% if p.phone_plans.blank? %>
             <% if p.new_price.blank? %>
               <% title = "Consulte el precio" %>
-              <% price = "Consulte el precio" %>
+              <% price = "<a href='/contacto' class='cons-price'>Consulte el precio</a>" %>
             <% else %>
               <% price = "$ #{p.new_price} <small style='font-size: 80%'> (IVA inc.)</small>" %>
-              <% title = "A tan solo <span>#{price}</span> <small style='font-size: 80%'> (IVA inc.)</small>" %>
+              <% title = "A tan solo <span>#{price}" %>
             <% end -%>
           <% else %>
             <% title = "Con plan <span>#{p.phone_plans.first.plan.title}</span> " %>
-            <% price = p.phone_plans.first.price %>
+            <% price = "#{p.phone_plans.first.price} <small style='font-size: 80%'> (IVA inc.)</small>" %>
           <% end -%>
           <div class="name-cel2"><%= title.html_safe %></div>
         </div>
@@ -42,18 +42,29 @@
               <p><%= truncate(p.short_desc, :length => 158, :separator => ' ') %></p>
             </div>
             <div class="precio">
-
-              <div class="bgPrecio"> <%= price.html_safe %></div>
-              <span class="titDesde"></span>
-              <span>
-                <strong></strong>
-              </span>
+              <div class="bgPrecio"> <%= price.html_safe %> </div>
             </div>
             <div class="items">
-              <div class="more-details">
-                <i class="fa fa-plus-circle fa-2x"></i>
-                <%= link_to "Más detalles", "/celulares/#{p.id}"  %>
-              </div>
+              <%= link_to "/celulares/#{p.id}" do %>
+                <div class="items-block-left">
+                  <div class="items-icons">
+                    <i class="fa fa-plus-circle fa-2x"></i>
+                  </div>
+                  <div class="items-links">
+                    <p>Detalles</p>
+                  </div>
+                </div>
+              <% end -%>
+              <%= link_to "/comparador/#{p.id}" do %>
+                <div class="items-block-right">
+                  <div class="items-icons">
+                    <i class="fa fa-list-ul fa-2x"></i>
+                  </div>
+                  <div class="items-links">
+                    <p>Comparar</p>
+                  </div>
+                </div>
+              <% end -%>
             </div>
           </div>
         </div>
