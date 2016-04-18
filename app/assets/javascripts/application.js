@@ -66,12 +66,12 @@ $(document).on('page:change', function() {
 
   if ( $( "#zoom_gallery" ).length ) {
     $('#zoom_gallery .simpleLens-thumbnails-container img').simpleGallery({
-      loading_image: '/assets/loading.gif',
+      loading_image: '/loading.gif',
       show_event: 'click'
     });
 
     $('#zoom_gallery .simpleLens-big-image').simpleLens({
-      loading_image: '/assets/loading.gif',
+      loading_image: '/loading.gif',
     });
   }
 
