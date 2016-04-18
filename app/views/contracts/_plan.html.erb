@@ -68,7 +68,9 @@
                  <%= image_tag p.phone_images.first.image(:index) %>
                 </div>
                 <div class="name-cel"><%= p %></div>
-                <div class="name-cel2"> <span style="color:black;font-weight: 600;"><%= pp.price %></span> con plan <%=  @plan.title %> </div>
+                <div class="name-cel2">
+                  A tan solo <span style="color:#303967;font-weight: 600;" ><%= pp.price %></span>
+                </div>
               </div>
               <div class="back" style="transform: rotateY(-180deg); height: 100%; width: 100%; backface-visibility: hidden; transform-style: preserve-3d; position: absolute; z-index: 0; transition: all 0.5s ease-out 0s;">
                 <div class="datahover">
@@ -78,13 +80,29 @@
                     <p><%= truncate(p.short_desc, :length => 158, :separator => ' ') %></p>
                   </div>
                   <div class="precio">
-                    <div class="bgPrecio"><%= pp.price %></div>
+                    <div class="bgPrecio"><%= pp.price %> <small style='font-size: 80%'> (IVA inc.)</small></div>
                   </div>
                   <div class="items">
-                    <div class="more-details">
-                      <i class="fa fa-plus-circle fa-2x"></i>
-                      <%= link_to "Más detalles", "/celulares/#{p.id}"  %>
-                    </div>
+                    <%= link_to "/celulares/#{p.id}" do %>
+                      <div class="items-block-left">
+                        <div class="items-icons">
+                          <i class="fa fa-plus-circle fa-2x"></i>
+                        </div>
+                        <div class="items-links">
+                          <p>Detalles</p>
+                        </div>
+                      </div>
+                    <% end -%>
+                    <%= link_to "/comparador/#{p.id}" do %>
+                      <div class="items-block-right">
+                        <div class="items-icons">
+                          <i class="fa fa-list-ul fa-2x"></i>
+                        </div>
+                        <div class="items-links">
+                          <p>Comparar</p>
+                        </div>
+                      </div>
+                    <% end -%>
                   </div>
                 </div>
               </div>

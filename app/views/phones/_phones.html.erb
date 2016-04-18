@@ -26,7 +26,7 @@
               <% price = "<a href='/contacto' class='cons-price'>Consulte el precio</a>" %>
             <% else %>
               <% price = "$ #{p.new_price} <small style='font-size: 80%'> (IVA inc.)</small>" %>
-              <% title = "A tan solo <span>#{price}" %>
+              <% title = "A tan solo <span>#{price}</span>" %>
             <% end -%>
           <% else %>
             <% title = "Con plan <span>#{p.phone_plans.first.plan.title}</span> " %>

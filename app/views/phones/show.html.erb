@@ -99,52 +99,16 @@
                 </nav>
                 <div class="content">
                   <section id="section-1">
-                    <div class="cel-description">
-                      <%= @phone.long_desc.html_safe %>
-                    </div>
+                    <%= render partial: "description" %>
                   </section>
                   <section id="section-2">
-                  <%= render partial: "spec" %>
+                    <%= render partial: "spec" %>
                   </section>
                   <section id="section-3">
-                    <% @phone.phone_plans.each do |pp| %>
-                      <div class="panelPlan">
-                        <div class="panel-heading panelplan-head">
-                          <span class="tit"> Con <%= pp.plan.title %></span>
-                          <span class="pull-right price"><%= pp.price %> </span>
-                        </div>
-                      </div>
-                    <% end -%>
+                    <%= render partial: "phone_plans" %>
                   </section>
                   <section id="section-4">
-                    <% @phone.accessories.each do |a| %>
-                      <div class="boxEquipo col-md-12 lista">
-                        <div class="boxImg ">
-                          <%= image_tag a.accessory_images.first.image(:thumb)%>
-                        </div>
-                        <div class="boxCont">
-                          <h4><%= a.title %></h4>
-                          <div class="desc">
-                            <p><%= a.short_desc %></p>
-                          </div>
-                        </div>
-
-                        <div class="boxPrecio">
-                          <div class="desde">A solo</div>
-                          <div class="price-acce">
-                            <strong>
-                              <small>$</small><%= a.new_price %>
-                            </strong>
-                          </div>
-                          <%= link_to "/accesorios/#{a.id}" do %>
-                            <div class="btn-more-details">
-                              <span class="icon-carro"></span>
-                              Ver detalles
-                            </div>
-                          <% end -%>
-                        </div>
-                      </div>
-                    <% end -%>
+                    <%= render partial: "accessories" %>
                   </section>
                 </div>
               </div>

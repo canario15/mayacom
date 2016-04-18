@@ -172,6 +172,7 @@ es:
         created_at: "Fecha creación"
         updated_at: "Fecha Modificación"
         order_number: "Orden"
+        plan_phone_desc: "Descripción para teléfono"
       technology:
         name: "Nombre"
         created_at: "Fecha creación"
@@ -290,6 +291,8 @@ es:
             item_3:
               blank: "no puede ser vacío"
             description:
+              blank: "no puede ser vacía"
+            plan_phone_desc:
               blank: "no puede ser vacía"
         phone_plan:
           attributes:

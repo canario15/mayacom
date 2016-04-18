@@ -243,6 +243,20 @@ $(document).on('page:change', function() {
     });
   });
 
+  $(".btn-coso").click(function(){
+    var contract_id = $(this).data('contract-id');
+    var phone_id = $(this).data('phone-id');
+    $(".btn-coso-active").removeClass("btn-coso-active");
+    $(this).addClass("btn-coso-active");
+    $.ajax({
+      method: "GET",
+      url: "/contracts_plans",
+      data: { contract_id: contract_id, phone_id: phone_id }
+    }).done(function( data ) {
+      $(".plan-list").html(data);
+    });
+  });
+
 });
 
 /*

@@ -1,0 +1,82 @@
+<ul id="plan_acordion">
+  <% @contracts.each do |co| %>
+    <li>
+      <h4><%= co.title %></h4>
+      <div class="panelPlan">
+        <div class="selec-cont-plans">
+          <% @plan = co.plans.first %>
+          <% if co.plans.count > 1 %>
+            <%= collection_select(:select, :plan, co.plans, :id, :title, {}, {:class => 'select-plan', :data => {:phone_id => "#{@phone.id}"} }) %>
+          <% else %>
+            <p><%= @plan.title %> </p>
+          <% end -%>
+        </div>
+        <a href="javascript:void(0)" class="link-plan" >
+          <i class="fa fa-caret-right fa-2x"></i>
+          <div class="panel-heading panelplan-head">
+            <span class="pull-right price"> <%= @phone.phone_plans.find_by(plan_id: @plan.id).price %> </span>
+          </div>
+        </a>
+        <div class="plan-details-acc">
+          <%= render "plan_info" %>
+        </div>
+      </div>
+    </li>
+  <% end -%>
+  <% if !@phone.new_price.blank? && @only_phone == true %>
+    <li>
+      <h4>Sólo Equipo</h4>
+      <div class="panelPlan">
+        <div class="selec-cont-plans">
+          <p>Cambio de Terminal</p>
+        </div>
+        <a href="javascript:void(0)" class="link-plan" >
+          <i class="fa fa-caret-right fa-2x"></i>
+          <div class="panel-heading panelplan-head">
+            <span class="pull-right price"> $ <%= @phone.new_price %> </span>
+          </div>
+        </a>
+        <div class="plan-details-acc">
+          <div class="plan-details-acc-row">
+            <div class="col-md-3 col-sm-9 col-xss-8"></div>
+            <div class="col-md-8 col-sm-9 col-xss-8">
+              <div class="description-det">
+                <p>
+                  Si tenés un plan móvil contratado con nosotros, que aún no se encuentra en condiciones de renovar, ahora podés adquirir tu nuevo equipo móvil a través de nuestra Tienda en Línea y te lo llevamos a donde quieras.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+  <% end -%>
+</ul>
+<script type="text/javascript">
+  $(document).ready(function () {
+    $(".link-plan").click(function(){
+      if(false == $(this).next().is(':visible')) {
+        //$('#accordion ul').slideUp(300);
+        $(this).find("i").replaceWith( "<i class='fa fa-caret-down fa-2x'></i>" );
+      }else{
+        $(this).find("i").replaceWith( "<i class='fa fa-caret-right fa-2x'></i>" );
+      }
+      $(this).next().slideToggle(300);
+    });
+    $('#plan_acordion ul:eq(0)').show();
+
+    $( ".select-plan" ).change(function() {
+      var phone_id = $(this).data('phone-id');
+      var plan_id = $(this).val();
+      var parent_div = $(this).parent().parent();
+      $.ajax({
+        method: "GET",
+        url: "/plan_info",
+        data: { plan_id: plan_id, phone_id: phone_id }
+      }).done(function( data ) {
+        parent_div.find(".plan-details-acc").html(data);
+        parent_div.find(".price").html(parent_div.find("#phone_plan_"+phone_id).val());
+      });
+    });
+  });
+</script>

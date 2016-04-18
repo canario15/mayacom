@@ -9,6 +9,8 @@ ActiveAdmin.register Contract do
   filter :technology, collection: proc { Technology.all }, as: :select
   filter :title
 
+  config.sort_order = 'order_desc'
+
   config.batch_actions = false
 
   index :title => "Contratos"  do
@@ -25,7 +27,7 @@ ActiveAdmin.register Contract do
       f.input :order
       f.input :technology, :as => :select, :collection => Technology.all.collect {|tec| [tec.name, tec.id] }
       f.input :title
-      f.input :short_desc
+      f.input :short_desc, :as => :string, :hint => "140 caracteres"
       f.input :logo, :as => :file, :hint => f.object.logo.present? ? image_tag(f.object.logo.url(:thumb)) : content_tag(:span, "todavía no hay foto ")
     end
     f.actions
@@ -41,6 +43,15 @@ ActiveAdmin.register Contract do
       row :updated_at
       row :logo do
         image_tag co.logo.url(:thumb)
+      end
+      row "Planes" do
+        ul do
+          co.plans.each do |pp|
+            li do
+              pp.title
+            end
+          end
+        end
       end
     end
   end

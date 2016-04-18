@@ -1,0 +1,19 @@
+<div class="plan-det">
+  <div class="row plan-det-tit">
+    <h2>Elegí tu plan</h2>
+    <div class="btn-group" role="group" aria-label="...">
+      <button type="button" data-contract-id="0" data-phone-id="<%= @phone.id %>" class="btn btn-coso btn-coso-active">Todos</button>
+      <% @contracts.each do |c| %>
+        <button type="button" data-contract-id="<%= c.id %>" data-phone-id="<%= @phone.id %>" class="btn btn-coso"><%= c.title %></button>
+      <% end -%>
+      <% unless @phone.new_price.blank? %>
+        <button type="button" data-contract-id="99" data-phone-id="<%= @phone.id %>" class="btn btn-coso">Sólo equipo</button>
+      <% end -%>
+    </div>
+  </div>
+  <div class="row">
+    <div class="plan-list">
+      <%= render "contracts_plans" %>
+    </div>
+  </div>
+</div>

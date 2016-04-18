@@ -33,5 +33,9 @@ class Phone < ActiveRecord::Base
     errors.add(:phone_images, "ingrese al menos una imagen") if phone_images.size < 1
   end
 
+  def contracts
+    phone_plans.map {|c| c.contract }.uniq
+  end
+
 end
 

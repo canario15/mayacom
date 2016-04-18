@@ -11,6 +11,8 @@ class PhonesController < ApplicationController
   def show
     @phone = Phone.find(params[:id])
     @hover_menu = CONSTANT_MENU_PHONES
+    @contracts = @phone.contracts
+    @only_phone = true
   end
 
   def compare
@@ -28,6 +30,35 @@ class PhonesController < ApplicationController
       else
         format.html
       end
+    end
+  end
+
+  def plan_info
+    @plan = Plan.find(params[:plan_id])
+    @phone = Phone.find(params[:phone_id])
+    @phone_plan = @phone.phone_plans.find_by(plan_id: @plan.id)
+    respond_to do |format|
+      format.html { render partial: 'plan_info', :layout => false }
+    end
+  end
+
+  def contracts_plans
+    @phone = Phone.find(params[:phone_id])
+    if params[:contract_id] == '0'
+      @contracts = @phone.contracts
+      @only_phone = true
+    else
+      if params[:contract_id] == '99'
+        @contracts = {}
+        @only_phone = true
+      else
+        @contracts = []
+        @contracts << @phone.contracts.detect{|c| c.id.to_s == params[:contract_id]}
+        @only_phone = false
+      end
+    end
+    respond_to do |format|
+      format.html { render partial: 'contracts_plans', :layout => false }
     end
   end
 

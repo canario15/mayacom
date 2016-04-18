@@ -1,0 +1,6 @@
+<% unless @plan.plan_phone_desc.blank? %>
+  <%= @plan.plan_phone_desc.html_safe %>
+<% end -%>
+<% unless @phone_plan.blank? %>
+  <%= hidden_field_tag "phone_plan_#{@phone.id}", @phone_plan.price %>
+<% end -%>

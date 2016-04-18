@@ -475,6 +475,7 @@ form fieldset legend span {
   border-color: none;
   border-image: none;
   border-style: solid;
+  border-radius: 9px 9px 0 0;
   border-width: 1px;
   box-shadow: none;
   color: #fecc00;
@@ -489,9 +490,9 @@ form fieldset legend span {
 
 
 form fieldset.inputs {
-    background: #f7f1d6 none repeat scroll 0 0;
-    border-radius: 4px;
-    box-shadow: 0 1px 4px #ddd inset;
+  background: #fff none repeat scroll 0 0;
+  border-radius: 9px;
+  box-shadow: 0 0 4px #303967 inset;
 }
 
 
@@ -555,8 +556,6 @@ form fieldset.buttons li.cancel a, form fieldset.actions li.cancel a {
   text-shadow: none;
 }
 
-
-
 .section > h3, .panel > h3 {
   -moz-border-bottom-colors: none;
   -moz-border-left-colors: none;
@@ -568,6 +567,7 @@ form fieldset.buttons li.cancel a, form fieldset.actions li.cancel a {
   border-image: none;
   border-style: none;
   border-width: 1px;
+  border-radius: 9px 9px 0 0;
   box-shadow: nonet;
   color: #fecc00;
   font-size: 1em;
@@ -579,9 +579,9 @@ form fieldset.buttons li.cancel a, form fieldset.actions li.cancel a {
 }
 
 .section, .panel {
-  background: #f7f1d6 none repeat scroll 0 0;
-  border-radius: 4px;
-  box-shadow: 0 1px 4px #ddd inset;
+  background: #fff none repeat scroll 0 0;
+  border-radius: 9px;
+  box-shadow: 0 1px 4px #303967 inset;
   margin-bottom: 20px;
 }
 

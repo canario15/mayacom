@@ -16,7 +16,8 @@ Rails.application.routes.draw do
   get '/comparador'  => 'phones#compare'
   get '/comparador/:phone_id' => 'phones#compare'
   get '/spec_comp' => 'phones#spec_comp'
-
+  get '/plan_info' => 'phones#plan_info'
+  get '/contracts_plans' => 'phones#contracts_plans'
 
   get '/accesorios/'    => 'accessories#index', as: :accessories
   get '/accesorios/:id' => 'accessories#show', as: :accessory

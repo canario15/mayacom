@@ -1,0 +1,28 @@
+<% @phone.accessories.each do |a| %>
+  <div class="boxEquipo col-md-12 lista">
+    <div class="boxImg ">
+      <%= image_tag a.accessory_images.first.image(:thumb)%>
+    </div>
+    <div class="boxCont">
+      <h4><%= a.title %></h4>
+      <div class="desc">
+        <p><%= a.short_desc %></p>
+      </div>
+    </div>
+
+    <div class="boxPrecio">
+      <div class="desde">A solo</div>
+      <div class="price-acce">
+        <strong>
+          <small>$</small><%= a.new_price %>
+        </strong>
+      </div>
+      <%= link_to "/accesorios/#{a.id}" do %>
+        <div class="btn-more-details">
+          <span class="icon-carro"></span>
+          Ver detalles
+        </div>
+      <% end -%>
+    </div>
+  </div>
+<% end -%>

@@ -4,7 +4,7 @@ ActiveAdmin.register Plan do
 
   menu :label => "Planes"
 
-  permit_params :title, :order_number, :item_1, :item_2, :item_3, :price, :description, :contract_id, phone_plans_attributes: [:phone_id, :price,  :_destroy, :id ]
+  permit_params :title, :order_number, :item_1, :item_2, :item_3, :price, :description, :plan_phone_desc, :contract_id, phone_plans_attributes: [:phone_id, :price,  :_destroy, :id ]
 
   config.batch_actions = false
 
@@ -29,6 +29,7 @@ ActiveAdmin.register Plan do
       f.input :item_2, :hint => "20/2 megas velocidad"
       f.input :item_3, :hint => "5 destinos GRATIS. ej"
       f.input :description, :hint => "en código HTML"
+      f.input :plan_phone_desc, :hint => "en código HTML"
       f.has_many :phone_plans, allow_destroy: true  do |r|
         r.input :phone, as: :select, :input_html => { :class => 'plan-phone-plans-phone'}, :collection => Phone.all.collect {|ph| ["#{ph.brand} #{ph.model}", ph.id] }
         r.input :price, :hint => "Incluido o $1500. ej"
@@ -48,6 +49,8 @@ ActiveAdmin.register Plan do
       row :item_3
       row :created_at
       row :updated_at
+      row :description
+      row :plan_phone_desc
       row "Teléfonos" do
         ul do
           co.phone_plans.each do |pp|
@@ -57,7 +60,6 @@ ActiveAdmin.register Plan do
           end
         end
       end
-      row :description
     end
   end
 end
