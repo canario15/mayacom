@@ -1,4 +1,4 @@
-$(function () {
+$(document).on('page:change', function() {
 
 
   if ($('html').hasClass('csstransforms3d')) {
