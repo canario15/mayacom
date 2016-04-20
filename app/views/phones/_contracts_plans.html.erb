@@ -1,57 +1,87 @@
-<ul id="plan_acordion">
-  <% @contracts.each do |co| %>
-    <li>
-      <h4><%= co.title %></h4>
-      <div class="panelPlan">
-        <div class="selec-cont-plans">
-          <% @plan = co.plans.first %>
-          <% if co.plans.count > 1 %>
-            <%= collection_select(:select, :plan, co.plans, :id, :title, {}, {:class => 'select-plan', :data => {:phone_id => "#{@phone.id}"} }) %>
-          <% else %>
-            <p><%= @plan.title %> </p>
-          <% end -%>
-        </div>
-        <a href="javascript:void(0)" class="link-plan" >
-          <i class="fa fa-caret-right fa-2x"></i>
-          <div class="panel-heading panelplan-head">
-            <span class="pull-right price"> <%= @phone.phone_plans.find_by(plan_id: @plan.id).price %> </span>
+<% if @only_phone == false %>
+  <h4><%= @contracts.first.title %></h4>
+  <ul id="plan_acordion">
+    <% @contracts.first.plans.each do |pl| %>
+      <li>
+        <div class="panelPlan">
+          <div class="selec-cont-plans">
+            <% @plan = pl %>
+            <% if @plan.price != '0' %>
+              <p><%= "$ #{@plan.price} - #{@plan.title}" %></p>
+            <% else %>
+              <p><%= "#{@plan.title}" %></p>
+            <% end -%>
           </div>
-        </a>
-        <div class="plan-details-acc">
-          <%= render "plan_info" %>
-        </div>
-      </div>
-    </li>
-  <% end -%>
-  <% if !@phone.new_price.blank? && @only_phone == true %>
-    <li>
-      <h4>Sólo Equipo</h4>
-      <div class="panelPlan">
-        <div class="selec-cont-plans">
-          <p>Cambio de Terminal</p>
-        </div>
-        <a href="javascript:void(0)" class="link-plan" >
-          <i class="fa fa-caret-right fa-2x"></i>
-          <div class="panel-heading panelplan-head">
-            <span class="pull-right price"> $ <%= @phone.new_price %> </span>
+          <a href="javascript:void(0)" class="link-plan" >
+            <i class="fa fa-caret-right fa-2x"></i>
+            <div class="panel-heading panelplan-head">
+              <span class="pull-right price"> <%= @phone.phone_plans.find_by(plan_id: @plan.id).price %> </span>
+            </div>
+          </a>
+          <div class="plan-details-acc">
+            <%= render "plan_info" %>
           </div>
-        </a>
-        <div class="plan-details-acc">
-          <div class="plan-details-acc-row">
-            <div class="col-md-3 col-sm-9 col-xss-8"></div>
-            <div class="col-md-8 col-sm-9 col-xss-8">
-              <div class="description-det">
-                <p>
-                  Si tenés un plan móvil contratado con nosotros, que aún no se encuentra en condiciones de renovar, ahora podés adquirir tu nuevo equipo móvil a través de nuestra Tienda en Línea y te lo llevamos a donde quieras.
-                </p>
+        </div>
+      </li>
+    <% end -%>
+  </ul>
+<% else %>
+  <ul id="plan_acordion">
+    <% @contracts.each do |co| %>
+      <li>
+        <h4><%= co.title %></h4>
+        <div class="panelPlan">
+          <div class="selec-cont-plans">
+            <% @plan = co.plans.first %>
+            <% if co.plans.count > 1 %>
+              <%= collection_select(:select, :plan, co.plans, :id, :title, {}, {:class => 'select-plan', :data => {:phone_id => "#{@phone.id}"} }) %>
+            <% else %>
+              <p><%= @plan.title %> </p>
+            <% end -%>
+          </div>
+          <a href="javascript:void(0)" class="link-plan" >
+            <i class="fa fa-caret-right fa-2x"></i>
+            <div class="panel-heading panelplan-head">
+              <span class="pull-right price"> <%= @phone.phone_plans.find_by(plan_id: @plan.id).price %> </span>
+            </div>
+          </a>
+          <div class="plan-details-acc">
+            <%= render "plan_info" %>
+          </div>
+        </div>
+      </li>
+    <% end -%>
+    <% if !@phone.new_price.blank? && @only_phone == true %>
+      <li>
+        <h4>Sólo Equipo</h4>
+        <div class="panelPlan">
+          <div class="selec-cont-plans">
+            <p>Cambio de Terminal</p>
+          </div>
+          <a href="javascript:void(0)" class="link-plan" >
+            <i class="fa fa-caret-right fa-2x"></i>
+            <div class="panel-heading panelplan-head">
+              <span class="pull-right price"> $ <%= @phone.new_price %> </span>
+            </div>
+          </a>
+          <div class="plan-details-acc">
+            <div class="plan-details-acc-row">
+              <div class="col-md-3 col-sm-9 col-xss-8"></div>
+              <div class="col-md-8 col-sm-9 col-xss-8">
+                <div class="description-det">
+                  <p>
+                    Si tenés un plan móvil contratado con nosotros, que aún no se encuentra en condiciones de renovar, ahora podés adquirir tu nuevo equipo móvil a través de nuestra Tienda en Línea y te lo llevamos a donde quieras.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </li>
-  <% end -%>
-</ul>
+      </li>
+    <% end -%>
+  </ul>
+<% end -%>
+
 <script type="text/javascript">
   $(document).ready(function () {
     $(".link-plan").click(function(){
