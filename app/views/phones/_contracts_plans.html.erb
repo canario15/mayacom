@@ -1,11 +1,11 @@
 <% if @only_phone == false %>
-  <h4><%= @contracts.first.title %></h4>
+  <h4><%= @phone_plans.first.contract.title %></h4>
   <ul id="plan_acordion">
-    <% @contracts.first.plans.each do |pl| %>
+    <% @phone_plans.each do |pl| %>
       <li>
         <div class="panelPlan">
           <div class="selec-cont-plans">
-            <% @plan = pl %>
+            <% @plan = pl.plan %>
             <% if @plan.price != '0' %>
               <p><%= "$ #{@plan.price} - #{@plan.title}" %></p>
             <% else %>
@@ -15,7 +15,9 @@
           <a href="javascript:void(0)" class="link-plan" >
             <i class="fa fa-caret-right fa-2x"></i>
             <div class="panel-heading panelplan-head">
-              <span class="pull-right price"> <%= @phone.phone_plans.find_by(plan_id: @plan.id).price %> </span>
+              <span class="pull-right price">
+                <%= pl.price %>
+              </span>
             </div>
           </a>
           <div class="plan-details-acc">
@@ -32,9 +34,11 @@
         <h4><%= co.title %></h4>
         <div class="panelPlan">
           <div class="selec-cont-plans">
-            <% @plan = co.plans.first %>
-            <% if co.plans.count > 1 %>
-              <%= collection_select(:select, :plan, co.plans, :id, :title, {}, {:class => 'select-plan', :data => {:phone_id => "#{@phone.id}"} }) %>
+            <% phone_contract_plans = co.phone_plans.where(phone_id: @phone.id).map {|p| p.plan} %>
+            <% phone_plans = co.phone_plans.where(phone_id: @phone.id) %>
+            <% @plan = phone_plans.first.plan %>
+            <% if phone_contract_plans.count > 1 %>
+              <%= collection_select(:select, :plan, phone_contract_plans, :id, :title, {}, {:class => 'select-plan', :data => {:phone_id => "#{@phone.id}"} }) %>
             <% else %>
               <p><%= @plan.title %> </p>
             <% end -%>
@@ -42,7 +46,9 @@
           <a href="javascript:void(0)" class="link-plan" >
             <i class="fa fa-caret-right fa-2x"></i>
             <div class="panel-heading panelplan-head">
-              <span class="pull-right price"> <%= @phone.phone_plans.find_by(plan_id: @plan.id).price %> </span>
+              <span class="pull-right price">
+                <%= phone_plans.first.price %>
+              </span>
             </div>
           </a>
           <div class="plan-details-acc">

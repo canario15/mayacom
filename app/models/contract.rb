@@ -3,6 +3,8 @@ class Contract < ActiveRecord::Base
   belongs_to :technology
   has_many :plans
 
+  has_many :phone_plans, through: :plans
+
   has_attached_file :logo, styles: { index: "250x160" , thumb: "100x100>" }, default_url: "/assets/contracts/default_:style_image.png"
   validates_attachment_content_type :logo, content_type: /\Aimage\/.*\Z/
 

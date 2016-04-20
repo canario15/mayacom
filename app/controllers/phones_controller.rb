@@ -52,8 +52,7 @@ class PhonesController < ApplicationController
         @contracts = {}
         @only_phone = true
       else
-        @contracts = []
-        @contracts << @phone.contracts.detect{|c| c.id.to_s == params[:contract_id]}
+        @phone_plans = Contract.find(params[:contract_id]).phone_plans.where(phone_id: @phone.id)
         @only_phone = false
       end
     end

@@ -6,6 +6,6 @@ class PhonePlan < ActiveRecord::Base
 
   validates_presence_of :phone, :price
 
-  default_scope -> { joins(:contract).order('contracts.order DESC') }
+  default_scope -> { joins(:contract).joins(:plan).order('contracts.order DESC, plans.order_number ASC') }
 
 end
