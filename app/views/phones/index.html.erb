@@ -19,16 +19,16 @@
         </h1>
       </div>
       <div class="col-lg-7 col-md-4 col-sm-5 col-xs-12 col-xss-5">
-        <div class="input-group long-input pull-right">
-          <%= search_form_for @search, :class => "main-search", :remote=> :true, url: phones_path, :method => :get do |f| %>
+        <%= search_form_for @search, :class => "main-search", :remote=> :true, url: phones_path, :method => :get do |f| %>
+          <div class="input-group long-input pull-right">
             <%= f.text_field :title_or_phone_type_or_brand_name_or_model_or_mode_cont, :class => "form-control", :placeholder => "Buscar un equipo" %>
             <span class="input-group-btn">
               <%= f.button "", :class => "btn btn-default btn-searh" do %>
                 <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
               <% end -%>
             </span>
-          <% end -%>
-        </div>
+          </div>
+        <% end -%>
       </div>
     </div>
     <div class="row row-body">

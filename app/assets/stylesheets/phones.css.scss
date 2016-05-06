@@ -23,6 +23,11 @@
   padding: 7px 20px!important;
 }
 
+.btn-searh:focus {
+  background: #303967;
+  color: #fecc00;
+}
+
 #phone_search input {
   border: 1px solid #303967;
   border-radius: 5px 0 0 5px;
@@ -428,7 +433,6 @@
 
 .long-input {
   width:45%;
-  margin-right: 52px;
 }
 
 

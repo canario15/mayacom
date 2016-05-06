@@ -621,7 +621,7 @@ body {
 .single-product h2 {
     font-size: 18px;
     line-height: 25px;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     margin-top: 15px;
     color: #303967;
 }
@@ -634,6 +634,7 @@ body {
 }
 .single-product {
     overflow: hidden;
+    text-align: center;
 }
 .single-product:hover {
 }
