@@ -20,8 +20,9 @@
     </div>
     <div clas="row rowContracts">
       <% @contracts.each do |c| %>
-        <div class="contr-card scroll ">
-          <div class="contr-card-wrapper">
+      <div class="contr-card">
+        <div class="contr-card-wrapper">
+          <div class="front">
             <div class="div-contr-img">
               <%= image_tag c.logo(:index) %>
             </div>
@@ -45,6 +46,8 @@
                 </p>
               <% end -%>
             </div>
+          </div>
+          <div class="back">
             <div class="contr-card-detail">
               <div class="div-plan-tit">
                 <h3><%= c.title %></h3>
@@ -97,6 +100,7 @@
             </div>
           </div>
         </div>
+      </div>
       <% end -%>
     </div>
   </div>

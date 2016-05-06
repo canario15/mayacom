@@ -28,9 +28,6 @@
 //= require jquery.validate.min
 //= require owl.carousel.min
 //= require woco.accordion
-//= require jquery.easing.1.3
-//= require modernizr.2.5.3.min
-//= require my_flip
 //= require chosen.jquery.min
 //= require jquery.tooltipster.min
 
@@ -256,6 +253,13 @@ $(document).on('page:change', function() {
       $(".plan-list").html(data);
     });
   });
+
+  $('.contr-card-wrapper').hover(function(){
+    $(this).addClass('flip');
+  },function(){
+    $(this).removeClass('flip');
+  });
+
 
 });
 
