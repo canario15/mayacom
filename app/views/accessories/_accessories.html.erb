@@ -23,7 +23,7 @@
         </div>
         <div class="back back-card" style="transform: rotateY(-180deg); height: 100%; width: 100%; backface-visibility: hidden; transform-style: preserve-3d; position: absolute; z-index: 0; transition: all 0.5s ease-out 0s;">
           <div class="datahover">
-            <div class="hov-tit"><%= acc.title %></div>
+            <div class="hov-tit" style="min-height:61px"><%= acc.title %></div>
             <div class="hov-desc">
               <p><%= acc.short_desc %></p>
             </div>
@@ -35,10 +35,16 @@
               </span>
             </div>
             <div class="items">
-              <div class="more-details">
-                <i class="fa fa-plus-circle fa-2x"></i>
-                <%= link_to "Más detalles", "/accesorios/#{acc.id}"%>
-              </div>
+              <%= link_to "/accesorios/#{acc.id}" do %>
+                <div class="items-block-left">
+                  <div class="items-icons">
+                    <i class="fa fa-plus-circle fa-2x"></i>
+                  </div>
+                  <div class="items-links">
+                    <p>Detalles</p>
+                  </div>
+                </div>
+              <% end -%>
             </div>
           </div>
         </div>
