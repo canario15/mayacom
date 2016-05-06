@@ -19,7 +19,6 @@ es:
       phone_image: "Imágenes"
       phone_plan: "Teléfonos para el plan"
       offer: "Ofertas"
-      slider: "Slider"
       network: "Red"
       launch: "Lanzamiento"
       status: "Dimenciones"
@@ -90,15 +89,6 @@ es:
         music_play: "Tiempo de música"
       misc:
         colors: "Colores"
-      slider:
-        active: "Activo"
-        title: "Título"
-        phone: "Teléfono"
-        duration: "Duración"
-        description: "Descripción"
-        created_at: "Fecha creación"
-        updated_at: "Fecha Modificación"
-        image : "Imagen"
       offer:
         phone_id: "Teléfono"
         accessory_id: "Accesorio"
@@ -302,14 +292,6 @@ es:
               blank: "no puede ser vacío"
             price:
               blank: "no puede ser vacío"
-        slider:
-          attributes:
-            title:
-              blank: "no puede ser vacío"
-            description:
-              blank: "no puede ser vacía"
-            image:
-              blank: "no puede ser vacía"
         technology:
           attributes:
             name:

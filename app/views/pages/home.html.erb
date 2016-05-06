@@ -6,10 +6,9 @@
           <%= image_tag offer.slider_image(:home) %>
           <div class="caption-group">
             <h2 class="caption title">
-              iPhone <span class="primary">6 <strong>Plus</strong></span>
+              <span class="primary"><%= offer.title %></span>
             </h2>
-            <h4 class="caption subtitle">Dual SIM</h4>
-            <a class="caption button-radius" href="javascript:void(0)"><span class="icon"></span>Ver detalles</a>
+            <a class="caption button-radius" href="/ofertas/<%= offer.id %>"><span class="icon"></span>Ver detalles</a>
           </div>
         </li>
       <% end %>

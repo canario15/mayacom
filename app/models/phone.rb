@@ -9,7 +9,6 @@ class Phone < ActiveRecord::Base
   has_many   :phone_images, :dependent => :destroy
   has_many   :phone_plans, :dependent => :destroy
   has_many   :offer, :dependent => :destroy
-  has_many   :slider, :dependent => :destroy
   has_many   :plans, through: :phone_plans
   has_and_belongs_to_many :accessories, class_name: 'Accessory', join_table: 'accessories_phones'
 
