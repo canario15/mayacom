@@ -1,6 +1,6 @@
 # deploy conf
 # Change these
-server '159.203.101.36', roles: [:web, :app, :db], primary: true
+server '107.170.134.217', roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@github.com:canario15/mayacom.git'
 set :application,     'mayacom'

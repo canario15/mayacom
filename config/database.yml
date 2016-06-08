@@ -19,4 +19,4 @@ production:
   database: mayacom_production
   pool: 5
   username: mayacom
-  password:
+  password: Rails.application.secrets.database_password
