@@ -10,4 +10,5 @@ ActiveAdmin.register AccessType do
 
   permit_params :name
 
+
 end
