@@ -29,10 +29,4 @@ class PagesController < ApplicationController
     redirect_to contacto_path
   end
 
-  def en_construccion
-    respond_to do |format|
-      format.html { render partial: 'en_construccion', :layout => false}
-    end
-  end
-
 end

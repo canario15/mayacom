@@ -7,9 +7,7 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  get '/' => 'pages#en_construccion'
-
-  get '/home' => 'pages#home'
+  get '/' => 'pages#home'
 
   get '/celulares'      => 'phones#index', as: :phones
   get '/celulares/:id'  => 'phones#show', as: :phone
