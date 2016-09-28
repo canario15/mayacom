@@ -1,20 +1,22 @@
-<div class="slider-area">
-  <div class="block-slider block-slider4">
-    <ul class="" id="bxslider-home4">
-      <% @offers.each do |offer|%>
-        <li>
-          <%= image_tag offer.slider_image(:home) %>
-          <div class="caption-group">
-            <h2 class="caption title">
-              <span class="primary"><%= offer.title %></span>
-            </h2>
-            <a class="caption button-radius" href="/ofertas/<%= offer.id %>"><span class="icon"></span>Ver detalles</a>
-          </div>
-        </li>
-      <% end %>
-    </ul>
+<% unless @offers.blank? %>
+  <div class="slider-area">
+    <div class="block-slider block-slider4">
+      <ul class="" id="bxslider-home4">
+        <% @offers.each do |offer|%>
+          <li>
+            <%= image_tag offer.slider_image(:home) %>
+            <div class="caption-group">
+              <h2 class="caption title">
+                <span class="primary"><%= offer.title %></span>
+              </h2>
+              <a class="caption button-radius" href="/ofertas/<%= offer.id %>"><span class="icon"></span>Ver detalles</a>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
   </div>
-</div>
+<% end -%>
 
 <div class="maincontent-area">
   <div class="zigzag-bottom"></div>
