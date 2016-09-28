@@ -17,7 +17,6 @@
 //
 //   .status_tag { background: #6090DB; }
 
-
 #accessory_phone_ids {
   width: 75%;
 }
@@ -606,4 +605,10 @@ form fieldset.buttons li.cancel a, form fieldset.actions li.cancel a {
 
 .pagination li.active a {
   background: #f7f1d6;
+}
+
+
+form input[type="text"]:focus, form input[type="password"]:focus, form input[type="email"]:focus, form input[type="number"]:focus, form input[type="url"]:focus, form input[type="tel"]:focus, form input[type="date"]:focus, form textarea:focus {
+  border: 1px solid #303967;
+  box-shadow: 0 0 10px #303967;
 }
