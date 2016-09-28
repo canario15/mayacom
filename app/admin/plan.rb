@@ -20,6 +20,7 @@ ActiveAdmin.register Plan do
   end
 
   form do |f|
+    f.semantic_errors *f.object.errors.keys
     f.inputs "Plan",  :multipart => true do
       f.input :order_number, :hint => "orden del plan. ej plan vera 630 es 1 plan vera 990 es 4"
       f.input :contract, :as => :select, :collection => Contract.all.collect {|con| [con.title, con.id] }
