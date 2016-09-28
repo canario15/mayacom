@@ -93,8 +93,12 @@
                   <ul>
                     <li><a href="#section-1" class="icon icon-file-text"><span>Descripción</span></a></li>
                     <li><a href="#section-2" class="icon icon-list2"><span>Especificaciones</span></a></li>
-                    <li><a href="#section-3" class="icon icon-price-tags"><span>Planes</span></a></li>
-                    <li><a href="#section-4" class="icon icon-attachment"><span>Accesorios Compatibles</span></a></li>
+                    <% unless @phone.contracts.blank? %>
+                      <li><a href="#section-3" class="icon icon-price-tags"><span>Planes</span></a></li>
+                    <% end -%>
+                    <% unless @phone.accessories.blank? %>
+                      <li><a href="#section-4" class="icon icon-attachment"><span>Accesorios Compatibles</span></a></li>
+                    <% end -%>
                   </ul>
                 </nav>
                 <div class="content">
